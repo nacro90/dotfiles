@@ -1,0 +1,8 @@
+[user]
+	email = orcan.tiryakioglu@gmail.com
+	name = nacro90
+[filesystem "N/A|13|/dev/mapper/crypthome"]
+	timestampResolution = 6000 nanoseconds
+	minRacyThreshold = 5859 microseconds
+[core]
+	editor = nvim

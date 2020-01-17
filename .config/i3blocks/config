@@ -1,0 +1,27 @@
+# vim: ft=toml
+
+markup=pango
+separator_block_width=30
+color=#b4b7b4
+
+# [xkb]
+# command=lindic
+# interval=10
+
+[termal]
+command=~/.local/bin/tindic
+interval=5
+
+[battery]
+# label=bat
+command=~/.local/bin/bindic
+interval=10
+
+# [connection]
+# command=nmcli d | grep '\<connected\>' | tr -s ' ' | cut -d ' ' -f4
+# interval=10
+
+[datetime]
+command=date "+%a %b %d %R" | sed -e 's/\(.*\)/\1/'
+interval=60
+

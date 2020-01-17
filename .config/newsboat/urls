@@ -1,0 +1,46 @@
+# vim: set ft=conf
+# https://tr.sputniknews.com/export/rss2/archive/index.xml local-news 
+# https://t24.com.tr/rss local-news
+http://feeds.bbci.co.uk/turkce/rss.xml local-news news "~BBC Turkish"
+# "query:Local News:tags # \"local-news\""
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA youtube computers "~Luke Smith - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg youtube computers "~DistroTube - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA youtube computers "~Kai Hendry - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA youtube computers "~Computerphile - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg youtube computers "~Wolfgang's Channel - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCv6jcPwFujuTIwFQ11jt1Yw youtube science "~Barış Özcan - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA youtube science "~Veritasium - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw youtube science "~3Blue1Brown - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A youtube science "~Tom Scott - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCzWQYUVCpZqtN93H8RR44Qw youtube science "~Seeker - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q youtube science "~Kurzesagt - In a Nutshell - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg youtube science "~Two Minute Papers - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCbpkmMfvXhvpfI-IGUQbHdg youtube sports "~Zelimir HBK - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWJ2lWNubArHWmf3FIHbfcQ youtube sports "~NBA - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCoh_z6QB0AGB1oxWufvbDUg youtube sports "~MLG Highlights - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSGkhjEMPDq0iPb0JHb_w5Q youtube sports "~CliveNBAParody - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsTcErHg8oDvUnTzoqsYeNw youtube technology "~Unbox Therapy - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWFKCr40YwOZQx8FHU_ZqqQ youtube technology "~JerryRigEverything - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCddiUEpeqJcYeBxX1IVBKvQ youtube technology "~Verge - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ youtube technology "~Marques Brownlee - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVYamHliCI9rw1tHR1xbkfw youtube technology "~Dave Lee - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWN3xxRkmTPmbKwht9FuE5A youtube programming "~Siraj Reval - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtxCXg-UvSnTKPOzLH4wJaQ youtube programming "~Coding Tech - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCNwlNNDsWUIL1vYqrIErg-g youtube news "~ATİLLA YEŞİLADA - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmwxBk7Af9OnnloGZzp6JnQ youtube sports "~Heat Check - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJFp8uSYCjXOMnkUyb3CQ3Q youtube fun food "~Tasty - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCekQr9znsk2vWxBo3YiLq2w youtube fun food "~You Suck At Cooking - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1zZE_kJ8rQHgLTVfobLi_g youtube fun "~The King of Random - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCdC0An4ZPNr_YiFiYoVbwaw youtube fun "~Daily Dose Of Internet - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCajXeitgFL-rb5-gXI-aG8Q youtube fun "~Great Big Story - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsqjHFMB_JYTaEnf_vmTNqg youtube fun cars "~Doug DeMuro - YouTube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUhFaUpnq31m6TNX2VKVSVA youtube fun cars "~carwow - YouTube"
+
+https://twitrss.me/twitter_user_to_rss/?user=tpope tpope twitter "~Tim Pope (@tpope) | Twitter"
+https://twitrss.me/twitter_user_to_rss/?user=DepremTR news twitter "~DepremTR | Twitter"
+https://twitrss.me/twitter_user_to_rss/?user=mguercankarakas "~Mehmet Gürcan Karakaş | Twitter"
+
+https://lukesmith.xyz/rss.xml blog linux luke-smith
+
+https://news.ycombinator.com/rss news technology

@@ -1,0 +1,4 @@
+# -*- sh -*-
+
+PANEL_HEIGHT=24
+PANEL_FONT="mononoki Nerd Font:antialias=true:size=12:bold"

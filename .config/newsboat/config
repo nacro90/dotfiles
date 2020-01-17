@@ -1,0 +1,170 @@
+# ----------------------------------------------------------------------
+# file:    ~/.config/newsbeuter/config
+# author: nacro90
+# date:    05/08/2013 - 18:12 EDT
+# vim: set ai et fenc=utf-8 ft=conf nu si sts=0 sw=4 ts=8 tw=0 :
+# ----------------------------------------------------------------------
+
+# Settings {{{
+
+# auto-reload yes # \w crontab
+# refresh-on-startup yes
+prepopulate-query-feeds yes
+
+download-path "~/down/newsboat"
+
+player mpv
+pager internal
+browser surf
+# html-renderer "w3m -dump -T text/html"
+external-url-viewer nvim
+
+notify-program newsboat-notifier
+notify-format "%d new articles"
+
+feedlist-format " %3i %n | %t %>  %11u"
+feedlist-title-format " Newsboat - %u unread in %t feeds %?T? - tag:%T&?"
+
+articlelist-title-format " %T (%u/%t)"
+
+itemview-title-format " %T"
+# }}}
+
+# Key bindings {{{
+
+# Unbind all key mappings.
+unbind-key ENTER # open
+unbind-key q # quit
+unbind-key Q # hard-quit
+unbind-key r # reload
+unbind-key R # reload-all
+unbind-key A # mark-feed-read
+unbind-key C # mark-all-feeds-read
+unbind-key s # save
+unbind-key n # next-unread
+unbind-key p # prev-unread
+unbind-key J # next
+unbind-key K # prev
+unbind-key ^K # random-unread
+unbind-key o # open-in-browser
+unbind-key O # open-in-browser-and-mark-read
+unbind-key N # toggle-article-read
+unbind-key l # toggle-show-read-feeds
+unbind-key u # show-urls
+unbind-key ^T # clear-tag
+unbind-key t # set-tag
+unbind-key / # open-search
+unbind-key e # enqueue
+unbind-key ^R # reload-urls
+unbind-key ^L # redraw
+unbind-key : # cmdline
+unbind-key F # set-filter
+unbind-key f # select-filter
+unbind-key ^F # clear-filter
+unbind-key ^B # bookmark
+unbind-key ^E # edit-flags
+unbind-key ^N # next-unread-feed
+unbind-key ^P # prev-unread-feed
+unbind-key j # next-feed
+unbind-key k # prev-feed
+unbind-key $ # purge-deleted
+unbind-key v # view-dialogs
+unbind-key ^X # close-dialog
+unbind-key ^V # next-dialog
+unbind-key ^G # prev-dialog
+unbind-key | # pipe-to
+unbind-key g # sort
+unbind-key G # revsort
+unbind-key UP # up
+unbind-key DOWN # down
+unbind-key PPAGE # pageup
+unbind-key NPAGE # pagedown
+# unbind-key , # macro-prefix
+
+# Global
+# bind-key space macro-prefix
+bind-key / open-search
+bind-key ^U toggle-source-view
+bind-key : cmdline
+bind-key ? help
+bind-key ^D pagedown
+bind-key ^L redraw
+bind-key ^R reload-urls
+bind-key ^U pageup
+bind-key b bookmark
+bind-key e edit-urls
+bind-key F clear-filter
+bind-key D delete-article
+unbind-key ? help
+unbind-key \# goto-url
+bind-key f select-filter
+bind-key G end
+bind-key g home
+bind-key H prev-dialog
+bind-key h quit
+bind-key j down
+bind-key J next-unread
+bind-key K prev-unread
+bind-key k up
+bind-key L next-dialog
+bind-key l open
+# bind-key ^M mark-all-feeds-read
+bind-key M mark-feed-read
+# bind-key O open-all-unread-in-browser-and-mark-read
+bind-key o open-in-browser
+# bind-key q hard-quit
+bind-key r reload
+bind-key R reload-all
+bind-key w save
+bind-key T clear-tag
+bind-key t set-tag
+bind-key u show-urls
+bind-key v view-dialogs
+bind-key x close-dialog
+bind-key | pipe-to
+bind-key s sort
+
+# feedlist
+bind-key m mark-feed-read feedlist
+
+# articlelist
+bind-key m toggle-article-read articlelist
+
+# article
+bind-key i toggle-source-view article
+bind-key d pagedown article
+bind-key u pageup article
+
+macro b set browser "$BROWSER"; open-in-browser-and-mark-read ; set browser surf
+macro t set browser "w3m"; open-in-browser-and-mark-read ; set browser surf
+macro v set browser "mpv %u --title %u"; open-in-browser-and-mark-read ; set browser surf
+
+# }}}
+
+# Colors {{{
+
+# # General Colors
+# color background default default
+# color listnormal default default
+# color listnormal_unread yellow default bold
+# color listfocus default white
+# color listfocus_unread yellow black bold
+# color info white default
+# color article default default
+
+# # Highlight Rules
+# highlight feedlist "https?://[^ ]+" cyan default
+# highlight articlelist "[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}" cyan default
+highlight article "https?://[^ ]+" magenta default
+highlight article "\[[[:digit:]]{1,}\]" red default
+highlight article "^(Feed|Title|Author|Link|Date):" blue default
+
+color listnormal default default dim
+color listfocus             magenta   default dim
+color listnormal_unread     default  default
+color listfocus_unread      magenta  default bold
+color info                  black   magenta
+# color article black green
+
+highlight feedlist "- YouTube" red default dim
+# }}}

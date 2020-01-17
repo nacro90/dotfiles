@@ -1,0 +1,347 @@
+# -*- conf -*-
+
+
+#
+# Settings
+#
+
+set globsearch on
+set smartdia on
+set smartcase on
+
+# interpreter for shell commands (needs to be POSIX compatible)
+set shell sh
+
+set previewer ~/.config/lf/scope.sh
+
+# set '-eu' options for shell commands
+# These options are used to have safer shell commands. Option '-e' is used to
+# exit on error and option '-u' is used to give error for unset variables.
+# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
+# $fx variables contain names with '*' or '?' characters. However, this option
+# is used selectively within individual commands as it can be limiting at
+# times.
+set shellopts '-eu'
+
+# set internal field separator (IFS) to "\n" for shell commands
+# This is useful to automatically split file names in $fs and $fx properly
+# since default file separator used in these variables (i.e. 'filesep' option)
+# is newline. You need to consider the values of these options and create your
+# commands accordingly.
+set ifs "\n"
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+
+#
+# Keybindings
+#
+
+# Remove mappings
+map e
+map r
+map g
+
+
+# Plain esc relaods and redraws
+map <esc> :{{
+    reload
+    redraw
+}}
+
+# Delete current file unless there is no selection.
+map x delete %fx
+
+# Renaming
+
+# |.ext
+map rr rename-clean-name
+# filename.ext|
+map ra rename-append-all
+# filename|.ext
+map re rename-append-name
+# |filename.ext
+map ri rename-insert-beginning
+# filename.|
+map rx rename-clean-extension
+# |
+map rc rename-clean-all
+
+# Yanking
+map y copy
+map gyn yank-name-without-extension
+map gyy yank-name-with-extension
+map gyx yank-extension
+map gypp yank-path-parent
+map gypf yank-path-full
+
+
+# New file
+map ot push :touch<space>
+map Ot push :touch<space>
+# New directory
+map om push :mkdir<space>
+map Om push :mkdir<space>
+
+# Please be like vim
+map ` mark-load
+
+# Find with fzf
+map f $lf -remote "send $id select $(ls | fzf)"
+map F $lf -remote "send $id select $(fzf)"
+
+# Unselect and uncut
+map u
+map us unselect
+map uc clear
+map uu :{{
+    unselect
+    clear
+}}
+
+# Settings toggles using z{}
+map zp set preview!
+map zi set icons!
+map z1 :{{
+    set nopreview
+    set ratios '1'
+}}
+map z2 :{{
+    set ratios '1:2'
+    set preview
+}}
+map z3 :{{
+    set ratios '1:2:3'
+    set preview;
+}}
+map z4 :{{
+    set ratios '1:2:3:5'
+    set preview;
+}}
+
+
+# use enter for shell commands
+map <enter> shell
+
+
+# execute current file (must be executable)
+# map - $$f
+# map = !$f
+
+
+
+# Shortcuts to folders usin g{}
+map gdc cd ~/doc
+map gor cd ~/doc/org
+map gdw cd ~/down
+map gp  cd ~/pic
+map gc  cd ~/cs
+map gs  cd ~/sync
+map gll cd ~/.local/lib
+map glb cd ~/.local/bin
+map gls cd ~/.local/share
+map gls cd ~/.local/share
+map gc cd ~/.config
+map gm  cd /mnt
+map gt  cd /tmp
+
+
+#
+# Custom commands
+#
+
+# Renaming
+
+cmd rename-append-all rename
+
+cmd rename-append-name :{{
+    rename
+    cmd-word-back
+    cmd-left
+}}
+
+cmd rename-insert-beginning :{{
+    rename
+    cmd-home
+}}
+
+cmd rename-clean-name &{{
+    set -f
+    lf -remote "send $id rename"
+    lf -remote "send $id cmd-delete-home"
+
+    ext="$(basename "$f" | sed 's/ /<space>/g' | rev | cut -d'.' -f 1 -s | rev)"
+    if [ -n "$ext" ]; then
+       lf -remote "send $id push .${ext}<home>"
+    fi
+}}
+
+cmd rename-clean-extension &{{
+    set -f
+    lf -remote "send $id rename"
+    lf -remote "send $id cmd-delete-home"
+
+    name="$(basename "$f" | sed -e 's/ /<space>/g' -e 's/\.[^.]\+$//')"
+    lf -remote "send $id push ${name}"
+}}
+
+cmd rename-clean-all :{{
+    rename
+    cmd-delete-home
+}}
+
+
+# Yanking
+
+cmd yank-path-full &{{
+    escaped="$(echo "$f" | sed 's/ /\\ /g')"
+    echo "$escaped" | xclip -sel clip
+    lf -remote "send $id echo Copied \\\\\"${escaped}\\\\\" to clipboard"
+}}
+
+cmd yank-path-parent &{{
+    escaped="$(dirname "$f" | sed 's/ /\\ /g')"
+    echo "$escaped" | tr -d '\n' | xclip -sel clip
+    lf -remote "send $id echo Copied \\\\\"${escaped}\\\\\" to clipboard"
+
+}}
+
+cmd yank-name-without-extension &{{
+    escaped="$(basename "$f" | sed -e 's/ /\\ /g' -e 's/\.[^.]\+$//')"
+    echo "$escaped" | tr -d '\n' | xclip -sel clip
+    lf -remote "send $id echo Copied \\\\\"${escaped}\\\\\" to clipboard"
+}}
+
+cmd yank-name-with-extension &{{
+    escaped="$(basename "$f" | sed 's/ /\\ /g')"
+    echo "$escaped" | tr -d '\n' | xclip -sel clip
+    lf -remote "send $id echo Copied \\\\\"${escaped}\\\\\" to clipboard"
+}}
+
+cmd yank-extension &{{
+    escaped="$(basename "$f" | sed 's/ /\\ /g' | rev | cut -d'.' -f 1 -s | rev)"
+    echo "$escaped" | tr -d '\n' | xclip -sel clip
+    lf -remote "send $id echo Copied \\\\\"${escaped}\\\\\" to clipboard"
+}}
+
+# Easy mkdir
+cmd mkdir $mkdir -p "$@"
+
+# Easy touch
+cmd touch $touch "$@"
+
+
+# define a custom 'open' command
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        image/*) $IMGVIEWER $fx &;;
+        application/pdf) $PDFVIEWER $fx &;;
+        video/* | audio/*) $MEDIAPLAYER $fx &;;
+        application/vnd.openxmlformats-officedocument*|application/msword) libreconvert.sh $fx;;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+
+# rename current file without overwrite
+# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+# map r push :rename<space>
+
+
+
+# make sure trash folder exists
+# %mkdir -p ~/.trash
+
+# move current file or selected files to trash folder
+# (also see 'man mv' for backup/overwrite options)
+cmd trash %set -f; mv $fx ~/.trash
+
+# extract the current file with the right command
+# (xkcd link: https://xkcd.com/1168/)
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+cmd bulk-rename ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
+
+cmd rpaste &{{
+    load=$(lf -remote 'load')
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        rsync -av --ignore-existing --progress $list . \
+        | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+        | while read line; do
+            lf -remote "send $id echo $line"
+        done
+    elif [ $mode = 'move' ]; then
+        mv -n $list .
+    fi
+    lf -remote 'send load'
+    lf -remote 'send clear'
+}}
+
+map U !du -sh      # waiting shell command
+map <enter> open
+
+# map a $lf -remote "send $id push :rename<space>'$(basename $f | sed 's/ /<space>/g')'<left>"
+
+# Set columns according to terminal width
+${{
+    w=$(tput cols)
+    if [ $w -le 80 ]; then
+        lf -remote "send $id set ratios 1:2"
+    elif [ $w -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:5"
+    fi
+}}

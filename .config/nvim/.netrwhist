@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca/.vim'
+let g:netrw_dirhist_8='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca'
+let g:netrw_dirhist_7='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca/.vim'
+let g:netrw_dirhist_6='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca'
+let g:netrw_dirhist_5='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca/osman'
+let g:netrw_dirhist_4='/home/orcan/doc/school/2019-2020/fall/blm4800-datamining/hw/01-simple-pca'
+let g:netrw_dirhist_3='/home/orcan/.config/nvim/ftplugin'
+let g:netrw_dirhist_2='/home/orcan/cs/testinium/qa-dashboard-platform'
+let g:netrw_dirhist_1='/home/orcan/cs/eclim-test'

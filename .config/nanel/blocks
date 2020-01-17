@@ -1,0 +1,9 @@
+# block		update-type	update-value   
+
+clock		interval	1m
+wifi		pace		nmcli m
+battery		interval	10s	
+bluetooth	interval	10s
+
+# keyboard	signal		1
+

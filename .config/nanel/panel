@@ -1,0 +1,15 @@
+# -*- sh -*-
+
+#
+# System
+#
+PANEL_FIFO="/tmp/${PANEL_NAME}-fifo"
+PANEL_WM_NAME="$PANEL_NAME"
+
+#
+# Directories and files
+#
+PROJECT_EXEC_ROOT="$HOME/.local/bin/$PANEL_NAME"
+PROJECT_BLOCK_ROOT="$PROJECT_EXEC_ROOT/blocks"
+BLOCK_CONFIG="$XDG_CONFIG_HOME/$PANEL_NAME/blocks"
+

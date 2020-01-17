@@ -1,0 +1,34 @@
+#!/bin/sh
+
+
+# Reset all rules at the beginning to prevent doubling up
+bspc rule -r "*"
+
+i=1
+for monitor in $(bspc query -M); do
+bspc monitor $monitor \
+        -n "$i" \
+        -d "$i"/{1,2,3,4,5,6,7,8,9,10}
+    let i++
+done
+NMON=$i
+unset i
+
+bspc config border_width         2
+bspc config top_padding         24
+bspc config window_gap          16
+
+bspc config focus_follows_pointer true
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# Rules
+bspc rule -a Blueberry.py state=floating follow=on
+bspc rule -a Xdialog state=floating
+bspc rule -a *:"*scratchpad*" state=floating
+bspc rule -a Anki state=pseudo_tiled
+bspc rule -a jetbrains-idea "desktop=^2" follow=on
+
+nanel &
