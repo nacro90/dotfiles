@@ -84,3 +84,22 @@ index 4a97267..b1c859c 100644
  
  ** Markdown
 #+END_SRC
+* <2020-01-21 Tue 07:25>
+
+- 
+
+#+BEGIN_SRC diff
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index bf365ff..6b09ae6 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -84,3 +84,8 @@ index 4a97267..b1c859c 100644
+  
+  ** Markdown
+ #+END_SRC
++* <2020-01-21 Tue 07:25>
++
++- 
++
++#+BEGIN_SRC diff
+#+END_SRC
