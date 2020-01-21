@@ -103,3 +103,22 @@ index bf365ff..6b09ae6 100644
 +
 +#+BEGIN_SRC diff
 #+END_SRC
+* <2020-01-21 Tue 07:28>
+
+- 
+
+#+BEGIN_SRC diff
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index 1aa6618..5e7e7a4 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -103,3 +103,8 @@ index bf365ff..6b09ae6 100644
+ +
+ +#+BEGIN_SRC diff
+ #+END_SRC
++* <2020-01-21 Tue 07:28>
++
++- 
++
++#+BEGIN_SRC diff
+#+END_SRC
