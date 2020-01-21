@@ -1,0 +1,29 @@
+#!/bin/sh
+
+function get_name() {
+    echo "$(echo "$1" | cut -d' ' -f 3-)"
+}
+
+function get_mac() {
+    echo "$(echo "$1" | cut -d' ' -f 2)"
+}
+
+
+devs="$(bluetoothctl paired-devices)"
+sel="$(echo "$devs"  | cut -d' ' -f 3- | dmenu)"
+
+ifs_tmp=$IFS
+IFS=$'\n'
+
+devs=($devs)
+
+idx=0
+elem="$(get_name ${devs[idx]})"
+until [ "$elem" = "$sel" ]; do
+    idx=$((idx+1))
+    elem="$(get_name ${devs[idx]})"
+done
+
+mac="$(get_mac ${devs[idx]})"
+bluetoothctl connect "$mac"
+

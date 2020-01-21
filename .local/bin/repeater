@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Repeat given script once in given interval of seconds.
+# Default interval is 1s
+
+while getopts i: OPT; do
+    case $OPT in
+	i)
+	    interval="$OPTARG"
+	    ;;
+	?)
+	    echo "usage: `basename $0` [-i} [--] ARGS..."
+	    exit 2
+    esac
+done
+shift `expr $OPTIND - 1`
+OPTIND=1
+
+if [ "$#" -lt 1 ]; then
+    echo "Missing executable"
+    exit 1
+elif [ -x "$1" ]; then
+    echo "First argument is not an executable"
+    exit 1
+fi
+
+executable="$1"
+
+while true; do
+    eval "$executable"
+    sleep "${interval-1s}"
+done

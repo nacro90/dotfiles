@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# vim: ft=sh
+# Text based keyboard layout indicator
+
+if [ "$(setxkbmap -query | sed -rn 's/layout:\s*(\w+)/\1/p')" == "tr" ]; then
+  echo ""
+else
+  echo ""
+fi
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+emails="orcan.tiryakioglu@gmail.com
+orcan.tiryakioglu@testinium.com
+nacro@cock.li"
+
+selected_email=$(echo "$emails" | dmenu)
+echo "$selected_email" | xclip -selection clipboard && \
+  notify-send "Email has been yanked to clipboard" "$selected_email" -u low
+
+# vim: ft=sh

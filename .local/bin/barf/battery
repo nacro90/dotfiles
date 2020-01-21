@@ -1,0 +1,79 @@
+#!/bin/bash
+# vim: ft=sh
+# Text based battery indicator 
+# There are three states: Charging, Discharging, Plugged but not charging
+# 6 intervals: 0-5-15-25-50-75-100
+
+# set -x
+
+if [[ -f ~/.config/i3blocks/scripts/bindic.conf ]]; then
+  source ~/.config/status-functions/battery.conf
+else
+  discharge_normal_character='+'
+  discharge_critical_character='!'
+  charging_character='>'
+  not_charging_normal_character='*'
+  not_charging_abnormal_character='?'
+fi
+
+acpi_result="$(acpi -V)"
+
+# First element is the status
+# Second element is the percentage
+info_array=($(echo "$acpi_result" | sed -rn 's/^Battery.*: (Discharging|Unknown|Charging).*\<([0-9]+)%.*/\1\n\2/p'))
+
+## WIP
+# if [[ $charging_status != ${info_array[0]} ]]; then
+#   if [[ ${info_array[0]} == 'Discharging' ]]; then
+#     notify-send -u low 'Discharging'
+#   elif [[ ${info_array[0]} == 'Charging' ]]; then
+#     notify-send -u low 'Charging'
+#   elif [[ ${info_array[0]} == 'Unknown' ]]; then
+#     notify-send -u low 'Stopped charging'
+#   fi
+# fi
+
+export charging_status=${info_array[0]}
+export current_perc=${info_array[1]}
+
+if [[ $charging_status == 'Discharging' ]]; then
+  if [[ $current_perc -gt 75 ]]; then
+    output='++++'
+  elif [[ $current_perc -gt 50 ]]; then
+    output='+++-'
+  elif [[ $current_perc -gt 25 ]]; then
+    output='++--'
+  elif [[ $current_perc -gt 15 ]]; then
+    output='+---'
+  elif [[ $current_perc -gt 5 ]]; then
+    output='!---'
+  else
+    output='!!!!'
+  fi
+elif [[ $charging_status == 'Charging' ]]; then
+  if [[ $current_perc -gt 75 ]]; then
+    output='>>>>'
+  elif [[ $current_perc -gt 50 ]]; then
+    output='>>>-'
+  elif [[ $current_perc -gt 25 ]]; then
+    output='>>--'
+  else
+    output='>---'
+  fi
+elif [[ $charging_status == 'Unknown' ]]; then
+  if [[ $current_perc -gt 75 ]]; then
+    output='****'
+  elif [[ $current_perc -gt 50 ]]; then
+    output='***-'
+  elif [[ $current_perc -gt 25 ]]; then
+    output='**--'
+  elif [[ $current_perc -gt 15 ]]; then
+    output='*---'
+  elif [[ $current_perc -gt 5 ]]; then
+    output='?---'
+  else
+    output='????'
+  fi
+fi
+
+echo "$output"

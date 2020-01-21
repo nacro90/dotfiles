@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+rm -f ~/.cache/dmenu_recent
+
+# vim: ft=sh

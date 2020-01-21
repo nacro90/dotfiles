@@ -1,0 +1,5 @@
+#!/bin/sh
+
+$TERMINAL -e tmux a -t $(tmux ls -F "#S" | dmenu -p "tmux-sessions")
+
+# vim: ft=sh

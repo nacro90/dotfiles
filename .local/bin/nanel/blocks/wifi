@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+# vim: ft=sh
+# Unicode wifi icon
+
+wifi_state=$(nmcli d | grep "wlp2s0\s\+wifi\s\+" | awk '{print $3}')
+
+case "$wifi_state" in
+  "connected")
+    echo "直"
+    ;;
+  "disconnected")
+    echo "睊"
+    ;;
+  "connecting")
+    echo "直!"
+    ;;
+  "unavailable")
+    echo "睊!"
+    ;;
+esac
+
+

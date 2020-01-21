@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+killall compton 2> /dev/null
+compton --config ~/.config/compton/compton.conf -b
+
+# vim: ft=sh

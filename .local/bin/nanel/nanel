@@ -1,0 +1,102 @@
+#!/bin/sh
+
+export PANEL_NAME="$(basename $0)"
+
+#
+# System
+#
+export PANEL_FIFO="/tmp/${PANEL_NAME}-fifo"
+export PANEL_WM_NAME="$PANEL_NAME"
+
+#
+# Directories and files
+#
+export PROJECT_CONF_ROOT="${XDG_CONFIG_HOME:-$HOME/.config}/$PANEL_NAME"
+export PROJECT_EXEC_ROOT="$HOME/.local/bin/$PANEL_NAME"
+export PROJECT_BLOCK_ROOT="$PROJECT_EXEC_ROOT/blocks"
+export BLOCK_CONFIG="$XDG_CONFIG_HOME/$PANEL_NAME/blocks"
+
+
+# Create configuration folder if it does not exist
+[ ! -e "$PROJECT_CONF_ROOT" ] && mkdir "$PROJECT_CONF_ROOT"
+# Create block folder if it does not exist
+[ ! -e "$PROJECT_BLOCK_ROOT" ] && mkdir "$PROJECT_BLOCK_ROOT"
+
+if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+# Making named pipe
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+
+while read block upd_type upd_val; do
+
+    # Ignore comments
+    if [ "$block" != "${block#\#}" ] || [ -z "${block#\#}" ]; then
+	continue
+    fi
+
+    block_executable="$PROJECT_BLOCK_ROOT/$block"
+
+    if [ ! -e "$block_executable" ] && [ ! -x "$block_executable" ]; then
+        echo "$block_executable is not available"
+	exit 1
+    fi
+
+    case $upd_type in
+
+	'interval')
+	    while true; do
+		echo "$block"
+		sleep "$upd_val"
+	    done > $PANEL_FIFO &
+	    ;;
+	
+	'pace')
+	    echo "$block" > $PANEL_FIFO &
+	    sh -c "$upd_val" | while read line; do
+		echo "$block"
+	    done > $PANEL_FIFO &
+	    ;;
+
+	'once')
+	    echo "$block" > $PANEL_FIFO &
+	    ;;
+	
+	'signal') # TODO 
+	    trap "$executable" "$upd_val" > $PANEL_FIFO &
+	    ;;
+
+	'repeat')
+	    while true; do
+		echo "$block" 
+	    done > $PANEL_FIFO &
+	    ;;
+
+	*)
+    esac
+done < $BLOCK_CONFIG
+
+# bspc subscribe report > "$PANEL_FIFO" &
+
+. $PROJECT_CONF_ROOT/colors
+. $PROJECT_CONF_ROOT/visual
+
+$PROJECT_EXEC_ROOT/fifo-parser < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh > /dev/null 2>&1 &
+
+# Adjust X layer order
+panel_ids=($(xdo id -m -a "$PANEL_WM_NAME"))
+root_ids=($(xdo id -N Bspwm -n root))
+for panel in "${panel_ids[@]}"; do
+    for root in "${root_ids[@]}"; do
+	xdo above -t "$root" "$panel"
+    done
+done
+
+wait
+

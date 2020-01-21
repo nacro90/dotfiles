@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+notify-send -u low 'Newsboat' "$1" 
+
+# vim: ft=sh

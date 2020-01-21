@@ -1,0 +1,8 @@
+#!/bin/bash
+# vim: ft=sh
+
+dpi="$(xrdb -query | sed -rn 's/.*dpi.*\<([0-9]+)/\1/p')"
+
+font_size=$(("$dpi" * 13 / 86))
+
+i3-dmenu-desktop --dmenu="dmenu -i -b -p 'picolo' -fn 'Fira Mono:bold:pixelsize=$font_size' -nb '#002b36' -nf '#586e75' -sf '#93a1a1' -sb '#002b36'"

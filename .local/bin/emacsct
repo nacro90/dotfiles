@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+emacsclient -t --alternate-editor "\"emacs -t\"" "$@"
+
+# vim: ft=sh

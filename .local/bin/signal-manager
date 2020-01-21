@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# Network listener
+nmcli m | while read line; do
+  /bin/kill -SIGRTMIN+1 $(pidof dwmblocks) 
+done

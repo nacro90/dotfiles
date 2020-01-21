@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+systemctl --user restart emacs
+
+# vim: ft=sh

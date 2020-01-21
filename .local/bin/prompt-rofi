@@ -1,0 +1,5 @@
+#/bin/sh
+# vim: ft=sh
+
+[ "$(printf "OK\\nCancel" | dmenu -dmenu -l 2 -i -width -20 -selected-row 1 -p "$1")" = "OK" ] && $2
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+xset r rate 200 50
+
+# Caps to CTRL
+setxkbmap -option "caps:ctrl_modifier"
+setxkbmap -option "shift:both_capslock"
+# Layout to US
+setxkbmap -layout us
+
+# vim: ft=sh

@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -x
+
+if [ -n "${1+x}" ]; then
+  echo kemal
+  tmux a -t $1 || tmux new -s $@
+fi
+
+# vim: ft=sh

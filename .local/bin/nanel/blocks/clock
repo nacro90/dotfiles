@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# vim: ft=sh
+
+function escaped_date() {
+    echo "$(date | sed s/:/\\\\:/g)"
+}
+
+echo "%{A:notify-send -u low \"$(escaped_date)\":} $(date +"%H:%M") %{A}"

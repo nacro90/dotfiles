@@ -1,0 +1,96 @@
+#!/usr/bin/env sh
+# vim: ft=sh
+# Text based battery indicator 
+# There are three states: Charging, Discharging, Plugged but not charging
+# 6 intervals: 0-5-15-25-50-75-100
+
+# set -x
+
+acpi_result="$(acpi -V)"
+
+# First element is the status
+# Second element is the percentage
+info_array=($(echo "$acpi_result" | sed -rn 's/^Battery.*: (Discharging|Unknown|Charging).*\<([0-9]+)%.*/\1\n\2/p'))
+
+export charging_status=${info_array[0]}
+export current_perc=${info_array[1]}
+
+if [ $charging_status == 'Discharging' ]; then
+
+  if [[ $current_perc -gt 90 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 80 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 70 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 60 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 50 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 40 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 30 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 20 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 10 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 5 ]]; then
+    output=''
+
+  else
+    output=''
+
+  fi
+
+elif [[ $charging_status == 'Charging' ]]; then
+
+  if [[ $current_perc -gt 90 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 80 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 70 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 60 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 50 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 30 ]]; then
+    output=''
+
+  elif [[ $current_perc -gt 20 ]]; then
+    output=''
+
+  else
+    output=''
+
+  fi
+
+
+elif [[ $charging_status == 'Unknown' ]]; then
+
+  if [[ $current_perc -gt 50 ]]; then
+    output=''
+
+  else
+    output=''
+
+  fi
+
+fi
+
+echo "$output"

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+response="$(curl -s -X GET https://openexchangerates.org/api/latest.json?app_id=a669877db25b45aeb139597da3227787)"
+
+try=$(echo "$response" | sed -nr 's/\"TRY\": ([0-9]+\.[0-9]+),/\1/p')
+
+if [ $# -eq 0 ]; then
+  echo "1 USD = $try TRY"
+else
+  result=$(calc "$try * $1")
+  echo "$1 USD = $result TRY"
+fi

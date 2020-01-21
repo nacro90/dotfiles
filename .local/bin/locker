@@ -1,0 +1,44 @@
+#!/bin/bash
+#vim: ft=bash
+
+# rectangles=" "
+
+# SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
+# for RES in $SR; do
+#   SRA=(${RES//[x+]/ })
+#   CX=$((${SRA[2]} + 25))
+#   CY=$((${SRA[1]} - 80))
+#   rectangles+="rectangle $CX,$CY $((CX+300)),$((CY-80)) "
+# done
+
+# TMPBG=/tmp/screen.png
+# scrot $TMPBG && convert $TMPBG -scale 10% -scale 1000% -draw "fill black fill-opacity 0.4 $rectangles" $TMPBG
+# # scrot $TMPBG && corrupter -mag 2 -lag 0.01 -stride 0 -meanabber 0 -stdoffset 0 -stdabber 0  $TMPBG $TMPBG
+
+# i3lock \
+#   -i $TMPBG \
+#   --clock --datestr "Type password to unlock..." \
+#   --timepos="100:100" \
+#   --datepos="x+24:y+25" \
+#   --insidecolor=00000000 --ringcolor=ffffffff --line-uses-inside \
+#   --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
+#   --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
+#   --ringvercolor=ffffffff --ringwrongcolor=ffffffff --indpos="x+290:h-120" \
+#   --radius=20 --ring-width=3 --veriftext="" --wrongtext="" \
+#   --timecolor="ffffffff" --datecolor="ffffffff" \
+
+# rm $TMPBG
+
+i3lock \
+  -i ~/.config/lock.png \
+  --ignore-empty-password --show-failed-attempts \
+  --clock --timepos="ix:iy-200" \
+  --ringvercolor=ffffffff --ringwrongcolor=d23c3dff --indpos="w-400:h/2+200" \
+  --pass-media-keys --pass-screen-keys \
+  --insidecolor=00000000 --ringcolor=ffffff55 --line-uses-inside \
+  --keyhlcolor=ffffffff --bshlcolor=d23c3dff --separatorcolor=00000000 \
+  --insidevercolor=ffffffff --insidewrongcolor=d23c3dff \
+  --radius=16 --ring-width=4 --veriftext="" --wrongtext="" --noinputtext="" \
+  --timecolor="ffffffcc" --timestr="%H:%M" --time-font="DejaVu Sans" --timesize=112 \
+  --datecolor="ffffffcc" --datesize=18 --date-font="DejaVu Sans" --datepos="tx:ty+50"
+

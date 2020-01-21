@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+lc="$(hidden | wc -l)"
+
+titles="$(hidden -c | tr)
+
+
+

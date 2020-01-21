@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+if [ "$(bluetoothctl show | grep -c 'Powered: yes')" == "1" ]; then
+    if [ "$(bluetoothctl info | grep -c 'Connected: yes')" == "1" ]; then
+	if [ "$(bluetoothctl info | grep -c 'Class: 0x00260404')" == "1" ]; then
+	    output=""
+	elif [ "$(bluetoothctl info | grep -c 'Class: 0x00240404')" == "1" ]; then
+	    output="ﰝ"
+	else
+	    output=""
+	fi
+    else
+	output=""
+    fi
+
+    echo "%{A:blueberry:}${output}%{A}"
+fi
+

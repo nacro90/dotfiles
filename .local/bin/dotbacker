@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+#
+# nacro90
+#
+# Shell script to backup dotfiles via git bare repo.
+# This file only adds and commits the files that are tracked by git.
+
+set -x
+
+DOTGIT=$HOME/.config/dotgit
+REPO=$DOTGIT/repo
+LOG=$DOTGIT/log.org
+GIT="git --git-dir=$REPO --work-tree=$HOME"
+
+which git > /dev/null 2>&1
+if [ "$?" -ne 0 ]; then
+    echo "Git is not installed"
+    exit 1
+fi
+
+
+datetime="$(date +"%Y-%m-%d %a %R")"
+
+status="$($GIT status --porcelain)"
+
+echo -e "* <${datetime}>\n" >> $LOG
+
+if [ -z $status ]; then
+    echo -e "No change\n" >> $LOG
+else
+    while read file; do
+	echo -e "- ${file}" >> $LOG
+    done < <(echo "$status")
+
+    echo -e "\n#+BEGIN_SRC diff" >> $LOG
+
+    $GIT diff >> $LOG
+
+    echo -e "#+END_SRC" >> $LOG
+fi
+
+# Explicitly add the log file
+$GIT add $LOG
+
+$GIT add -u && $GIT commit -m "dotbacker - $datetime" && $GIT push
+

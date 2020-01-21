@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+if [ "$(bluetoothctl show | grep -c 'Powered: yes')" == "1" ]; then
+  if [ "$(bluetoothctl info | grep -c 'Connected: yes')" == "1" ]; then
+    if [ "$(bluetoothctl info | grep -c 'Class: 0x00260404')" == "1" ]; then
+      echo ""
+    elif [ "$(bluetoothctl info | grep -c 'Class: 0x00240404')" == "1" ]; then
+      echo "ﰝ"
+    else
+      echo ""
+    fi
+  else
+    echo ""
+  fi
+fi
+
+# vim: ft=sh

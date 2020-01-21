@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+feh --no-fehbg --bg-fill '/home/orcan/.config/wall.png'
+
+# vim: ft=sh

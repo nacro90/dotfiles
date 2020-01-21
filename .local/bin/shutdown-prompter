@@ -1,0 +1,5 @@
+#!/bin/bash
+# vim: ft=sh
+# Simple shutdown prompter using dmenu
+
+selection=$(echo -e 'OK\nCancel' | dmenu-wrapper)

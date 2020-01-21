@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LETTERS="Ä\nä\nÖ\nö\nÜ\nü\nẞ\nß"
+
+echo -e "$LETTERS" | dmenu | xclip -sel clip
+
+# vim: ft=sh
