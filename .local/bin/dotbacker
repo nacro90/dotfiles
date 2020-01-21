@@ -5,8 +5,6 @@
 # Shell script to backup dotfiles via git bare repo.
 # This file only adds and commits the files that are tracked by git.
 
-set -x
-
 DOTGIT=$HOME/.config/dotgit
 REPO=$DOTGIT/repo
 LOG=$DOTGIT/log.org
