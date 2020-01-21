@@ -323,9 +323,8 @@ every buffer change to enable it buffer-local for every buffer.
 
 ** Backup files and versioning
 
--)
-~filename#~ files drive me crazy. This centralises the backup files
-created as I edit.
+~#filename#~ and ~filename~~ files drive me crazy. This centralises
+the backup files created as I edit.
 
 #+BEGIN_SRC emacs-lisp :results output silent
 
@@ -348,13 +347,14 @@ created as I edit.
 
 #+BEGIN_SRC emacs-lisp :results output silent
 
-  (custom-set-variables 
-   '(recentf-mode t)
-   '(recentf-max-menu-items 25)
-   '(recentf-max-saved-items 25))
+    (custom-set-variables 
+     '(recentf-mode t)
+     '(recentf-max-menu-items 50)
+     '(recentf-max-saved-items 50))
+
+  (add-to-list 'recentf-exclude (expand-file-name "~/.emacs.d/elpa/.*"))
 
 #+END_SRC
-
 
 
 ** Save point places
@@ -393,8 +393,6 @@ I am setting this to ~forward~ which is provided in [[https://github.com/technom
 * Global keybindings
 
 ** ~DEL~ \rightarrow ~C-h~
-
-** 
 
 Backspace key is hard to reach. I swapped it with ~C-h~ which also
 backward deletes a char in all shells.
@@ -477,6 +475,11 @@ list. It is listed in [[https://github.com/technomancy/better-defaults/blob/mast
 **** <2019-12-28 Sat>
 
 Looks like evil does not work in ibuffer. So it is disabled now.
+
+
+** CONFIGURE Regex search by default
+
+
 
 
 * Major Modes

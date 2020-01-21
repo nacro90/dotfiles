@@ -1,0 +1,86 @@
+* <2020-01-21 Tue 07:07>
+
+- D .config/systemd/user/default.target.wants/emacs.service
+- M .config/zsh/.zshrc
+- M .emacs.d/config.org
+
+#+BEGIN_SRC diff
+diff --git a/.config/systemd/user/default.target.wants/emacs.service b/.config/systemd/user/default.target.wants/emacs.service
+deleted file mode 120000
+index 003173b..0000000
+--- a/.config/systemd/user/default.target.wants/emacs.service
++++ /dev/null
+@@ -1 +0,0 @@
+-/usr/lib/systemd/user/emacs.service
+\ No newline at end of file
+diff --git a/.config/zsh/.zshrc b/.config/zsh/.zshrc
+index faee5ca..d9dafc7 100644
+--- a/.config/zsh/.zshrc
++++ b/.config/zsh/.zshrc
+@@ -226,7 +226,7 @@ alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/
+ 
+ alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+ 
+-alias dotgit='/usr/bin/git --git-dir=$HOME/.dot --work-tree=$HOME' 
++alias dotgit='/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME' 
+ 
+ # Config aliases {{{
+ alias zshconfig="$EDITOR ~/.zshrc"
+diff --git a/.emacs.d/config.org b/.emacs.d/config.org
+index 4a97267..b1c859c 100644
+--- a/.emacs.d/config.org
++++ b/.emacs.d/config.org
+@@ -323,9 +323,8 @@ every buffer change to enable it buffer-local for every buffer.
+ 
+ ** Backup files and versioning
+ 
+--)
+-~filename#~ files drive me crazy. This centralises the backup files
+-created as I edit.
++~#filename#~ and ~filename~~ files drive me crazy. This centralises
++the backup files created as I edit.
+ 
+ #+BEGIN_SRC emacs-lisp :results output silent
+ 
+@@ -348,13 +347,14 @@ created as I edit.
+ 
+ #+BEGIN_SRC emacs-lisp :results output silent
+ 
+-  (custom-set-variables 
+-   '(recentf-mode t)
+-   '(recentf-max-menu-items 25)
+-   '(recentf-max-saved-items 25))
++    (custom-set-variables 
++     '(recentf-mode t)
++     '(recentf-max-menu-items 50)
++     '(recentf-max-saved-items 50))
+ 
+-#+END_SRC
++  (add-to-list 'recentf-exclude (expand-file-name "~/.emacs.d/elpa/.*"))
+ 
++#+END_SRC
+ 
+ 
+ ** Save point places
+@@ -394,8 +394,6 @@ I am setting this to ~forward~ which is provided in [[https://github.com/technom
+ 
+ ** ~DEL~ \rightarrow ~C-h~
+ 
+-** 
+-
+ Backspace key is hard to reach. I swapped it with ~C-h~ which also
+ backward deletes a char in all shells.
+ 
+@@ -479,6 +477,11 @@ list. It is listed in [[https://github.com/technomancy/better-defaults/blob/mast
+ Looks like evil does not work in ibuffer. So it is disabled now.
+ 
+ 
++** CONFIGURE Regex search by default
++
++
++
++
+ * Major Modes
+ 
+ ** Markdown
+#+END_SRC

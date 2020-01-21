@@ -226,7 +226,7 @@ alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/
 
 alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 
-alias dotgit='/usr/bin/git --git-dir=$HOME/.dot --work-tree=$HOME' 
+alias dotgit='/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME' 
 
 # Config aliases {{{
 alias zshconfig="$EDITOR ~/.zshrc"
