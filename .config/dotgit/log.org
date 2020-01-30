@@ -1,0 +1,259 @@
+* <2020-01-30 Thu 06:39>
+
+- M .config/bspwm/bspwmrc
+- M .config/htop/htoprc
+- M .config/sxhkd/sxhkdrc
+- M .config/zathura/zathurarc
+- M .config/zsh/.zshrc
+- M .local/bin/setup-screens
+
+#+BEGIN_SRC diff
+diff --git a/.config/bspwm/bspwmrc b/.config/bspwm/bspwmrc
+index 9fe8147..f2e87cb 100755
+--- a/.config/bspwm/bspwmrc
++++ b/.config/bspwm/bspwmrc
+@@ -18,18 +18,24 @@ bspc config border_width         2
+ bspc config top_padding         24
+ bspc config window_gap          16
+ 
+-bspc config focus_follows_pointer true
+-
+ bspc config split_ratio          0.5
+-bspc config borderless_monocle   true
++
++bspc config focus_follows_pointer true
++bspc config borderless_monocle   false
+ bspc config gapless_monocle      true
+ bspc config single_monocle       true
+ 
++bspc config focused_border_color '#dee6e7'
++bspc config active_border_color '#565656'
++bspc config normal_border_color '#1e2521'
++
+ # Rules
+-bspc rule -a Blueberry.py state=floating follow=on
++bspc rule -a Blueberry.py state=pseudo_tiled follow=on
+ bspc rule -a Xdialog state=floating
+ bspc rule -a *:"*scratchpad*" state=floating
+ bspc rule -a Anki state=pseudo_tiled
++bspc rule -a emacs state=tiled
+ bspc rule -a jetbrains-idea "desktop=^2" follow=on
++bspc rule -a Zathura state=tiled
+ 
+ nanel &
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index e69de29..ff7a0b9 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -0,0 +1,10 @@
++* <2020-01-30 Thu 06:39>
++
++- M .config/bspwm/bspwmrc
++- M .config/htop/htoprc
++- M .config/sxhkd/sxhkdrc
++- M .config/zathura/zathurarc
++- M .config/zsh/.zshrc
++- M .local/bin/setup-screens
++
++#+BEGIN_SRC diff
+diff --git a/.config/htop/htoprc b/.config/htop/htoprc
+index e3718b1..aef0481 100755
+--- a/.config/htop/htoprc
++++ b/.config/htop/htoprc
+@@ -12,7 +12,7 @@ show_program_path=0
+ highlight_base_name=1
+ highlight_megabytes=1
+ highlight_threads=1
+-tree_view=1
++tree_view=0
+ header_margin=1
+ detailed_cpu_time=0
+ cpu_count_from_zero=0
+diff --git a/.config/sxhkd/sxhkdrc b/.config/sxhkd/sxhkdrc
+index 5d7941a..d48118c 100644
+--- a/.config/sxhkd/sxhkdrc
++++ b/.config/sxhkd/sxhkdrc
+@@ -37,13 +37,13 @@ super + {ctrl,shift} + x
+ # applications and helpers
+ 
+ 
+-# password manager
++# p
+ super + alt + p
+ 	passmenu
+ 
+ # browser
+-super + w
+-	$BROWSER
++super + {_,shift +,alt +} w
++	$BROWSER {_,--private-window,--new-window web.whatsapp.com}
+ 
+ # editor
+ super + alt + r
+@@ -153,9 +153,18 @@ super + {m,a,y,z}
+ # focus/swap
+ #
+ 
+-# focus the node in the given direction
+-super + {_,shift + }{h,l}
+-	bspc node -{f,s} {west,east}
++super + h
++	bspc node -f west || bspc monitor -f west
++
++super + l
++	bspc node -f east || bspc monitor -f east
++
++# TODO Change switching to moving
++super + shift + h
++	bspc node -s west || bspc node --to-monitor --follow west 
++
++super + shift + l
++	bspc node -s east || bspc node --to-monitor --follow east 
+ 
+ super + j
+ 	bspc node -f south || bspc monitor -f south
+diff --git a/.config/zathura/zathurarc b/.config/zathura/zathurarc
+index 32da0d0..a2f1a24 100755
+--- a/.config/zathura/zathurarc
++++ b/.config/zathura/zathurarc
+@@ -1,6 +1,36 @@
+ set selection-clipboard clipboard
+ set font "mononoki Nerd Font 10"
+ 
++set recolor                     "false"
++set recolor-keephue             "true"
++
++set statusbar-h-padding		0
++set statusbar-v-padding		0
++set statusbar-basename		"true"
++set page-padding		1
++
++# Open document in fit-width mode by default
++set adjust-open			"best-fit"
++
++# stop at page boundries
++set scroll-page-aware		"true"
++
++# set smooth-scroll "true"
++set scroll-full-overlap		0.01
++set scroll-step			50
++
++map u scroll half-up
++map d scroll half-down
++
++map ` mark_evaluate
++map t toggle_page_mode
++map r reload
++map R rotate
++map = zoom in
++map i recolor
++map p print
++
++
+ # set guioptions none
+ # window-title-basename "true"
+ 
+@@ -43,14 +73,14 @@ set font "mononoki Nerd Font 10"
+ # Base16 Classic Dark
+ # Author: Jason Heeris (http://heeris.id.au)
+ 
+-set default-bg                  "#151515"
+-set default-fg                  "#202020"
++set default-bg                  "#1e2541"
++set default-fg                  "#eeffff"
+ 
+-set statusbar-fg                "#B0B0B0"
+-set statusbar-bg                "#303030"
++set statusbar-bg                "#1e2541"
++set statusbar-fg                "#eeffff"
+ 
+-set inputbar-bg                 "#151515"
+-set inputbar-fg                 "#F5F5F5"
++set inputbar-bg                 "#2a335a"
++set inputbar-fg                 "#eeffff"
+ 
+ set notification-bg             "#151515"
+ set notification-fg             "#F5F5F5"
+@@ -64,29 +94,22 @@ set notification-warning-fg     "#AC4142"
+ set highlight-color             "#F4BF75"
+ set highlight-active-color      "#6A9FB5"
+ 
+-set completion-bg               "#202020"
+-set completion-fg               "#6A9FB5"
++set completion-bg               "#1e2521"
++set completion-fg               "#eeffff"
+ 
+-set completion-highlight-fg     "#F5F5F5"
+-set completion-highlight-bg     "#6A9FB5"
++set completion-highlight-bg     "#dee6e7"
++set completion-highlight-fg     "#eeffff"
+ 
+-set recolor-lightcolor          "#151515"
+-set recolor-darkcolor           "#E0E0E0"
++set completion-group-bg     "#dee6e7"
++set completion-group-fg     "#eeffff"
+ 
+-set recolor                     "false"
+-set recolor-keephue             "false"
++set tabbar-fg
++set tabbar-bg
+ 
+-# Open document in fit-width mode by default
+-set adjust-open "best-fit"
++set tabbar-focus-bg
++set tabbar-focus-bg
+ 
+-# stop at page boundries
+-set scroll-page-aware "true"
+-# set smooth-scroll "true"
+-set scroll-full-overlap 0.01
+-set scroll-step 100
+ 
+-map u scroll half-up
+-map d scroll half-down
++set recolor-lightcolor          "#1e2521"
++set recolor-darkcolor           "#eeffff"
+ 
+-map b scroll full-up
+-map f scroll full-down
+diff --git a/.config/zsh/.zshrc b/.config/zsh/.zshrc
+index d9dafc7..53b2c5c 100644
+--- a/.config/zsh/.zshrc
++++ b/.config/zsh/.zshrc
+@@ -291,6 +291,12 @@ function mkx {
+   echo "#!/usr/bin/env sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
+ }
+ 
++function dotsave {
++    local GIT="/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME"
++    $GIT add -u && $GIT commit -m "$1" && $GIT push
++}
++
++
+ # }}}
+ 
+ # Execution on startup {{{
+diff --git a/.local/bin/setup-screens b/.local/bin/setup-screens
+index 0e05f23..70f5b34 100755
+--- a/.local/bin/setup-screens
++++ b/.local/bin/setup-screens
+@@ -1,13 +1,16 @@
+ #!/usr/bin/env sh
+ 
+-set -x 
++# set -x 
+ 
+ monitors="$(xrandr)"
+ dp_exists="$(echo "$monitors" | grep -c "^DP[1-9] connected")"
+ hdmi_exists="$(echo "$monitors" | grep -c "^HDMI[1-9] connected")"
+ 
+-if [ "$dp_exists" -eq '1' ]; then
++if [ "$dp_exists" -eq '1' ] && [ "$hdmi_exists" -eq '1' ]; then
++  ~/.screenlayout/holy-home.sh
++elif [ "$dp_exists" -eq '1' ]; then
+   ~/.screenlayout/home-topbottom.sh
++  notify-send "WTF?"
+ elif [ "$hdmi_exists" -eq '1' ]; then
+   ~/.screenlayout/work-topbottom.sh
+ else
+#+END_SRC

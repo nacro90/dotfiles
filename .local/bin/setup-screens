@@ -1,13 +1,16 @@
 #!/usr/bin/env sh
 
-set -x 
+# set -x 
 
 monitors="$(xrandr)"
 dp_exists="$(echo "$monitors" | grep -c "^DP[1-9] connected")"
 hdmi_exists="$(echo "$monitors" | grep -c "^HDMI[1-9] connected")"
 
-if [ "$dp_exists" -eq '1' ]; then
+if [ "$dp_exists" -eq '1' ] && [ "$hdmi_exists" -eq '1' ]; then
+  ~/.screenlayout/holy-home.sh
+elif [ "$dp_exists" -eq '1' ]; then
   ~/.screenlayout/home-topbottom.sh
+  notify-send "WTF?"
 elif [ "$hdmi_exists" -eq '1' ]; then
   ~/.screenlayout/work-topbottom.sh
 else

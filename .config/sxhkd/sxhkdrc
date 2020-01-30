@@ -37,13 +37,13 @@ super + {ctrl,shift} + x
 # applications and helpers
 
 
-# password manager
+# p
 super + alt + p
 	passmenu
 
 # browser
-super + w
-	$BROWSER
+super + {_,shift +,alt +} w
+	$BROWSER {_,--private-window,--new-window web.whatsapp.com}
 
 # editor
 super + alt + r
@@ -153,9 +153,18 @@ super + {m,a,y,z}
 # focus/swap
 #
 
-# focus the node in the given direction
-super + {_,shift + }{h,l}
-	bspc node -{f,s} {west,east}
+super + h
+	bspc node -f west || bspc monitor -f west
+
+super + l
+	bspc node -f east || bspc monitor -f east
+
+# TODO Change switching to moving
+super + shift + h
+	bspc node -s west || bspc node --to-monitor --follow west 
+
+super + shift + l
+	bspc node -s east || bspc node --to-monitor --follow east 
 
 super + j
 	bspc node -f south || bspc monitor -f south

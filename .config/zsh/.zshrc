@@ -291,6 +291,12 @@ function mkx {
   echo "#!/usr/bin/env sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
 }
 
+function dotsave {
+    local GIT="/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME"
+    $GIT add -u && $GIT commit -m "$1" && $GIT push
+}
+
+
 # }}}
 
 # Execution on startup {{{

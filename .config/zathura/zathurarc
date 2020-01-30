@@ -1,6 +1,36 @@
 set selection-clipboard clipboard
 set font "mononoki Nerd Font 10"
 
+set recolor                     "false"
+set recolor-keephue             "true"
+
+set statusbar-h-padding		0
+set statusbar-v-padding		0
+set statusbar-basename		"true"
+set page-padding		1
+
+# Open document in fit-width mode by default
+set adjust-open			"best-fit"
+
+# stop at page boundries
+set scroll-page-aware		"true"
+
+# set smooth-scroll "true"
+set scroll-full-overlap		0.01
+set scroll-step			50
+
+map u scroll half-up
+map d scroll half-down
+
+map ` mark_evaluate
+map t toggle_page_mode
+map r reload
+map R rotate
+map = zoom in
+map i recolor
+map p print
+
+
 # set guioptions none
 # window-title-basename "true"
 
@@ -43,14 +73,14 @@ set font "mononoki Nerd Font 10"
 # Base16 Classic Dark
 # Author: Jason Heeris (http://heeris.id.au)
 
-set default-bg                  "#151515"
-set default-fg                  "#202020"
+set default-bg                  "#1e2541"
+set default-fg                  "#eeffff"
 
-set statusbar-fg                "#B0B0B0"
-set statusbar-bg                "#303030"
+set statusbar-bg                "#1e2541"
+set statusbar-fg                "#eeffff"
 
-set inputbar-bg                 "#151515"
-set inputbar-fg                 "#F5F5F5"
+set inputbar-bg                 "#2a335a"
+set inputbar-fg                 "#eeffff"
 
 set notification-bg             "#151515"
 set notification-fg             "#F5F5F5"
@@ -64,29 +94,22 @@ set notification-warning-fg     "#AC4142"
 set highlight-color             "#F4BF75"
 set highlight-active-color      "#6A9FB5"
 
-set completion-bg               "#202020"
-set completion-fg               "#6A9FB5"
+set completion-bg               "#1e2521"
+set completion-fg               "#eeffff"
 
-set completion-highlight-fg     "#F5F5F5"
-set completion-highlight-bg     "#6A9FB5"
+set completion-highlight-bg     "#dee6e7"
+set completion-highlight-fg     "#eeffff"
 
-set recolor-lightcolor          "#151515"
-set recolor-darkcolor           "#E0E0E0"
+set completion-group-bg     "#dee6e7"
+set completion-group-fg     "#eeffff"
 
-set recolor                     "false"
-set recolor-keephue             "false"
+set tabbar-fg
+set tabbar-bg
 
-# Open document in fit-width mode by default
-set adjust-open "best-fit"
+set tabbar-focus-bg
+set tabbar-focus-bg
 
-# stop at page boundries
-set scroll-page-aware "true"
-# set smooth-scroll "true"
-set scroll-full-overlap 0.01
-set scroll-step 100
 
-map u scroll half-up
-map d scroll half-down
+set recolor-lightcolor          "#1e2521"
+set recolor-darkcolor           "#eeffff"
 
-map b scroll full-up
-map f scroll full-down
