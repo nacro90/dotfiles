@@ -103,11 +103,11 @@ set completion-highlight-fg     "#eeffff"
 set completion-group-bg     "#dee6e7"
 set completion-group-fg     "#eeffff"
 
-set tabbar-fg
-set tabbar-bg
+# set tabbar-fg
+# set tabbar-bg
 
-set tabbar-focus-bg
-set tabbar-focus-bg
+# set tabbar-focus-bg
+# set tabbar-focus-bg
 
 
 set recolor-lightcolor          "#1e2521"

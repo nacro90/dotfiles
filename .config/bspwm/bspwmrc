@@ -34,7 +34,7 @@ bspc rule -a Blueberry.py state=pseudo_tiled follow=on
 bspc rule -a Xdialog state=floating
 bspc rule -a *:"*scratchpad*" state=floating
 bspc rule -a Anki state=pseudo_tiled
-bspc rule -a emacs state=tiled
+bspc rule -a Emacs state=tiled
 bspc rule -a jetbrains-idea "desktop=^2" follow=on
 bspc rule -a Zathura state=tiled
 

@@ -304,3 +304,5 @@ function dotsave {
 # pfetch
 
 # }}}
+
+source /home/orcan/.config/broot/launcher/bash/br

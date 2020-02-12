@@ -1,7 +1,7 @@
 #+TITLE: normacs
 #+DESCRIPTION: A well documented configuration file for emacs. Powered by Org.
 #+AUTHOR: nacro90
-#+DATE: <2019-12-08 Sun>
+#+DATE: [2019-12-08 Sun]
 #+TODO: EXPLAIN CONFIGURE FIX(f/@) DONE
 #+STARTUP: indent
 
@@ -862,6 +862,23 @@ specify a target file.
 #+END_SRC
 
 
+*** Property inheritance
+
+Org mode does not turn this on by default, because it can slow down
+property searches significantly and is often not needed.
+
+#+BEGIN_SRC emacs-lisp
+
+(customize-set-variable 'org-use-property-inheritance t)
+
+#+END_SRC
+
+*** Agenda
+
+#+BEGIN_SRC emacs-lisp
+  (customize-set-variable 'org-agenda-files (list "~/doc/org"))
+#+END_SRC
+
 ** Appearance
 
 *** Special bullet characters
@@ -880,6 +897,17 @@ Improve the display of bullet points.
 
 
 ** Hooks
+
+*** Disable auto-completion
+
+#+BEGIN_SRC emacs-lisp
+  (defun normacs/org-mode-hook ()
+    (company-mode -1))
+  (add-hook 'org-mode-hook 'normacs/org-mode-hook)
+#+END_SRC
+
+#+RESULTS:
+| normacs/org-mode-hook | org-bullets-mode | evil-org-mode | er/add-org-mode-expansions | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-block-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
 *** CONFIGURE Disable indent guides
 

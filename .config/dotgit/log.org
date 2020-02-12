@@ -257,3 +257,471 @@ index 0e05f23..70f5b34 100755
    ~/.screenlayout/work-topbottom.sh
  else
 #+END_SRC
+* <2020-02-12 Wed 21:13>
+
+- M .config/alacritty/alacritty.yml
+- M .config/bspwm/bspwmrc
+- M .config/zathura/zathurarc
+- M .config/zsh/.zshrc
+- M .emacs.d/config.org
+- A  .screenlayout/holy-home.sh
+- A  .screenlayout/home-topbottom-wide.sh
+- A  .screenlayout/home-topbottom.sh
+- A  .screenlayout/laptop.sh
+- A  .screenlayout/work-topbottom.sh
+
+#+BEGIN_SRC diff
+diff --git a/.config/alacritty/alacritty.yml b/.config/alacritty/alacritty.yml
+index 0ba0a07..a9dac3a 100644
+--- a/.config/alacritty/alacritty.yml
++++ b/.config/alacritty/alacritty.yml
+@@ -61,7 +61,7 @@ scrolling:
+ 
+   # Number of lines the viewport will move for every line scrolled when
+   # scrollback is enabled (history > 0).
+-  multiplier: 1
++  multiplier: 2
+ 
+   # Faux Scrolling
+   #
+@@ -70,7 +70,7 @@ scrolling:
+   # to allow mouse scrolling for applications like `man`.
+   #
+   # Specifying `0` will disable faux scrolling.
+-  faux_multiplier: 1
++  # faux_multiplier: 1
+ 
+   # Scroll to the bottom when new text is written to the terminal.
+   auto_scroll: false
+@@ -94,7 +94,7 @@ font:
+     #   - (macOS) Menlo
+     #   - (Linux) monospace
+     #   - (Windows) Consolas
+-    family: DejaVu Sans Mono
++    family: mononoki Nerd Font
+ 
+     # The `style` can be specified to pick a specific face.
+     #style: Regular
+@@ -122,7 +122,7 @@ font:
+     #style: Italic
+ 
+   # Point size
+-  size: 8
++  size: 12
+ 
+   # Offset is the extra space around each character. `offset.y` can be thought of
+   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+@@ -200,41 +200,41 @@ colors:
+ 
+   # # }}} 
+ 
+-  # Base16 Classic Dark {{{
+-  # Jason Heeris (http://heeris.id.au)
+-  # Default colors
+-  primary:
+-    background: '0x151515'
+-    foreground: '0xd0d0d0'
++  # # Base16 Classic Dark {{{
++  # # Jason Heeris (http://heeris.id.au)
++  # # Default colors
++  # primary:
++    # background: '0x151515'
++    # foreground: '0xd0d0d0'
+ 
+-  # Colors the cursor will use if `custom_cursor_colors` is true
+-  cursor:
+-    text: '0x151515'
+-    cursor: '0xd0d0d0'
++  # # Colors the cursor will use if `custom_cursor_colors` is true
++  # cursor:
++    # text: '0x151515'
++    # cursor: '0xd0d0d0'
+ 
+-  # Normal colors
+-  normal:
+-    black:   '0x151515'
+-    red:     '0xac4142'
+-    green:   '0x90a959'
+-    yellow:  '0xf4bf75'
+-    blue:    '0x6a9fb5'
+-    magenta: '0xaa759f'
+-    cyan:    '0x75b5aa'
+-    white:   '0xd0d0d0'
+-
+-  # Bright colors
+-  bright:
+-    black:   '0x505050'
+-    red:     '0xd28445'
+-    green:   '0x202020'
+-    yellow:  '0x303030'
+-    blue:    '0xb0b0b0'
+-    magenta: '0xe0e0e0'
+-    cyan:    '0x8f5536'
+-    white:   '0xf5f5f5'
++  # # Normal colors
++  # normal:
++    # black:   '0x151515'
++    # red:     '0xac4142'
++    # green:   '0x90a959'
++    # yellow:  '0xf4bf75'
++    # blue:    '0x6a9fb5'
++    # magenta: '0xaa759f'
++    # cyan:    '0x75b5aa'
++    # white:   '0xd0d0d0'
++
++  # # Bright colors
++  # bright:
++    # black:   '0x505050'
++    # red:     '0xd28445'
++    # green:   '0x202020'
++    # yellow:  '0x303030'
++    # blue:    '0xb0b0b0'
++    # magenta: '0xe0e0e0'
++    # cyan:    '0x8f5536'
++    # white:   '0xf5f5f5'
+ 
+-  # }}}
++  # # }}}
+ 
+   # # Base16 Helios {{{
+   # # Alex Meyer (https://github.com/reyemxela)
+@@ -272,6 +272,37 @@ colors:
+ 
+   # # }}}
+ 
++# Manta
++  primary:
++    background: '0x1e2541'
++    foreground: '0xeeffff'
++
++  cursor:
++    text: '0x1e2541'
++    cursor: '0xeeffff'
++
++  normal:
++    black:   '0x1e2541'
++    red:     '0xf0719b'
++    green:   '0x5af7b0'
++    yellow:  '0xffa56b'
++    blue:    '0x57c7ff'
++    magenta: '0xc792ea'
++    cyan:    '0x89ddff'
++    white:   '0xeeffff'
++
++  bright:
++    black:   '0x354274'
++    red:     '0xf02e6e'
++    green:   '0x2ce592'
++    yellow:  '0xff8537'
++    blue:    '0x1da0e2'
++    magenta: '0xa742ea'
++    cyan:    '0x47bae8'
++    white:   '0xdee6e7'
++
++# }}}
++
+ draw_bold_text_with_bright_colors: false
+ 
+ 
+@@ -350,7 +381,7 @@ mouse:
+     #   - (Linux) xdg-open
+     #   - (Windows) explorer
+     launcher:
+-      program: brave
++      program: xdg-open
+ 
+     # URL modifiers
+     #
+diff --git a/.config/bspwm/bspwmrc b/.config/bspwm/bspwmrc
+index f2e87cb..79c435b 100755
+--- a/.config/bspwm/bspwmrc
++++ b/.config/bspwm/bspwmrc
+@@ -34,7 +34,7 @@ bspc rule -a Blueberry.py state=pseudo_tiled follow=on
+ bspc rule -a Xdialog state=floating
+ bspc rule -a *:"*scratchpad*" state=floating
+ bspc rule -a Anki state=pseudo_tiled
+-bspc rule -a emacs state=tiled
++bspc rule -a Emacs state=tiled
+ bspc rule -a jetbrains-idea "desktop=^2" follow=on
+ bspc rule -a Zathura state=tiled
+ 
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index 363c581..8daa85c 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -257,3 +257,188 @@ index 0e05f23..70f5b34 100755
+    ~/.screenlayout/work-topbottom.sh
+  else
+ #+END_SRC
++* <2020-02-12 Wed 21:13>
++
++- M .config/alacritty/alacritty.yml
++- M .config/bspwm/bspwmrc
++- M .config/zathura/zathurarc
++- M .config/zsh/.zshrc
++- M .emacs.d/config.org
++- A  .screenlayout/holy-home.sh
++- A  .screenlayout/home-topbottom-wide.sh
++- A  .screenlayout/home-topbottom.sh
++- A  .screenlayout/laptop.sh
++- A  .screenlayout/work-topbottom.sh
++
++#+BEGIN_SRC diff
++diff --git a/.config/alacritty/alacritty.yml b/.config/alacritty/alacritty.yml
++index 0ba0a07..a9dac3a 100644
++--- a/.config/alacritty/alacritty.yml
+++++ b/.config/alacritty/alacritty.yml
++@@ -61,7 +61,7 @@ scrolling:
++ 
++   # Number of lines the viewport will move for every line scrolled when
++   # scrollback is enabled (history > 0).
++-  multiplier: 1
+++  multiplier: 2
++ 
++   # Faux Scrolling
++   #
++@@ -70,7 +70,7 @@ scrolling:
++   # to allow mouse scrolling for applications like `man`.
++   #
++   # Specifying `0` will disable faux scrolling.
++-  faux_multiplier: 1
+++  # faux_multiplier: 1
++ 
++   # Scroll to the bottom when new text is written to the terminal.
++   auto_scroll: false
++@@ -94,7 +94,7 @@ font:
++     #   - (macOS) Menlo
++     #   - (Linux) monospace
++     #   - (Windows) Consolas
++-    family: DejaVu Sans Mono
+++    family: mononoki Nerd Font
++ 
++     # The `style` can be specified to pick a specific face.
++     #style: Regular
++@@ -122,7 +122,7 @@ font:
++     #style: Italic
++ 
++   # Point size
++-  size: 8
+++  size: 12
++ 
++   # Offset is the extra space around each character. `offset.y` can be thought of
++   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
++@@ -200,41 +200,41 @@ colors:
++ 
++   # # }}} 
++ 
++-  # Base16 Classic Dark {{{
++-  # Jason Heeris (http://heeris.id.au)
++-  # Default colors
++-  primary:
++-    background: '0x151515'
++-    foreground: '0xd0d0d0'
+++  # # Base16 Classic Dark {{{
+++  # # Jason Heeris (http://heeris.id.au)
+++  # # Default colors
+++  # primary:
+++    # background: '0x151515'
+++    # foreground: '0xd0d0d0'
++ 
++-  # Colors the cursor will use if `custom_cursor_colors` is true
++-  cursor:
++-    text: '0x151515'
++-    cursor: '0xd0d0d0'
+++  # # Colors the cursor will use if `custom_cursor_colors` is true
+++  # cursor:
+++    # text: '0x151515'
+++    # cursor: '0xd0d0d0'
++ 
++-  # Normal colors
++-  normal:
++-    black:   '0x151515'
++-    red:     '0xac4142'
++-    green:   '0x90a959'
++-    yellow:  '0xf4bf75'
++-    blue:    '0x6a9fb5'
++-    magenta: '0xaa759f'
++-    cyan:    '0x75b5aa'
++-    white:   '0xd0d0d0'
++-
++-  # Bright colors
++-  bright:
++-    black:   '0x505050'
++-    red:     '0xd28445'
++-    green:   '0x202020'
++-    yellow:  '0x303030'
++-    blue:    '0xb0b0b0'
++-    magenta: '0xe0e0e0'
++-    cyan:    '0x8f5536'
++-    white:   '0xf5f5f5'
+++  # # Normal colors
+++  # normal:
+++    # black:   '0x151515'
+++    # red:     '0xac4142'
+++    # green:   '0x90a959'
+++    # yellow:  '0xf4bf75'
+++    # blue:    '0x6a9fb5'
+++    # magenta: '0xaa759f'
+++    # cyan:    '0x75b5aa'
+++    # white:   '0xd0d0d0'
+++
+++  # # Bright colors
+++  # bright:
+++    # black:   '0x505050'
+++    # red:     '0xd28445'
+++    # green:   '0x202020'
+++    # yellow:  '0x303030'
+++    # blue:    '0xb0b0b0'
+++    # magenta: '0xe0e0e0'
+++    # cyan:    '0x8f5536'
+++    # white:   '0xf5f5f5'
++ 
++-  # }}}
+++  # # }}}
++ 
++   # # Base16 Helios {{{
++   # # Alex Meyer (https://github.com/reyemxela)
++@@ -272,6 +272,37 @@ colors:
++ 
++   # # }}}
++ 
+++# Manta
+++  primary:
+++    background: '0x1e2541'
+++    foreground: '0xeeffff'
+++
+++  cursor:
+++    text: '0x1e2541'
+++    cursor: '0xeeffff'
+++
+++  normal:
+++    black:   '0x1e2541'
+++    red:     '0xf0719b'
+++    green:   '0x5af7b0'
+++    yellow:  '0xffa56b'
+++    blue:    '0x57c7ff'
+++    magenta: '0xc792ea'
+++    cyan:    '0x89ddff'
+++    white:   '0xeeffff'
+++
+++  bright:
+++    black:   '0x354274'
+++    red:     '0xf02e6e'
+++    green:   '0x2ce592'
+++    yellow:  '0xff8537'
+++    blue:    '0x1da0e2'
+++    magenta: '0xa742ea'
+++    cyan:    '0x47bae8'
+++    white:   '0xdee6e7'
+++
+++# }}}
+++
++ draw_bold_text_with_bright_colors: false
++ 
++ 
++@@ -350,7 +381,7 @@ mouse:
++     #   - (Linux) xdg-open
++     #   - (Windows) explorer
++     launcher:
++-      program: brave
+++      program: xdg-open
++ 
++     # URL modifiers
++     #
++diff --git a/.config/bspwm/bspwmrc b/.config/bspwm/bspwmrc
++index f2e87cb..79c435b 100755
++--- a/.config/bspwm/bspwmrc
+++++ b/.config/bspwm/bspwmrc
++@@ -34,7 +34,7 @@ bspc rule -a Blueberry.py state=pseudo_tiled follow=on
++ bspc rule -a Xdialog state=floating
++ bspc rule -a *:"*scratchpad*" state=floating
++ bspc rule -a Anki state=pseudo_tiled
++-bspc rule -a emacs state=tiled
+++bspc rule 
+\ No newline at end of file
+diff --git a/.config/zathura/zathurarc b/.config/zathura/zathurarc
+index a2f1a24..39c316d 100755
+--- a/.config/zathura/zathurarc
++++ b/.config/zathura/zathurarc
+@@ -103,11 +103,11 @@ set completion-highlight-fg     "#eeffff"
+ set completion-group-bg     "#dee6e7"
+ set completion-group-fg     "#eeffff"
+ 
+-set tabbar-fg
+-set tabbar-bg
++# set tabbar-fg
++# set tabbar-bg
+ 
+-set tabbar-focus-bg
+-set tabbar-focus-bg
++# set tabbar-focus-bg
++# set tabbar-focus-bg
+ 
+ 
+ set recolor-lightcolor          "#1e2521"
+diff --git a/.config/zsh/.zshrc b/.config/zsh/.zshrc
+index 53b2c5c..294bd8b 100644
+--- a/.config/zsh/.zshrc
++++ b/.config/zsh/.zshrc
+@@ -304,3 +304,5 @@ function dotsave {
+ # pfetch
+ 
+ # }}}
++
++source /home/orcan/.config/broot/launcher/bash/br
+diff --git a/.emacs.d/config.org b/.emacs.d/config.org
+index b1c859c..bf5af4c 100644
+--- a/.emacs.d/config.org
++++ b/.emacs.d/config.org
+@@ -1,7 +1,7 @@
+ #+TITLE: normacs
+ #+DESCRIPTION: A well documented configuration file for emacs. Powered by Org.
+ #+AUTHOR: nacro90
+-#+DATE: <2019-12-08 Sun>
++#+DATE: [2019-12-08 Sun]
+ #+TODO: EXPLAIN CONFIGURE FIX(f/@) DONE
+ #+STARTUP: indent
+ 
+@@ -862,6 +862,23 @@ specify a target file.
+ #+END_SRC
+ 
+ 
++*** Property inheritance
++
++Org mode does not turn this on by default, because it can slow down
++property searches significantly and is often not needed.
++
++#+BEGIN_SRC emacs-lisp
++
++(customize-set-variable 'org-use-property-inheritance t)
++
++#+END_SRC
++
++*** Agenda
++
++#+BEGIN_SRC emacs-lisp
++  (customize-set-variable 'org-agenda-files (list "~/doc/org"))
++#+END_SRC
++
+ ** Appearance
+ 
+ *** Special bullet characters
+@@ -881,6 +898,17 @@ Improve the display of bullet points.
+ 
+ ** Hooks
+ 
++*** Disable auto-completion
++
++#+BEGIN_SRC emacs-lisp
++  (defun normacs/org-mode-hook ()
++    (company-mode -1))
++  (add-hook 'org-mode-hook 'normacs/org-mode-hook)
++#+END_SRC
++
++#+RESULTS:
++| normacs/org-mode-hook | org-bullets-mode | evil-org-mode | er/add-org-mode-expansions | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-block-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
++
+ *** CONFIGURE Disable indent guides
+ 
+ #+BEGIN_SRC emacs-lisp :results output silent
+#+END_SRC
