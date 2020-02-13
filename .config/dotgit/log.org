@@ -725,3 +725,49 @@ index b1c859c..bf5af4c 100644
  
  #+BEGIN_SRC emacs-lisp :results output silent
 #+END_SRC
+* <2020-02-13 Thu 08:18>
+
+- M .config/tmux/tmux.conf
+- M .gitconfig
+
+#+BEGIN_SRC diff
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index a630dc1..71036ff 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -725,3 +725,9 @@ index b1c859c..bf5af4c 100644
+  
+  #+BEGIN_SRC emacs-lisp :results output silent
+ #+END_SRC
++* <2020-02-13 Thu 08:18>
++
++- M .config/tmux/tmux.conf
++- M .gitconfig
++
++#+BEGIN_SRC diff
+diff --git a/.config/tmux/tmux.conf b/.config/tmux/tmux.conf
+index 0f6e54d..38c9b9c 100755
+--- a/.config/tmux/tmux.conf
++++ b/.config/tmux/tmux.conf
+@@ -8,7 +8,7 @@ setw -g window-status-current-format ' #W '
+ setw -g window-status-format ' #W '
+ 
+ set -g prefix C-space
+-bind C-space copy-mode
++bind C-space last-pane
+ bind space last-window
+ 
+ # Customizing status
+diff --git a/.gitconfig b/.gitconfig
+index 01b1690..bf93cb9 100644
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -1,6 +1,6 @@
+ [user]
+ 	email = orcan.tiryakioglu@gmail.com
+-	name = nacro90
++	name = Orcan Tiryakioglu
+ [filesystem "N/A|13|/dev/mapper/crypthome"]
+ 	timestampResolution = 6000 nanoseconds
+ 	minRacyThreshold = 5859 microseconds
+#+END_SRC
