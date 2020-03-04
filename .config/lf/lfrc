@@ -87,6 +87,8 @@ map Om push :mkdir<space>
 # Please be like vim
 map ` mark-load
 
+map zz fit
+
 # Find with fzf
 map f $lf -remote "send $id select $(ls | fzf)"
 map F $lf -remote "send $id select $(fzf)"
@@ -335,7 +337,7 @@ map <enter> open
 # map a $lf -remote "send $id push :rename<space>'$(basename $f | sed 's/ /<space>/g')'<left>"
 
 # Set columns according to terminal width
-${{
+cmd fit ${{
     w=$(tput cols)
     if [ $w -le 80 ]; then
         lf -remote "send $id set ratios 1:2"

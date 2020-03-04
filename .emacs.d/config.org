@@ -592,6 +592,14 @@ easy to create in emacs.
 #+END_SRC
 
 
+** Todo Txt
+
+#+BEGIN_SRC emacs-lisp
+
+  (use-package todotxt-mode)
+
+#+END_SRC
+
 * Tools
 
 ** ~helm~

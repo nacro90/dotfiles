@@ -771,3 +771,246 @@ index 01b1690..bf93cb9 100644
  	timestampResolution = 6000 nanoseconds
  	minRacyThreshold = 5859 microseconds
 #+END_SRC
+* <2020-03-04 Wed 16:26>
+
+- M .config/htop/htoprc
+- M .config/lf/lfrc
+- D  .config/nvim/.netrwhist
+- A  .config/nvim/after/syntax/nroff.vim
+- A  .config/nvim/after/syntax/todo.vim
+- M  .config/nvim/autoload/plug.vim
+- M  .config/nvim/autoload/plug.vim.old
+- D  .config/nvim/coc-settings.json
+- A  .config/nvim/ftdetect/markdown.vim
+- A  .config/nvim/ftplugin/calendar.vim
+- A  .config/nvim/ftplugin/man.vim
+- M  .config/nvim/ftplugin/markdown.vim
+- A  .config/nvim/ftplugin/nroff.vim
+- M  .config/nvim/init.vim
+- D  .config/nvim/nvim.zip
+- A  .config/nvim/util.vim
+- M .config/zathura/zathurarc
+- M .config/zsh/.zshrc
+- M .config/zsh/zplug/packages.zsh
+- M .emacs.d/config.org
+- M .profile
+
+#+BEGIN_SRC diff
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index 4df02c6..609a475 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -771,3 +771,28 @@ index 01b1690..bf93cb9 100644
+  	timestampResolution = 6000 nanoseconds
+  	minRacyThreshold = 5859 microseconds
+ #+END_SRC
++* <2020-03-04 Wed 16:26>
++
++- M .config/htop/htoprc
++- M .config/lf/lfrc
++- D  .config/nvim/.netrwhist
++- A  .config/nvim/after/syntax/nroff.vim
++- A  .config/nvim/after/syntax/todo.vim
++- M  .config/nvim/autoload/plug.vim
++- M  .config/nvim/autoload/plug.vim.old
++- D  .config/nvim/coc-settings.json
++- A  .config/nvim/ftdetect/markdown.vim
++- A  .config/nvim/ftplugin/calendar.vim
++- A  .config/nvim/ftplugin/man.vim
++- M  .config/nvim/ftplugin/markdown.vim
++- A  .config/nvim/ftplugin/nroff.vim
++- M  .config/nvim/init.vim
++- D  .config/nvim/nvim.zip
++- A  .config/nvim/util.vim
++- M .config/zathura/zathurarc
++- M .config/zsh/.zshrc
++- M .config/zsh/zplug/packages.zsh
++- M .emacs.d/config.org
++- M .profile
++
++#+BEGIN_SRC diff
+diff --git a/.config/htop/htoprc b/.config/htop/htoprc
+index aef0481..e3718b1 100755
+--- a/.config/htop/htoprc
++++ b/.config/htop/htoprc
+@@ -12,7 +12,7 @@ show_program_path=0
+ highlight_base_name=1
+ highlight_megabytes=1
+ highlight_threads=1
+-tree_view=0
++tree_view=1
+ header_margin=1
+ detailed_cpu_time=0
+ cpu_count_from_zero=0
+diff --git a/.config/lf/lfrc b/.config/lf/lfrc
+index cf93afb..5907ada 100644
+--- a/.config/lf/lfrc
++++ b/.config/lf/lfrc
+@@ -87,6 +87,8 @@ map Om push :mkdir<space>
+ # Please be like vim
+ map ` mark-load
+ 
++map zz fit
++
+ # Find with fzf
+ map f $lf -remote "send $id select $(ls | fzf)"
+ map F $lf -remote "send $id select $(fzf)"
+@@ -335,7 +337,7 @@ map <enter> open
+ # map a $lf -remote "send $id push :rename<space>'$(basename $f | sed 's/ /<space>/g')'<left>"
+ 
+ # Set columns according to terminal width
+-${{
++cmd fit ${{
+     w=$(tput cols)
+     if [ $w -le 80 ]; then
+         lf -remote "send $id set ratios 1:2"
+@@ -344,4 +346,4 @@ ${{
+     else
+         lf -remote "send $id set ratios 1:2:3:5"
+     fi
+-}}
+\ No newline at end of file
++}}
+diff --git a/.config/zathura/zathurarc b/.config/zathura/zathurarc
+index 39c316d..6af29cd 100755
+--- a/.config/zathura/zathurarc
++++ b/.config/zathura/zathurarc
+@@ -1,5 +1,5 @@
+ set selection-clipboard clipboard
+-set font "mononoki Nerd Font 10"
++set font "JetBrainsMono Nerd Font 10"
+ 
+ set recolor                     "false"
+ set recolor-keephue             "true"
+diff --git a/.config/zsh/.zshrc b/.config/zsh/.zshrc
+index 294bd8b..00f6f60 100644
+--- a/.config/zsh/.zshrc
++++ b/.config/zsh/.zshrc
+@@ -224,31 +224,29 @@ alias vim="nvim"
+ 
+ alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -hr | head -25"
+ 
+-alias tmux='tmux -f ~/.config/tmux/tmux.conf'
++alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+ 
+-alias dotgit='/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME' 
++alias dotgit="/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME" 
+ 
+ # Config aliases {{{
+-alias zshconfig="$EDITOR ~/.zshrc"
+-alias zshcfg="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
++alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
+ 
+-alias zplugpackages="$EDITOR ~/.config/zsh/zplug/packages.zsh"
+-alias alacrittyconfig="$EDITOR ~/.config/alacritty/alacritty.yml"
++alias zplugpackages="$EDITOR $ZPLUG_LOADFILE"
++alias alacrittyconfig="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml"
+ alias stconfig="$EDITOR ~/.local/lib/st*/config.h"
+ alias dmenuconfig="$EDITOR ~/.local/lib/dmenu*/config.h"
+-alias zathuraconfig="$EDITOR ~/.config/zathura/zathurarc"
++alias zathuraconfig="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
+ alias xinitconfig="$EDITOR ~/.xinitrc"
+ alias xresourcesconfig="$EDITOR ~/.Xresources"
+ alias dwmconfig="$EDITOR ~/.local/lib/dwm/config.h"
+ alias surfconfig="$EDITOR ~/.local/lib/surf/config.h"
+-alias i3config="$EDITOR ~/.config/i3/config"
+-alias i3blocksconfig="$EDITOR ~/.config/i3blocks/config"
++alias i3config="$EDITOR $XDG_CONFIG_HOME/i3/config"
++alias i3blocksconfig="$EDITOR $XDG_CONFIG_HOME/i3blocks/config"
+ alias tmuxconfig="$EDITOR ~/.tmux/tmux.conf"
+-alias roficonfig="$EDITOR ~/.config/rofi/config"
+-alias dunstconfig="$EDITOR ~/.config/dunst/dunstrc"
+-alias comptonconfig="$EDITOR ~/.config/compton/compton.conf"
+-# alias vimconfig="$EDITOR ~/.vim/.vimrc"
+-alias nvimconfig="$EDITOR ~/.config/nvim/init.vim"
++alias roficonfig="$EDITOR $XDG_CONFIG_HOME/rofi/config"
++alias dunstconfig="$EDITOR $XDG_CONFIG_HOME/dunst/dunstrc"
++alias comptonconfig="$EDITOR $XDG_CONFIG_HOME/compton/compton.conf"
++alias nvimconfig="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+ alias todoconfig="$EDITOR ~/.todo/config"
+ # }}}
+ 
+@@ -273,7 +271,7 @@ alias makedmenu="sudo make -C $DMENU_HOME -f $DMENU_HOME/Makefile install"
+ # }}}
+ 
+ # Todo
+-alias todotxt="$EDITOR ~/doc/note/todo.txt"
++alias todo="$EDITOR ~/doc/note/todo.txt"
+ alias t="todo.sh"
+ alias quick="$EDITOR ~/doc/note/quick.org"
+ 
+@@ -301,7 +299,7 @@ function dotsave {
+ 
+ # Execution on startup {{{
+ 
+-# pfetch
++pfetch
+ 
+ # }}}
+ 
+diff --git a/.config/zsh/zplug/packages.zsh b/.config/zsh/zplug/packages.zsh
+index 55698a9..584c8cc 100644
+--- a/.config/zsh/zplug/packages.zsh
++++ b/.config/zsh/zplug/packages.zsh
+@@ -4,6 +4,7 @@ zplug "mafredri/zsh-async", from:github
+ 
+ # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+ # zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
++# zplug "startship/startship", from:github, as:theme
+ # zplug "themes/kennethreitz", use:kennethreitz.zsh-theme, from:oh-my-zsh, as:theme
+ # zplug "themes/mh", use:mh.zsh-theme, from:oh-my-zsh, as:theme
+ # zplug "themes/imajes", use:imajes.zsh-theme, from:oh-my-zsh, as:theme
+diff --git a/.emacs.d/config.org b/.emacs.d/config.org
+index bf5af4c..dca6751 100644
+--- a/.emacs.d/config.org
++++ b/.emacs.d/config.org
+@@ -592,6 +592,14 @@ easy to create in emacs.
+ #+END_SRC
+ 
+ 
++** Todo Txt
++
++#+BEGIN_SRC emacs-lisp
++
++  (use-package todotxt-mode)
++
++#+END_SRC
++
+ * Tools
+ 
+ ** ~helm~
+diff --git a/.profile b/.profile
+index 5a307ff..6442d24 100644
+--- a/.profile
++++ b/.profile
+@@ -10,16 +10,19 @@ if [ -d "$HOME/.local/bin" ]; then
+ fi
+ 
+ export XDG_CONFIG_HOME="$HOME/.config"
++export XDG_DATA_HOME="$HOME/.local/share"
++export XDG_CACHE_HOME="$HOME/.cache/"
+ 
+ export DWM_HOME='/home/orcan/.local/lib/dwm'
+ export SURF_HOME='/home/orcan/.local/lib/surf'
+ export ST_HOME='/home/orcan/.local/lib/st'
+ export DMENU_HOME='/home/orcan/.local/lib/dmenu'
++export VIM_HOME="$XDG_CONFIG_HOME/nvim"
+ 
+-export LESSHISTFILE='~/.local/share/less/history'
++export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+ 
+ # Java home
+-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
++export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+ export PATH=${PATH}:${JAVA_HOME}/bin
+ 
+ export PASSWORD_STORE_DIR=$HOME/.pass/pass
+@@ -33,3 +36,7 @@ export FZF_DEFAULT_COMMAND='find . -not -path "*/.git/*" 2>/dev/null'
+ export FZF_TMUX=1
+ 
+ export DOTFILES_REPO="$HOME/.dot"
++
++export TODO="$HOME/doc/note/todo.txt"
++export QUICK="$HOME/doc/note/quick.txt"
++export CALENDAR="$HOME/doc/note/calendar"
+#+END_SRC

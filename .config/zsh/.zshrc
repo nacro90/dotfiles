@@ -224,31 +224,29 @@ alias vim="nvim"
 
 alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -hr | head -25"
 
-alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
-alias dotgit='/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME' 
+alias dotgit="/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME" 
 
 # Config aliases {{{
-alias zshconfig="$EDITOR ~/.zshrc"
-alias zshcfg="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
+alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
 
-alias zplugpackages="$EDITOR ~/.config/zsh/zplug/packages.zsh"
-alias alacrittyconfig="$EDITOR ~/.config/alacritty/alacritty.yml"
+alias zplugpackages="$EDITOR $ZPLUG_LOADFILE"
+alias alacrittyconfig="$EDITOR $XDG_CONFIG_HOME/alacritty/alacritty.yml"
 alias stconfig="$EDITOR ~/.local/lib/st*/config.h"
 alias dmenuconfig="$EDITOR ~/.local/lib/dmenu*/config.h"
-alias zathuraconfig="$EDITOR ~/.config/zathura/zathurarc"
+alias zathuraconfig="$EDITOR $XDG_CONFIG_HOME/zathura/zathurarc"
 alias xinitconfig="$EDITOR ~/.xinitrc"
 alias xresourcesconfig="$EDITOR ~/.Xresources"
 alias dwmconfig="$EDITOR ~/.local/lib/dwm/config.h"
 alias surfconfig="$EDITOR ~/.local/lib/surf/config.h"
-alias i3config="$EDITOR ~/.config/i3/config"
-alias i3blocksconfig="$EDITOR ~/.config/i3blocks/config"
+alias i3config="$EDITOR $XDG_CONFIG_HOME/i3/config"
+alias i3blocksconfig="$EDITOR $XDG_CONFIG_HOME/i3blocks/config"
 alias tmuxconfig="$EDITOR ~/.tmux/tmux.conf"
-alias roficonfig="$EDITOR ~/.config/rofi/config"
-alias dunstconfig="$EDITOR ~/.config/dunst/dunstrc"
-alias comptonconfig="$EDITOR ~/.config/compton/compton.conf"
-# alias vimconfig="$EDITOR ~/.vim/.vimrc"
-alias nvimconfig="$EDITOR ~/.config/nvim/init.vim"
+alias roficonfig="$EDITOR $XDG_CONFIG_HOME/rofi/config"
+alias dunstconfig="$EDITOR $XDG_CONFIG_HOME/dunst/dunstrc"
+alias comptonconfig="$EDITOR $XDG_CONFIG_HOME/compton/compton.conf"
+alias nvimconfig="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
 alias todoconfig="$EDITOR ~/.todo/config"
 # }}}
 
@@ -273,7 +271,7 @@ alias makedmenu="sudo make -C $DMENU_HOME -f $DMENU_HOME/Makefile install"
 # }}}
 
 # Todo
-alias todotxt="$EDITOR ~/doc/note/todo.txt"
+alias todo="$EDITOR ~/doc/note/todo.txt"
 alias t="todo.sh"
 alias quick="$EDITOR ~/doc/note/quick.org"
 
@@ -301,7 +299,7 @@ function dotsave {
 
 # Execution on startup {{{
 
-# pfetch
+pfetch
 
 # }}}
 

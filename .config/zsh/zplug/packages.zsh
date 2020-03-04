@@ -4,6 +4,7 @@ zplug "mafredri/zsh-async", from:github
 
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 # zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+# zplug "startship/startship", from:github, as:theme
 # zplug "themes/kennethreitz", use:kennethreitz.zsh-theme, from:oh-my-zsh, as:theme
 # zplug "themes/mh", use:mh.zsh-theme, from:oh-my-zsh, as:theme
 # zplug "themes/imajes", use:imajes.zsh-theme, from:oh-my-zsh, as:theme
