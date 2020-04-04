@@ -5377,3 +5377,22 @@ index b8337c3..8b3e658 100755
  export QT_SCALE_FACTOR=1.1
  # export WINIT_HIDPI_FACTOR=1.1
 #+END_SRC
+* <2020-04-05 Sun 00:03>
+
+- A  .local/bin/screenshot
+
+#+BEGIN_SRC diff
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index 7860609..0b35297 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -5377,3 +5377,8 @@ index b8337c3..8b3e658 100755
+  export QT_SCALE_FACTOR=1.1
+  # export WINIT_HIDPI_FACTOR=1.1
+ #+END_SRC
++* <2020-04-05 Sun 00:03>
++
++- A  .local/bin/screenshot
++
++#+BEGIN_SRC diff
+#+END_SRC
