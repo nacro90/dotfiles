@@ -1,4 +1,4 @@
 # -*- sh -*-
 
 PANEL_HEIGHT=24
-PANEL_FONT="mononoki Nerd Font:antialias=true:size=12:bold"
+PANEL_FONT="JetBrainsMono Nerd Font:antialias=true:size=11:bold"

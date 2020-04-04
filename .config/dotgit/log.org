@@ -1014,3 +1014,4366 @@ index 5a307ff..6442d24 100644
 +export QUICK="$HOME/doc/note/quick.txt"
 +export CALENDAR="$HOME/doc/note/calendar"
 #+END_SRC
+* <2020-04-04 Sat 23:59>
+
+- D .calcurse/apts
+- D .calcurse/conf
+- D .calcurse/keys
+- D .calcurse/todo
+- M .config/bspwm/bspwmrc
+- M .config/cava/config
+- M .config/compton/compton.conf
+- M .config/dunst/dunstrc
+- M .config/htop/htoprc
+- D .config/keepassxc/keepassxc.ini
+- M .config/lf/lfrc
+- M .config/nanel/colors
+- M .config/nanel/visual
+- M .config/nvim/after/syntax/nroff.vim
+- M .config/nvim/after/syntax/todo.vim
+- M .config/nvim/ftplugin/java.vim
+- M .config/nvim/ftplugin/markdown.vim
+- M .config/nvim/ftplugin/nroff.vim
+- M .config/nvim/ftplugin/python.vim
+- M .config/nvim/ftplugin/sh.vim
+- M .config/nvim/ftplugin/todo.vim
+- M .config/nvim/init.vim
+- M .config/sxhkd/sxhkdrc
+- M .config/syncthing/config.xml
+- M .config/tmux/tmux.conf
+- M .config/zathura/zathurarc
+- M .config/zsh/.zshrc
+- M .config/zsh/zplug/packages.zsh
+- D .emacs.d/config.org
+- D .gitconfig
+- D .httpie/config.json
+- M .local/bin/nanel/nanel
+- M .local/bin/setup-screens
+- M .profile
+- D .screenlayout/holy-home.sh
+- D .screenlayout/home-topbottom-wide.sh
+- D .screenlayout/home-topbottom.sh
+- D .screenlayout/laptop.sh
+- D .screenlayout/work-topbottom.sh
+- D .vim/.vimrc
+- D .vim/ftplugin/java.vim
+- D .vim/ftplugin/ledger.vim
+- D .vim/ftplugin/markdown.vim
+- D .vim/ftplugin/pandoc.vim
+- D .vim/ftplugin/python.vim
+- D .vim/ftplugin/sh.vim
+- D .vim/ftplugin/todo.vim
+- D .vim/ftplugin/zsh.vim
+- D .vim/syntax/python.vim
+- M .xinitrc
+
+#+BEGIN_SRC diff
+diff --git a/.calcurse/apts b/.calcurse/apts
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/.calcurse/conf b/.calcurse/conf
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/.calcurse/keys b/.calcurse/keys
+deleted file mode 100644
+index 28ff9e4..0000000
+--- a/.calcurse/keys
++++ /dev/null
+@@ -1,55 +0,0 @@
+-#
+-# Calcurse keys configuration file
+-#
+-# In this file the keybindings used by Calcurse are defined.
+-# It is generated automatically by Calcurse and is maintained
+-# via the key configuration menu of the interactive user
+-# interface. It should not be edited directly.
+-
+-generic-cancel  ESC
+-generic-select  SPC
+-generic-credits  @
+-generic-help  ?
+-generic-quit  q Q
+-generic-save  s S ^S
+-generic-reload  R
+-generic-copy  c
+-generic-paste  p ^V
+-generic-change-view  TAB
+-generic-import  i I
+-generic-export  x X
+-generic-goto  g G
+-generic-other-cmd  o O
+-generic-config-menu  C
+-generic-redraw  ^R
+-generic-add-appt  ^A
+-generic-add-todo  ^T
+-generic-prev-day  T ^H
+-generic-next-day  t ^L
+-generic-prev-week  W ^K
+-generic-next-week  w
+-generic-prev-month  M
+-generic-next-month  m
+-generic-prev-year  Y
+-generic-next-year  y
+-generic-scroll-down  ^N
+-generic-scroll-up  ^P
+-generic-goto-today  ^G
+-generic-command  :
+-move-right  l L RGT
+-move-left  h H LFT
+-move-down  j J DWN
+-move-up  k K UP
+-start-of-week  0
+-end-of-week  $
+-add-item  a A
+-del-item  d D
+-edit-item  e E
+-view-item  v V RET
+-pipe-item  |
+-flag-item  !
+-repeat  r
+-edit-note  n N
+-view-note  >
+-raise-priority  +
+-lower-priority  -
+diff --git a/.calcurse/todo b/.calcurse/todo
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/.config/bspwm/bspwmrc b/.config/bspwm/bspwmrc
+index 79c435b..76ebeb8 100755
+--- a/.config/bspwm/bspwmrc
++++ b/.config/bspwm/bspwmrc
+@@ -25,9 +25,10 @@ bspc config borderless_monocle   false
+ bspc config gapless_monocle      true
+ bspc config single_monocle       true
+ 
+-bspc config focused_border_color '#dee6e7'
+-bspc config active_border_color '#565656'
+-bspc config normal_border_color '#1e2521'
++bspc config focused_border_color '#82aaff'
++bspc config active_border_color '#062844'
++bspc config normal_border_color '#011627'
++bspc config border_width 1
+ 
+ # Rules
+ bspc rule -a Blueberry.py state=pseudo_tiled follow=on
+diff --git a/.config/cava/config b/.config/cava/config
+index 55b2daf..79b50a5 100644
+--- a/.config/cava/config
++++ b/.config/cava/config
+@@ -97,7 +97,7 @@
+ # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires a
+ # terminal that can change color definitions such as Gnome-terminal or rxvt.
+ ; background = black
+-; foreground = cyan
++foreground = green
+ 
+ # Gradient mode, only hex defined colors are supported, background must also be defined in hex
+ # or remain commented out. 1 = on, 0 = off. Warning: for certain terminal emulators cava will
+@@ -112,7 +112,7 @@
+ 
+ # Percentage value for integral smoothing. Takes values from 0 - 100.
+ # Higher values means smoother, but less precise. 0 to disable.
+-; integral = 70
++integral = 40
+ 
+ # Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable. 
+ ; monstercat = 1
+diff --git a/.config/compton/compton.conf b/.config/compton/compton.conf
+index 432a1de..42558db 100755
+--- a/.config/compton/compton.conf
++++ b/.config/compton/compton.conf
+@@ -8,10 +8,10 @@ fade-out-step=0.02
+ # inactive-opacity = 0.7
+ backend = "glx";
+ glx-no-stencil = true;
+-blur-background = true;
+-blur-background-frame = true;
+-blur-strength = 10;
+-blur-method = "kawase";
++# blur-background = true;
++# blur-background-frame = true;
++# blur-strength = 0;
++# blur-method = "kawase";
+ vsync = "opengl-swc";
+ # unredir-if-possible = true;
+ 
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index e62c1d5..ce740a7 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -1014,3 +1014,57 @@ index 5a307ff..6442d24 100644
+ +export QUICK="$HOME/doc/note/quick.txt"
+ +export CALENDAR="$HOME/doc/note/calendar"
+ #+END_SRC
++* <2020-04-04 Sat 23:59>
++
++- D .calcurse/apts
++- D .calcurse/conf
++- D .calcurse/keys
++- D .calcurse/todo
++- M .config/bspwm/bspwmrc
++- M .config/cava/config
++- M .config/compton/compton.conf
++- M .config/dunst/dunstrc
++- M .config/htop/htoprc
++- D .config/keepassxc/keepassxc.ini
++- M .config/lf/lfrc
++- M .config/nanel/colors
++- M .config/nanel/visual
++- M .config/nvim/after/syntax/nroff.vim
++- M .config/nvim/after/syntax/todo.vim
++- M .config/nvim/ftplugin/java.vim
++- M .config/nvim/ftplugin/markdown.vim
++- M .config/nvim/ftplugin/nroff.vim
++- M .config/nvim/ftplugin/python.vim
++- M .config/nvim/ftplugin/sh.vim
++- M .config/nvim/ftplugin/todo.vim
++- M .config/nvim/init.vim
++- M .config/sxhkd/sxhkdrc
++- M .config/syncthing/config.xml
++- M .config/tmux/tmux.conf
++- M .config/zathura/zathurarc
++- M .config/zsh/.zshrc
++- M .config/zsh/zplug/packages.zsh
++- D .emacs.d/config.org
++- D .gitconfig
++- D .httpie/config.json
++- M .local/bin/nanel/nanel
++- M .local/bin/setup-screens
++- M .profile
++- D .screenlayout/holy-home.sh
++- D .screenlayout/home-topbottom-wide.sh
++- D .screenlayout/home-topbottom.sh
++- D .screenlayout/laptop.sh
++- D .screenlayout/work-topbottom.sh
++- D .vim/.vimrc
++- D .vim/ftplugin/java.vim
++- D .vim/ftplugin/ledger.vim
++- D .vim/ftplugin/markdown.vim
++- D .vim/ftplugin/pandoc.vim
++- D .vim/ftplugin/python.vim
++- D .vim/ftplugin/sh.vim
++- D .vim/ftplugin/todo.vim
++- D .vim/ftplugin/zsh.vim
++- D .vim/syntax/python.vim
++- M .xinitrc
++
++#+BEGIN_SRC diff
+diff --git a/.config/dunst/dunstrc b/.config/dunst/dunstrc
+index 0a45874..80cfeb4 100755
+--- a/.config/dunst/dunstrc
++++ b/.config/dunst/dunstrc
+@@ -54,7 +54,7 @@
+     separator_height = 0
+ 
+     # Padding between text and separator.
+-    padding = 4
++    padding = 2
+ 
+     # Horizontal padding.
+     horizontal_padding = 36
+@@ -86,7 +86,7 @@
+ 
+     ### Text ###
+ 
+-    font = mononoki Nerd Font 12
++    font = JetBrainsMono Nerd Font 11
+ 
+     # The spacing between lines.  If the height is smaller than the
+     # font height, it will get raised to the font height.
+@@ -126,7 +126,7 @@
+     #   %n  progress value if set without any extra characters
+     #   %%  Literal %
+     # Markup is allowed
+-    format = "<b>%s</b>  |  %b%p"
++    format = "<b>%s</b>     %b%p"
+ 
+     # Alignment of message text.
+     # Possible values are "left", "center" and "right".
+@@ -338,26 +338,50 @@
+     # foreground = "#2f2424"
+     # fullscreen = show
+ 
++# # Manta
++# frame_color = "#D0D0D0"
++# separator_color = "#D0D0D0"
++
++# [manta_low]
++    # msg_urgency = low
++    # background = "#1e2541"
++    # foreground = "#eeffff"
++    # timeout = 5
++
++# [manta_normal]
++    # msg_urgency = normal
++    # background = "#354274"
++    # foreground = "#eeffff"
++    # fullscreen = pushback
++    # timeout = 10
++
++# [manta_critical]
++    # msg_urgency = critical
++    # background = "#89ddff"
++    # foreground = "#1e2541"
++    # fullscreen = show
++
++
+ # Manta
+ frame_color = "#D0D0D0"
+ separator_color = "#D0D0D0"
+ 
+ [manta_low]
+     msg_urgency = low
+-    background = "#1e2541"
+-    foreground = "#eeffff"
++    background = "#011627"
++    foreground = "#d6deeb"
+     timeout = 5
+ 
+ [manta_normal]
+     msg_urgency = normal
+-    background = "#354274"
+-    foreground = "#eeffff"
++    background = "#062844"
++    foreground = "#d6deeb"
+     fullscreen = pushback
+     timeout = 10
+ 
+ [manta_critical]
+     msg_urgency = critical
+-    background = "#89ddff"
++    background = "#c792ea"
+     foreground = "#1e2541"
+     fullscreen = show
+ 
+@@ -370,6 +394,10 @@ separator_color = "#D0D0D0"
+     # body = "Newsboat*"
+     urgency = low
+ 
++[Slack]
++    body = "*slack*"
++    urgency = critical
++
+     # Icon for notifications with critical urgency, uncomment to enable
+     #icon = /path/to/icon
+ 
+diff --git a/.config/htop/htoprc b/.config/htop/htoprc
+index e3718b1..30b9215 100755
+--- a/.config/htop/htoprc
++++ b/.config/htop/htoprc
+@@ -1,7 +1,7 @@
+ # Beware! This file is rewritten by htop when settings are changed in the interface.
+ # The parser is also very primitive, and not human-friendly.
+ fields=0 49 38 39 2 47 46 1
+-sort_key=39
++sort_key=46
+ sort_direction=1
+ hide_threads=0
+ hide_kernel_threads=1
+@@ -12,7 +12,7 @@ show_program_path=0
+ highlight_base_name=1
+ highlight_megabytes=1
+ highlight_threads=1
+-tree_view=1
++tree_view=0
+ header_margin=1
+ detailed_cpu_time=0
+ cpu_count_from_zero=0
+diff --git a/.config/keepassxc/keepassxc.ini b/.config/keepassxc/keepassxc.ini
+deleted file mode 100755
+index 7c46581..0000000
+--- a/.config/keepassxc/keepassxc.ini
++++ /dev/null
+@@ -1,116 +0,0 @@
+-[General]
+-AutoReloadOnChange=true
+-AutoSaveAfterEveryChange=true
+-AutoSaveOnExit=true
+-AutoTypeDelay=25
+-AutoTypeEntryTitleMatch=true
+-AutoTypeEntryURLMatch=true
+-AutoTypeStartDelay=500
+-BackupBeforeSave=false
+-GlobalAutoTypeKey=0
+-GlobalAutoTypeModifiers=0
+-HideWindowOnCopy=true
+-IgnoreGroupExpansion=true
+-LastActiveDatabase=@Invalid()
+-LastChallengeResponse=@Variant(\0\0\0\x1c\0\0\0\0)
+-LastDatabases=/home/orcan/.pass/main/main-pass-db.kdbx, /home/orcan/.pass/main-pass-db.kdbx, /home/orcan/.pass/main-pass.key
+-LastDir=/home/orcan
+-LastKeyFiles=@Variant(\0\0\0\x1c\0\0\0\x2\0\0\0P\0/\0h\0o\0m\0\x65\0/\0o\0r\0\x63\0\x61\0n\0/\0.\0p\0\x61\0s\0s\0/\0m\0\x61\0i\0n\0/\0m\0\x61\0i\0n\0-\0p\0\x61\0s\0s\0-\0\x64\0\x62\0.\0k\0\x64\0\x62\0x\0\0\0\n\0\0\0N\0/\0h\0o\0m\0\x65\0/\0o\0r\0\x63\0\x61\0n\0/\0.\0p\0\x61\0s\0s\0/\0m\0\x61\0i\0n\0/\0m\0\x61\0i\0n\0-\0p\0\x61\0s\0s\0-\0\x64\0\x62\0.\0k\0\x65\0y\0\0\0\x46\0/\0h\0o\0m\0\x65\0/\0o\0r\0\x63\0\x61\0n\0/\0.\0p\0\x61\0s\0s\0/\0m\0\x61\0i\0n\0-\0p\0\x61\0s\0s\0-\0\x64\0\x62\0.\0k\0\x64\0\x62\0x\0\0\0\n\0\0\0\x44\0/\0h\0o\0m\0\x65\0/\0o\0r\0\x63\0\x61\0n\0/\0.\0p\0\x61\0s\0s\0/\0m\0\x61\0i\0n\0-\0p\0\x61\0s\0s\0-\0\x64\0\x62\0.\0k\0\x65\0y)
+-LastOpenedDatabases=@Invalid()
+-MinimizeOnCopy=true
+-OpenPreviousDatabasesOnStartup=true
+-RememberLastDatabases=true
+-RememberLastKeyFiles=true
+-SSHAgent=false
+-SingleInstance=true
+-UpdateCheckMessageShown=true
+-UseAtomicSaves=true
+-UseGroupIconOnEntryCreation=true
+-
+-[Browser]
+-AllowExpiredCredentials=false
+-AlwaysAllowAccess=false
+-AlwaysAllowUpdate=false
+-BestMatchOnly=false
+-CustomProxyLocation=
+-Enabled=true
+-HttpAuthPermission=false
+-MatchUrlScheme=true
+-SearchInAllDatabases=false
+-ShowNotification=true
+-SortByUsername=false
+-SupportBrowserProxy=true
+-SupportKphFields=true
+-UnlockDatabase=true
+-UpdateBinaryPath=true
+-UseCustomProxy=false
+-
+-[GUI]
+-CheckForUpdates=false
+-CheckForUpdatesIncludeBetas=false
+-DarkTrayIcon=false
+-HidePasswords=true
+-HidePreviewPanel=true
+-HideToolbar=true
+-HideUsernames=false
+-Language=system
+-ListViewState=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\x1\x1\0\0\0\0\0\0\0\0\0\0\0\r\x1\0\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\x6Z\0\0\0\r\x1\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x64\0\0\0\x18\0\0\0\x81\0\0\0\0\0\0\0\r\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\xf8\0\0\0\x1\0\0\0\0\0\0\0\xea\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0y\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x8c\0\0\0\x1\0\0\0\0\0\0\0\x9f\0\0\0\x1\0\0\0\0\0\0\0\xa9\0\0\0\x1\0\0\0\0\0\0\0\x18\0\0\0\x1\0\0\0\x2\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x83\0\0\0\x1\0\0\0\0\0\0\x3\xe8\x1\0\0\0\x83)
+-MainWindowGeometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\x4K\0\0\x6?\0\0\a\xbb\0\0\0\0\0\0\x4K\0\0\x6?\0\0\a\xbb\0\0\0\0\0\0\0\0\x6@\0\0\0\0\0\0\x4K\0\0\x6?\0\0\a\xbb)
+-MainWindowState=@ByteArray(\0\0\0\xff\0\0\0\0\xfd\0\0\0\0\0\0\x6@\0\0\x3]\0\0\0\x4\0\0\0\x4\0\0\0\b\0\0\0\b\xfc\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\xe\0t\0o\0o\0l\0\x42\0\x61\0r\0\0\0\0\0\xff\xff\xff\xff\0\0\0\0\0\0\0\0)
+-MinimizeOnClose=true
+-MinimizeOnStartup=false
+-MinimizeToTray=false
+-MovableToolbar=false
+-PreviewSplitterState=691, 228
+-SearchViewState=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x6\x1\0\0\0\r\x1\x1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x64\0\0\0\x18\0\0\0\x81\0\0\0\0\0\0\0\r\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\xf8\0\0\0\x1\0\0\0\0\0\0\0\xea\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x18\0\0\0\x1\0\0\0\x2\0\0\0\x64\0\0\0\x1\0\0\0\0\0\0\0\x83\0\0\0\x1\0\0\0\0\0\0\x3\xe8\x1\0\0\0\x83)
+-ShowTrayIcon=true
+-SplitterState=222, 705
+-ToolButtonStyle=4
+-
+-[KeeShare]
+-Settings.active="<?xml version=\"1.0\"?>\n<KeeShare xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <Active/>\n</KeeShare>\n"
+-Settings.foreign="<?xml version=\"1.0\"?>\n<KeeShare xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <Foreign/>\n</KeeShare>\n"
+-Settings.own="<?xml version=\"1.0\"?>\n<KeeShare xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <PrivateKey/>\n  <PublicKey/>\n</KeeShare>\n"
+-
+-[Messages]
+-NoLegacyKeyFileWarning=true
+-
+-[generator]
+-Braces=false
+-Dashes=false
+-EASCII=false
+-EnsureEvery=true
+-ExcludeAlike=true
+-ExcludedChars=
+-Length=30
+-Logograms=false
+-LowerCase=true
+-Math=false
+-Numbers=true
+-Punctuation=false
+-Quotes=false
+-SpecialChars=true
+-Type=0
+-UpperCase=true
+-WordCount=10
+-WordList=eff_large.wordlist
+-WordSeparator=" "
+-
+-[security]
+-HidePasswordPreviewPanel=true
+-IconDownloadFallback=true
+-autotypeask=true
+-clearclipboard=true
+-clearclipboardtimeout=15
+-hidenotes=false
+-lockdatabaseidle=true
+-lockdatabaseidlesec=600
+-lockdatabaseminimize=false
+-lockdatabasescreenlock=true
+-passwordemptynodots=true
+-passwordscleartext=false
+-passwordsrepeat=true
+-relockautotype=false
+-resettouchid=false
+-resettouchidscreenlock=true
+-resettouchidtimeout=30
+diff --git a/.config/lf/lfrc b/.config/lf/lfrc
+index 5907ada..dac5247 100644
+--- a/.config/lf/lfrc
++++ b/.config/lf/lfrc
+@@ -12,7 +12,7 @@ set smartcase on
+ # interpreter for shell commands (needs to be POSIX compatible)
+ set shell sh
+ 
+-set previewer ~/.config/lf/scope.sh
++set previewer /usr/bin/pistol
+ 
+ # set '-eu' options for shell commands
+ # These options are used to have safer shell commands. Option '-e' is used to
+@@ -43,6 +43,8 @@ map e
+ map r
+ map g
+ 
++map i $/usr/bin/pistol $f | $PAGER -R
++
+ 
+ # Plain esc relaods and redraws
+ map <esc> :{{
+@@ -90,7 +92,7 @@ map ` mark-load
+ map zz fit
+ 
+ # Find with fzf
+-map f $lf -remote "send $id select $(ls | fzf)"
++map f $lf -remote "send $id select $(ls -A | fzf)"
+ map F $lf -remote "send $id select $(fzf)"
+ 
+ # Unselect and uncut
+diff --git a/.config/nanel/colors b/.config/nanel/colors
+index 4e0b39f..35941dc 100755
+--- a/.config/nanel/colors
++++ b/.config/nanel/colors
+@@ -1,5 +1,5 @@
+-COLOR_DEFAULT_FG="#eeffff"
+-COLOR_DEFAULT_BG="#1e2541"
++COLOR_DEFAULT_FG="#d6deeb"
++COLOR_DEFAULT_BG="#011627"
+ COLOR_MONITOR_FG="#8dbcdf"
+ COLOR_MONITOR_BG="#333232"
+ COLOR_FOCUSED_MONITOR_FG="#b1d0e8"
+diff --git a/.config/nanel/visual b/.config/nanel/visual
+index 05b16f8..aca6926 100644
+--- a/.config/nanel/visual
++++ b/.config/nanel/visual
+@@ -1,4 +1,4 @@
+ # -*- sh -*-
+ 
+ PANEL_HEIGHT=24
+-PANEL_FONT="mononoki Nerd Font:antialias=true:size=12:bold"
++PANEL_FONT="JetBrainsMono Nerd Font:antialias=true:size=11:bold"
+diff --git a/.config/nvim/after/syntax/nroff.vim b/.config/nvim/after/syntax/nroff.vim
+index f0ac9f2..74f98c8 100644
+--- a/.config/nvim/after/syntax/nroff.vim
++++ b/.config/nvim/after/syntax/nroff.vim
+@@ -43,6 +43,5 @@ syntax match nroffSpecialChar "\\(Righttssrgerentical" conceal cchar=→
+ syntax match nroffSpecialChar "\\(Leftghttssrgerentical" conceal cchar=←
+ syntax match nroffSpecialChar "\\(Plusftghttssrgerentical" conceal cchar=±
+ 
+-
+-highlight! link Conceal Normal
++syntax match nroffIgnore "\\&" conceal
+ 
+diff --git a/.config/nvim/after/syntax/todo.vim b/.config/nvim/after/syntax/todo.vim
+index 725f9f7..d2211a3 100644
+--- a/.config/nvim/after/syntax/todo.vim
++++ b/.config/nvim/after/syntax/todo.vim
+@@ -1 +1,4 @@
++" syn TodoIgnorableDone region start="" contains=TodoDone
++
++
+ highlight! link TodoContext WarningMsg
+diff --git a/.config/nvim/ftplugin/java.vim b/.config/nvim/ftplugin/java.vim
+index 4025eee..3c397ee 100644
+--- a/.config/nvim/ftplugin/java.vim
++++ b/.config/nvim/ftplugin/java.vim
+@@ -1,12 +1,17 @@
+-filetype indent on
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
++"Specifies length of TAB character
++set tabstop=4
++"Specifies how many spaces is TAB
++set softtabstop=4
+ set shiftwidth=4
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set foldenable "Enable folding
++"Tabs becomes spaces
++set expandtab
++
++"Set line numbers
++set number
++set numberwidth=4
++
++"Show command in bottom bar
++set showcmd
++"Enable folding
++set foldenable
+ setlocal suffixesadd=.java
+-set foldlevel=1
+-set foldmethod=marker
+-set foldmarker={,}
+diff --git a/.config/nvim/ftplugin/markdown.vim b/.config/nvim/ftplugin/markdown.vim
+index d8baa09..8707795 100644
+--- a/.config/nvim/ftplugin/markdown.vim
++++ b/.config/nvim/ftplugin/markdown.vim
+@@ -24,7 +24,7 @@ set linebreak
+ " match OverLength /\%81v.\+/
+ 
+ "t -> Autoformat while typing
+-"l -> 
++"l ->
+ "n -> Respect list indentation
+ "q -> Autoformat html comments
+ "r -> Format insert new lines with <Enter>
+@@ -32,3 +32,10 @@ set linebreak
+ 
+ " Mappings
+ " autocmd! BufWritePre *.md,*.mkd,*.markdown substitute
++
++nnoremap <leader>. <Cmd>.HeaderIncrease<CR>
++nnoremap <leader>, <Cmd>.HeaderDecrease<CR>
++
++" Mark as done
++" TODO Enhance
++nnoremap <leader>x <Cmd>normal! 0f[lrX<CR>
+diff --git a/.config/nvim/ftplugin/nroff.vim b/.config/nvim/ftplugin/nroff.vim
+index 3fdd281..a8586d9 100644
+--- a/.config/nvim/ftplugin/nroff.vim
++++ b/.config/nvim/ftplugin/nroff.vim
+@@ -44,11 +44,14 @@ let nroff_space_errors = 1
+ " inoremap <buffer> <nowait> Ş \[u015E]
+ " }}}
+ 
+-setlocal conceallevel=1
++" Hide conceals that don't have conceal character
++setlocal conceallevel=2
+ " In groff there is no need to track lines because of the shortiness
+ setlocal nocursorline
+ " It's a classic
+-setlocal textwidth=80
++setlocal textwidth=79
++" Typesetting does not bear with softwraps!
++setlocal nowrap
+ 
+ " Trailing whitespaces in lines can be problematic in groff
+ autocmd BufWritePre *.roff %substitute/\s\+$//e
+diff --git a/.config/nvim/ftplugin/python.vim b/.config/nvim/ftplugin/python.vim
+index 9d5bf5d..0ad3535 100644
+--- a/.config/nvim/ftplugin/python.vim
++++ b/.config/nvim/ftplugin/python.vim
+@@ -1,25 +1,42 @@
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
+-set expandtab "Tabs becomes spaces
++set tabstop=4
++set softtabstop=4
++set shiftwidth=4
++set expandtab
++
+ set number "Set line numbers
+ set showcmd "Show command in bottom bar
+ set cursorline "Underline current line
+-filetype indent on
+ set foldenable "Enable folding
+ set foldmethod=indent "Setting folding method to indent
+ set autoindent
+ 
+-set wrap
+-set linebreak
++" Autofolding disabled by default
++set foldlevel=99
++
++" Widely used textwidth value for python. Black uses it too.
++set textwidth=88
++
++set nowrap
+ 
+ let python_highlight_all = 1
+ 
+-" Reformat python file
+-nnoremap <leader>l :w<bar>!black %<CR>
++nnoremap <silent> <leader>l <Cmd>call orcan#python#AutoformatBlack()<CR>
+ " Discover and check the python tests
+ nnoremap <leader>t :w<bar>!python -m unittest discover<CR>
+ nnoremap <leader>r :w<bar>!python %<CR>
+ 
+ let b:python_version_2 = 0
+-let &syntax=&syntax
+ 
++let g:syntastic_python_checkers = ['python']
++
++if executable('mypy')
++    call add(g:syntastic_python_checkers, 'mypy')
++endif
++
++if executable('pyls')
++    if exists('g:LanguageClient_serverCommands')
++        let g:LanguageClient_serverCommands['python'] = ['pyls']
++    else
++        let g:LanguageClient_serverCommands = { 'python': ['pyls'] }
++    endif
++endif
+diff --git a/.config/nvim/ftplugin/sh.vim b/.config/nvim/ftplugin/sh.vim
+index b6c8ec4..d961e5e 100644
+--- a/.config/nvim/ftplugin/sh.vim
++++ b/.config/nvim/ftplugin/sh.vim
+@@ -1,12 +1,12 @@
+ filetype indent on
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
+-set shiftwidth=4
++set tabstop=2 "Specifies length of TAB character
++set softtabstop=2 "Specifies how many spaces is TAB
++set shiftwidth=2
+ set expandtab "Tabs becomes spaces
+ set number "Set line numbers
+ set showcmd "Show command in bottom bar
+ set cursorline "Underline current line
+ set foldenable "Enable folding
+-set foldmethod=indent "Setting folding method to indent
++set foldmethod=manual "Setting folding method to indent
+ set autoindent
+ set nowrap
+diff --git a/.config/nvim/ftplugin/todo.vim b/.config/nvim/ftplugin/todo.vim
+index 1d9602e..4652a78 100644
+--- a/.config/nvim/ftplugin/todo.vim
++++ b/.config/nvim/ftplugin/todo.vim
+@@ -1 +1,25 @@
+ " colorscheme hashpunk
++
++" Variables
++" Ignore marked as done
++let b:done_ignored = 1
++
++" Sets
++" Treat tags as a whole word
++set iskeyword+=-
++set iskeyword+=_
++set iskeyword+=+
++
++" Mappings
++" Prepend date on every new line
++nnoremap <buffer> o o<Cmd>call todo#txt#prepend_date()<CR><Space>
++nnoremap <buffer> O O<Cmd>call todo#txt#prepend_date()<CR><Space>
++inoremap <buffer> <CR> <CR><Cmd>call todo#txt#prepend_date()<CR><Space>
++
++nnoremap <buffer> <leader>v <Cmd>call orcan#todo#txt#ToggleDoneIgnore()<CR>
++
++" Autocommands
++augroup orcan_todo_txt
++    autocmd!
++    autocmd BufWritePre <buffer> sort | silent! %substitute/\s\+$//
++augroup end
+diff --git a/.config/nvim/init.vim b/.config/nvim/init.vim
+index f342c60..3d4683a 100644
+--- a/.config/nvim/init.vim
++++ b/.config/nvim/init.vim
+@@ -1,21 +1,28 @@
+ " Include other source files {{{
+ source $XDG_CONFIG_HOME/nvim/util.vim
+ " }}}
++
++
+ " vim-plug {{{
+ 
+-if empty(glob('~/.vim/autoload/plug.vim'))
+-  silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+-  autocmd VimEnter * PlugInstall | source $MYVIMRC
++" Setup {{{
++let s:plug_vim = $XDG_CONFIG_HOME . '/nvim/autoload/plug.vim'
++if empty(glob(s:plug_vim))
++    silent execute "!curl -fLo " . s:plug_vim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
++    autocmd VimEnter * PlugInstall | source $MYVIMRC
+ endif
+ 
+-call plug#begin('~/.local/share/nvim/plugged')
++call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
++
++" }}}
+ 
+ " Themes {{{
+ Plug 'chriskempson/base16-vim'
+-Plug 'dracula/vim'
++" Plug 'dracla/vim'
+ Plug 'tomasr/molokai'
+ Plug 'flazz/vim-colorschemes'
+ Plug 'haishanh/night-owl.vim'
++Plug 'challenger-deep-theme/vim'
+ " }}}
+ 
+ " Visual plugins {{{
+@@ -31,24 +38,26 @@ Plug 'junegunn/fzf.vim'
+ 
+ Plug 'mbbill/undotree'
+ 
++Plug 'jeffkreeftmeijer/vim-numbertoggle'
++
++Plug 'norcalli/nvim-colorizer.lua'
++
+ Plug 'tpope/vim-fugitive'
+-Plug 'shumphrey/fugitive-gitlab.vim'
+-Plug 'tpope/vim-rhubarb'
+ 
+ Plug 'scrooloose/nerdtree'
+-Plug 'Xuyuanp/nerdtree-git-plugin'
+-"Plug 'jistr/vim-nerdtree-tabs'
++" Plug 'Xuyuanp/nerdtree-git-plugin'
++" Plug 'jistr/vim-nerdtree-tabs'
+ 
+ " }}}
+ 
+ " File Types {{{
+-Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
+-
+ Plug 'freitass/todo.txt-vim', { 'for': 'todo' }
+ 
+ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+ 
+-Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
++Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }
++
++Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.mustache', 'html.handlebars'] }
+ 
+ Plug 'cespare/vim-toml', { 'for': 'toml' }
+ 
+@@ -57,6 +66,7 @@ Plug 'jceb/vim-orgmode', { 'for': 'org' }
+ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+ 
+ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
++
+ " }}}
+ 
+ " Editing {{{
+@@ -78,6 +88,8 @@ Plug 'tpope/vim-unimpaired'
+ 
+ Plug 'preservim/nerdcommenter'
+ 
++Plug 'jiangmiao/auto-pairs'
++
+ Plug 'danro/rename.vim'
+ 
+ Plug 'tommcdo/vim-exchange'
+@@ -88,12 +100,10 @@ Plug 'kana/vim-textobj-entire'
+ 
+ Plug 'kana/vim-textobj-indent'
+ 
+-Plug 'roxma/vim-paste-easy'
++" Plug 'roxma/vim-paste-easy'
+ 
+ Plug 'machakann/vim-highlightedyank'
+ 
+-Plug 'tpope/vim-abolish'
+-
+ Plug 'vim-scripts/ReplaceWithRegister'
+ 
+ Plug 'vim-scripts/Parameter-Text-Objects'
+@@ -103,17 +113,30 @@ Plug 'vim-scripts/Parameter-Text-Objects'
+ 
+ Plug 'neomake/neomake'
+ 
+-Plug 'godlygeek/tabular'
+-
+-Plug 'thaerkh/vim-workspace'
++Plug 'vim-syntastic/syntastic'
+ 
+ Plug 'tpope/vim-obsession'
+ 
+-Plug 'majutsushi/tagbar'
++if has('nvim')
++    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
++else
++    Plug 'Shougo/deoplete.nvim'
++    Plug 'roxma/nvim-yarp'
++    Plug 'roxma/vim-hug-neovim-rpc'
++endif
++
++Plug 'autozimu/LanguageClient-neovim', {
++            \ 'branch': 'next',
++            \ 'do': 'bash install.sh',
++            \ }
+ 
+-Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
++Plug 'ptzz/lf.vim'
++Plug 'rbgrouleff/bclose.vim'
++
++Plug 'majutsushi/tagbar'
+ 
+ Plug 'SirVer/ultisnips'
++" Plug 'honza/vim-snippets'
+ 
+ " }}}
+ 
+@@ -184,6 +207,9 @@ set incsearch
+ " Preview :substitute command in a split
+ set inccommand=split
+ 
++" Set max height of completion window to human levels
++set pumheight=15
++
+ set autoindent
+ " Detect non-interactive changes in files
+ set autoread
+@@ -212,6 +238,9 @@ set nostartofline
+ " Persistent undo file
+ set undofile
+ 
++" This option controls the behavior when switching between buffers.
++set switchbuf=usetab
++
+ " Dont' display mode (Lightline)
+ set noshowmode
+ set laststatus=2
+@@ -227,24 +256,40 @@ set cmdheight=2
+ " You will have bad experience for diagnostic messages when it's default 4000.
+ set updatetime=300
+ " don't give |ins-completion-menu| messages.
+-set shortmess+=c
++if has("patch-7.4.314")
++    set shortmess+=c
++endif
+ " always show signcolumns
+ set signcolumn=yes
+ " Don't update screen while running macros
+ set lazyredraw
+ " Word boundaries
+ set iskeyword-=.             " Regard . as a word boundary
+-set iskeyword-=_             " Regard _ as a word boundary
+ set iskeyword-=#             " Regard # as a word boundary
+ 
+ "}}}
+ 
+ 
+-" Key bindings {{{
++" Mappings {{{
+ 
+ " Turkish keyboard flaws
+ nnoremap ı i
+ 
++nnoremap <leader>n <Cmd>NERDTree<CR>
++
++nnoremap <leader>zz <Cmd>call orcan#init#LanguageClientToggle()<CR>
++
++" C-w is life {{{
++
++nnoremap <C-w>. <Cmd>tabnext<CR>
++nnoremap <C-w>, <Cmd>tabprevious<CR>
++nnoremap <C-w><C-.> <Cmd>tabnext<CR>
++nnoremap <C-w><C-,> <Cmd>tabprevious<CR>
++
++nnoremap <C-w>m <Cmd>tabedit<CR>
++nnoremap <C-w><C-m> <Cmd>tabedit<CR>
++" }}}
++
+ " Nvim configuration {{{
+ " function! EditVimrc()
+ 
+@@ -252,11 +297,22 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+ nnoremap <leader>sv :source $MYVIMRC<CR>
+ " }}}
+ 
++" Fast resizing {{{
++noremap <C-w><lt> 5<C-w><lt>
++noremap <C-w>> 5<C-w>>
++noremap <C-w>+ 3<C-w>+
++noremap <C-w>- 3<C-w>-
++"}}}
++
++" Append new line {{{
++" TODO inoremap <silent> <M-m>
++" }}}
++
+ " Edit personal main todo file {{{
+-" 
++"
+ function IEditTodo()
+     if exists("$TODO") && filereadable($TODO)
+-        pedit $TODO
++        vsplit $TODO
+     else
+         echoerr "Environment variable '$TODO' has not been set"
+     endif
+@@ -268,7 +324,7 @@ nnoremap <leader>et :call IEditTodo()<CR>
+ " Edit personal calendar file {{{
+ function IEditCalendar()
+     if exists("$CALENDAR") && filereadable($CALENDAR)
+-        pedit $CALENDAR
++        vsplit $CALENDAR
+     else
+         echoerr "Environment variable '$CALENDAR' has not been set"
+     endif
+@@ -280,7 +336,7 @@ nnoremap <leader>ec :call IEditCalendar()<CR>
+ " Edit personal quick notes file {{{
+ function IEditQuickNote()
+     if exists("$QUICK") && filereadable($QUICK)
+-        pedit $QUICK
++        vsplit $QUICK
+     else
+         echoerr "Environment variable '$QUICK' has not been set"
+     endif
+@@ -291,7 +347,7 @@ nnoremap <leader>eq :call IEditQuickNote()<CR>
+ 
+ " Terminal {{{
+ " Focuses the terminal window by default
+-nnoremap <leader>t :10split term://zsh<CR>i
++nnoremap <leader>t :10split term://zsh<CR>
+ " }}}
+ 
+ " Kill current buffer {{{
+@@ -324,17 +380,20 @@ nmap gX gx$
+ nmap gR gr$
+ " }}}
+ 
++" Colorizer
++" nnoremap <leader>v <Cmd>ColorizerToggle<CR>
++
+ "Autoformat
+-nnoremap <leader>f :Autoformat<CR>
++nnoremap <leader>f <Cmd>Autoformat<CR>
+ 
+ " Goyo
+-nnoremap <leader>z :Goyo<CR>
++nnoremap <leader>v <Cmd>Goyo<CR>
+ 
+ " Undo tree
+-nnoremap <leader>u :UndotreeToggle<CR>
++nnoremap <leader>u <Cmd>UndotreeToggle<CR>
+ 
+ " Easy configure the corresponding filetype {{{
+-function! ConfigureFiletype(folder, filetype)
++function! s:ConfigureFiletype(folder, filetype)
+ 
+     function! CreateExecuteScript(ft) closure
+         let l:execString = printf('%s/nvim/%s/%s.vim', $XDG_CONFIG_HOME, a:folder, a:ft)
+@@ -347,7 +406,7 @@ function! ConfigureFiletype(folder, filetype)
+                     \ 'default': &filetype,
+                     \ 'cancelreturn': -1
+                     \ })
+-        if l:filetype == -1
++        if l:filetype == -1 || (empty(l:filetype) && empty(&l:filetype))
+             return
+         elseif empty(filetype)
+             execute CreateExecuteScript(&l:filetype)
+@@ -359,9 +418,9 @@ function! ConfigureFiletype(folder, filetype)
+     endif
+ endfunction
+ 
+-command! ConfigureFtplugin :call ConfigureFiletype('ftplugin', '') 
++command! ConfigureFtplugin :call s:ConfigureFiletype('ftplugin', '')
+ nnoremap <leader>ef :ConfigureFtplugin<CR>
+-command! ConfigureSyntax :call ConfigureFiletype('syntax', '')
++command! ConfigureSyntax :call s:ConfigureFiletype('after/syntax', '')
+ nnoremap <leader>es :ConfigureSyntax<CR>
+ " }}}
+ 
+@@ -377,18 +436,13 @@ endfunction
+ cnoremap <expr> %% ExpandPercentageIfInCommand()
+ " }}}
+ 
+-" Clear search highlighting before redraw
+-function! AdvancedRedraw()
+-    set hlsearch!
+-    if exists("*lightline#update")
+-        call lightline#update()
+-    endif
+-    redraw
+-endfunction
++" Clear search highlighting before redraw {{{
+ 
+-nnoremap <silent> <C-l> :call AdvancedRedraw()<CR>
++nnoremap <silent> <C-l> :nohlsearch<bar>redraw<CR>
+ " Clear search higlighting in insert mode and command-line mode
+-noremap! <silent> <C-l> <Cmd>call AdvancedRedraw()<CR>
++noremap! <silent> <C-l> <Cmd>nohlsearch<bar>redraw<CR>
++
++" }}}
+ 
+ " Pad current line with new lines
+ nnoremap <M-o> m0o<ESC>kO<ESC>`0
+@@ -399,32 +453,34 @@ nnoremap Y y$
+ 
+ " FZF {{{
+ " TODO if exists("*fzf#run")
+-    " FZF buffer list
+-    nnoremap <leader>b :Buffers<CR>
+-    " FZF file list
+-    nnoremap <leader>f :Files<CR>
+-    " FZF Occurence list
+-    nnoremap <leader>o :BLines<CR>
+-    " FZF Global occurence list
+-    nnoremap <leader>O :Lines<CR>
+-    " FZF Recent files list
+-    nnoremap <leader>r :History<CR>
+-    " FZF Search history list
+-    nnoremap <leader>/ :History/<CR>
+-    " FZF Command history list
+-    nnoremap <leader>: :History:<CR>
++" FZF buffer list
++nnoremap <leader>b <Cmd>Buffers<CR>
++" FZF file list
++nnoremap <leader>f <Cmd>Files<CR>
++" FZF Occurence list
++nnoremap <leader>o <Cmd>BLines<CR>
++" FZF Global occurence list
++nnoremap <leader>O <Cmd>Lines<CR>
++" FZF Recent files list
++nnoremap <leader>r <Cmd>History<CR>
++" FZF Grep
++nnoremap <leader>g <Cmd>Rg<CR>
++" FZF Search history list
++nnoremap q/ <Cmd>History/<CR>
++" FZF Command history list
++nnoremap q: <Cmd>History:<CR>
+ " else
+-    " echom "FZF is not installed. Mapping primitive equivalents"
+-    " " Buffer list
+-    " nnoremap <leader>b :buffers<CR>
+-    " " File list
+-    " nnoremap <leader>f :Hexplore<CR>
+-    " " Recent files list
+-    " nnoremap <leader>r :browse oldfiles<CR>
+-    " " Search history list
+-    " nnoremap <leader>/ q/
+-    " " Command history list
+-    " nnoremap <leader>: q:
++" echom "FZF is not installed. Mapping primitive equivalents"
++" " Buffer list
++" nnoremap <leader>b :buffers<CR>
++" " File list
++" nnoremap <leader>f :Hexplore<CR>
++" " Recent files list
++" nnoremap <leader>r :browse oldfiles<CR>
++" " Search history list
++" nnoremap <leader>/ q/
++" " Command history list
++" nnoremap <leader>: q:
+ " endif
+ 
+ " }}}
+@@ -434,55 +490,56 @@ nnoremap Y y$
+ 
+ " GitGutter {{{
+ 
+-nnoremap <leader>ggl :GitGutterLineHighlightsToggle<CR>
+-nnoremap <leader>ggn :GitGutterLineNrHighlightsToggle<CR>
+-nnoremap <leader>ggb :GitGutterBufferToggle<CR>
+-nnoremap <leader>ggg :GitGutterToggle<CR>
+-nnoremap <leader>ggs :GitGutterSignsToggle<CR>
++" Don't need to assign keys to these
++" nnoremap <leader>ggl :GitGutterLineHighlightsToggle<CR>
++" nnoremap <leader>ggn :GitGutterLineNrHighlightsToggle<CR>
++" nnoremap <leader>ggb :GitGutterBufferToggle<CR>
++" nnoremap <leader>ggg :GitGutterToggle<CR>
++" nnoremap <leader>ggs :GitGutterSignsToggle<CR>
+ 
+ nnoremap ]h :GitGutterNextHunk<CR>
+ nnoremap [h :GitGutterPrevHunk<CR>
+ 
+-nnoremap <leader>ghs :GitGutterStageHunk<CR>
+-nnoremap <leader>ghu :GitGutterUndoHunk<CR>
+-
+ " }}}
+ 
+ " Fugitive {{{
+-" Git status
+-nnoremap <leader>gs :Gstatus<CR>
+-" Fetch
+-nnoremap <leader>gf :Gfetch<CR>
+-" Pull
+-nnoremap <leader>gpl :Gpull<CR>
+-" Push
+-nnoremap <leader>gps :Gpush<CR>
+-" Vertical diff split
+-nnoremap <leader>gd :Gvdiffsplit<CR>
+-" Revert
+-nnoremap <leader>gr :Gread<CR>
+-" Write / stage
+-nnoremap <leader>gw :Gwrite<CR>
+-" Commit
+-nnoremap <leader>gc :Gcommit<CR>
+-" Merge
+-nnoremap <leader>gm :Gmerge<CR>
+-" Log
+-nnoremap <leader>gl :Glog!<CR>
+-" Blame
+-nnoremap <leader>gb :Gblame<CR>
+-
+-" G-edit - Show HEAD version of the file
+-" on current buffer
+-nnoremap <leader>goo :Gedit<CR>
+-" on vertical split
+-nnoremap <leader>gov :Gvsplit<CR>
+-" on horizontal split
+-nnoremap <leader>gos :Gsplit<CR>
+-" on new tab
+-nnoremap <leader>got :Gtabedit<CR>
+-" on popup
+-nnoremap <leader>gop :Gpedit<CR>
++"
++" I am using command line more...
++"
++" " Git status
++" nnoremap <leader>gs <Cmd>Git<CR>
++" " Fetch
++" nnoremap <leader>gf <Cmd>Git-fetch<CR>
++" " Pull
++" nnoremap <leader>gpl <Cmd>Git pull<CR>
++" " Push
++" nnoremap <leader>gps <Cmd>G-push<CR>
++" " Vertical diff split
++" nnoremap <leader>gd <Cmd>Gvdiffsplit<CR>
++" " Revert
++" nnoremap <leader>gr <Cmd>Gread<CR>
++" " Write / stage
++" nnoremap <leader>gw <Cmd>Gwrite<CR>
++" " Commit
++" nnoremap <leader>gc <Cmd>Git commit<CR>
++" " Merge
++" nnoremap <leader>gm <Cmd>Git merge<CR>
++" " Log
++" nnoremap <leader>glg <Cmd>Gclog<CR>
++" " Blame
++" nnoremap <leader>gb <Cmd>Git-blame<CR>
++
++" " G-edit - Show HEAD version of the file
++" " on current buffer
++" nnoremap <leader>goo :Gedit<CR>
++" " on vertical split
++" nnoremap <leader>gov :Gvsplit<CR>
++" " on horizontal split
++" nnoremap <leader>gos :Gsplit<CR>
++" " on new tab
++" nnoremap <leader>got :Gtabedit<CR>
++" " on popup
++" nnoremap <leader>gop :Gpedit<CR>
+ "
+ 
+ " }}}
+@@ -532,8 +589,66 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
+ 
+ " Plugin configurations {{{
+ 
+-" NERDTree {{{
+-nnoremap <leader>n :NERDTreeToggle<CR>
++" LanguageClient {{{
++"
++let g:LanguageClient_autoStart = 0
++" Custom variable to track language client status
++let g:language_client_started = g:LanguageClient_autoStart
++
++" }}}
++
++" Easy navigation with terminal {{{
++
++if (has('nvim'))
++    tnoremap <C-w>m <Cmd>tabedit<CR>
++    tnoremap <C-w><C-m> <Cmd>tabedit<CR>
++    tnoremap <C-w>, <Cmd>tabprevious<CR>
++    tnoremap <C-w><C-,> <Cmd>tabprevious<CR>
++    tnoremap <C-w>. <Cmd>tabnext<CR>
++    tnoremap <C-w><C-.> <Cmd>tabnext<CR>
++    tnoremap <C-w>q <Cmd>wincmd q<CR>
++    tnoremap <C-w><C-q> <Cmd>wincmd q<CR>
++    tnoremap <C-w>c <Cmd>wincmd c<CR>
++    tnoremap <C-w><C-c> <Cmd>wincmd c<CR>
++    tnoremap <C-w>h <Cmd>wincmd h<CR>
++    tnoremap <C-w><C-h> <Cmd>wincmd h<CR>
++    tnoremap <C-w>j <Cmd>wincmd j<CR>
++    tnoremap <C-w><C-j> <Cmd>wincmd j<CR>
++    tnoremap <C-w>k <Cmd>wincmd k<CR>
++    tnoremap <C-w><C-k> <Cmd>wincmd k<CR>
++    tnoremap <C-w>l <Cmd>wincmd l<CR>
++    tnoremap <C-w><C-l> <Cmd>wincmd l<CR>
++
++    tnoremap <C-l> <Cmd>nohlsearch<CR>
++    tnoremap <expr> <M-r> '<C-\><C-N>"' . nr2char(getchar()) . 'pi'
++endif
++
++" }}}
++
++" Deoplete {{{
++let g:deoplete#enable_at_startup = 1
++
++function g:Multiple_cursors_before()
++    call deoplete#custom#buffer_option('auto_complete', v:false)
++endfunction
++function g:Multiple_cursors_after()
++    call deoplete#custom#buffer_option('auto_complete', v:true)
++endfunction
++
++" }}}
++
++" Colorizer {{{
++
++lua require 'colorizer'.setup()
++
++" }}}
++
++" File explorer {{{
++let g:netrw_liststyle=3
++let g:netrw_chgwin=2
++let g:netrw_winsize=20
++let g:netrw_preview=1
++let g:netrw_banner=0
+ " }}}
+ 
+ " Lightline {{{
+@@ -580,22 +695,53 @@ highlight HighlightedyankRegion cterm=reverse gui=reverse
+ 
+ " Autocommands {{{
+ 
+-" Saving views {{{
+-augroup AutoSaveFolds
++" Auto View {{{
++
++let g:skipview_files = [
++            \ '[EXAMPLE PLUGIN BUFFER]'
++            \ ]
++function! MakeViewCheck()
++    if has('quickfix') && &buftype =~ 'nofile'
++        " Buffer is marked as not a file
++        return 0
++    endif
++    if empty(glob(expand('%:p')))
++        " File does not exist on disk
++        return 0
++    endif
++    if len($TEMP) && expand('%:p:h') == $TEMP
++        " We're in a temp dir
++        return 0
++    endif
++    if len($TMP) && expand('%:p:h') == $TMP
++        " Also in temp dir
++        return 0
++    endif
++    if index(g:skipview_files, expand('%')) >= 0
++        " File is in skip list
++        return 0
++    endif
++    return 1
++endfunction
++augroup AutoView
+     autocmd!
+-    autocmd BufWinLeave ?* mkview
+-    autocmd BufWinEnter ?* silent! loadview
+-augroup END
++    " Autosave & Load Views.
++    autocmd BufWritePost,BufLeave,WinLeave ?* if MakeViewCheck() | silent! mkview | endif
++    autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
++augroup end
+ 
+ " }}}
+ 
+-" Link filetypes {{{
+-augroup FileTypes
++" Terminal auto insert {{{
++
++augroup orcan_init_vim_terminal
+     autocmd!
+-augroup END
+-" }}}
++    " Start insert when swithing to a terminal
++    autocmd BufWinEnter,WinEnter term://* startinsert
++augroup end
+ 
+ " }}}
++" }}}
+ 
+ 
+ highlight! link Conceal Visual
+@@ -603,4 +749,4 @@ highlight! link Conceal Visual
+ " highlight NonText ctermbg=NONE guibg=NONE
+ " highlight Folded ctermbg=NONE guibg=NONE
+ 
+-" vim: foldmethod=marker
++" vim: foldmethod=marker ft=vim
+diff --git a/.config/sxhkd/sxhkdrc b/.config/sxhkd/sxhkdrc
+index d48118c..7994748 100644
+--- a/.config/sxhkd/sxhkdrc
++++ b/.config/sxhkd/sxhkdrc
+@@ -1,3 +1,5 @@
++# vim: set foldmethod=marker
++
+ #
+ # wm independent hotkeys
+ #
+@@ -14,23 +16,23 @@ super + d
+ 	dmenu_run
+ 
+ # make sxhkd reload its configuration files:
+-super + Escape
+-	pkill -USR1 -x sxhkd
++super + x; super + x
++	pkill -USR1 -x sxhkd && notify-send -u low 'Sxhkd has been reloaded'
+ 
+ 
+ 
+ # lock/shutdown/suspend/reboot
+ 
+ # lock
+-super + x
++super + x; l
+ 	slock
+ 
+ # suspend
+-super + alt + x
++super + x; s
+ 	systemctl suspend
+-	
++
+ # reboot/shutdown with prompt
+-super + {ctrl,shift} + x
++super x; {r, p}
+ 	dmenu-prompt {'Reboot?' reboot, 'Shutdown?' shutdown-now}
+ 
+ 
+@@ -38,19 +40,19 @@ super + {ctrl,shift} + x
+ 
+ 
+ # p
+-super + alt + p
++super grave; equal
+ 	passmenu
+ 
+ # browser
+-super + {_,shift +,alt +} w
+-	$BROWSER {_,--private-window,--new-window web.whatsapp.com}
++super + w; {m,w}
++	$BROWSER {_,--new-window web.whatsapp.com}
+ 
+ # editor
+-super + alt + r
+-	emacscv
++super + r
++	$TERMINAL -e nvim
+ 
+ # music
+-super + alt + s
++super + m
+ 	spotify
+ 
+ # file browser
+@@ -60,65 +62,71 @@ super + e
+ 
+ # system settings
+ 
+-# keyboard layouts
+-super + alt + y
+-	dmenu-keyboard-layout
+-
+-# volume controls
+-{XF86Audio{Raise,Lower}Volume}
+-	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
++# volume controls {{{
+ 
++# unmute and increase or decrease
++XF86Audio{Lower,Raise}Volume
++	pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
++# toggle mute
+ XF86AudioMute
+ 	pactl set-sink-mute @DEFAULT_SINK@ toggle
+ 
++# unmute and increase or decrease ascii
++super + {semicolon,apostrophe}
++	pactl set-sink-mute @DEFAULT_SINK@ 0 && pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
++# toggle mute ascii
++super + backslash
++	pactl set-sink-mute @DEFAULT_SINK@ toggle
++
++# }}}
++
++
+ # media controls
+ XF86Audio{Play,Prev,Next}
+ 	playerctl {play-pause,previous,next}
+-
++# media controls ascii
++super + {p,bracketleft,bracketright}
++	playerctl {play-pause,previous,next}
+ 
+ # brightness controls
+-{XF86MonBrightness{Up,Down}
++XF86MonBrightness{Up,Down}
+ 	light -{A,U} 10
+ 
+-# system monitor
+-super + grave
+-	$TERMINAL -e tmux-persist terminal
+-
+ # toggle panel
+-super + alt + 0
++super + grave; shift + 0
+ 	{xdo hide -a nanel; bspc config top_padding 0,xdo show -a nanel; bspc config top_padding 24}
+-	
+-super + alt + ctrl + 0
++
++super + x; p
+ 	{killall nanel > /dev/null 2>&1,nanel &!}
+ 
+ # bluetooth
+-super + alt + 1
++super + x; b
+ 	blueberry
+ 
+ # audio mixer
+-super + alt + 2
++super + x; a
+ 	$TERMINAL -e pulsemixer
+ 
+ # network
+-super + alt + 3
++super + x; n
+ 	$TERMINAL -e nmtui
+ 
+-# screenshot
+-# to clipboard
+-{_,alt +,ctrl +} Print
+-	scrot {_,-u,-s -f} -q 100 -o /tmp/screenshot.png -e 'xclip -selection c -t image/png < $f; notify-send -u low \"Screenshot saved\" \"to clipboard\"'
++# keyboard layouts
++super + x; k
++	dmenu-keyboard-layout
+ 
+-# to file
+-{super,super + alt,super + ctrl} + Print
+-	scrot -q 100 {_,-u,-s -f} ~/pic/screenshot/screenshot-$(date +%F_%T).png -e 'notify-send -u low \"Screenshot saved\" \"$f\"'
+ 
++# screenshot
++# clipboard + file
++super + s; {_,shift} + {s,w,a}
++	screenshot {_,-s} {select,window,all}
+ 
+ #
+ # bspwm hotkeys
+ #
+ 
+-# quit/restart bspwm
+-super + ctrl + {q,r}
++# quit/restart wm
++super + x; {q,w}
+ 	bspc {quit,wm -r}
+ 
+ # close and kill
+@@ -126,28 +134,32 @@ super + {_,shift +} q
+ 	bspc node -{c,k}
+ 
+ # alternate between the tiled and monocle layout
+-super + m
++super + b; l
+ 	bspc desktop -l next
+ 
++# rotate nodes
++super + b; r
++    bspc node @parent -R 90
++
+ # send the newest marked node to the newest preselected node
+-super + ctrl + y
+-	bspc node newest.marked.local -n newest.!automatic.local
++# super + ctrl + y
++#	bspc node newest.marked.local -n newest.!automatic.local
+ 
+ # swap the current node and the biggest node
+-super + g
+-	bspc node -s biggest
++# super + g
++#	bspc node -s biggest
+ 
+ #
+ # state/flags
+ #
+ 
+ # set the window state
+-super + {t,shift + t,s,f}
+-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
++super + t
++	bspc node -t {floating,fullscreen,tiled,pseudo_tiled}
+ 
+ # set the node flags
+-super + {m,a,y,z}
+-	bspc node -g {marked,locked,sticky,private}
++# super + {m,a,y,z}
++#	bspc node -g {marked,locked,sticky,private}
+ 
+ #
+ # focus/swap
+@@ -161,10 +173,10 @@ super + l
+ 
+ # TODO Change switching to moving
+ super + shift + h
+-	bspc node -s west || bspc node --to-monitor --follow west 
++	bspc node -s west || bspc node --to-monitor --follow west
+ 
+ super + shift + l
+-	bspc node -s east || bspc node --to-monitor --follow east 
++	bspc node -s east || bspc node --to-monitor --follow east
+ 
+ super + j
+ 	bspc node -f south || bspc monitor -f south
+@@ -180,7 +192,7 @@ super + shift + k
+ 	bspc node -s north || bspc node --to-monitor --follow north 
+ 
+ # focus the node for the given path jump
+-super + {p,b,comma,period}
++super + b; {p,b,comma,period}
+ 	bspc node -f @{parent,brother,first,second}
+ 
+ # focus the next/previous node in the current desktop
+@@ -188,7 +200,7 @@ super + {_,shift + }c
+ 	bspc node -f {next,prev}.local
+ 
+ # focus the next/previous desktop in the current monitor
+-super + bracket{left,right}
++super + {period,comma}
+ 	bspc desktop -f {prev,next}.local
+ 
+ # focus the last node/desktop
+@@ -245,5 +257,5 @@ super + {Left,Down,Up,Right}
+ #
+ # display
+ #
+-super + {minus,equal}
+-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
++#super + {minus,equal}
++#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 2 ))
+diff --git a/.config/syncthing/config.xml b/.config/syncthing/config.xml
+index 0439f3b..2a32a83 100644
+--- a/.config/syncthing/config.xml
++++ b/.config/syncthing/config.xml
+@@ -1,4 +1,4 @@
+-<configuration version="29">
++<configuration version="30">
+     <folder id="3wltl-wyxkx" label="doc" path="/home/orcan/doc" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+         <filesystemType>basic</filesystemType>
+         <device id="BEZTLIF-E3H4UF4-PY5IRYL-ZTQ2SKW-IQ4JEWL-QASAA4L-2PNRUVE-VFOVJQS" introducedBy=""></device>
+@@ -161,6 +161,54 @@
+         <copyOwnershipFromParent>false</copyOwnershipFromParent>
+         <modTimeWindowS>0</modTimeWindowS>
+     </folder>
++    <folder id="qxggx-9jlux" label="note" path="/home/orcan/note" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
++        <filesystemType>basic</filesystemType>
++        <device id="BEZTLIF-E3H4UF4-PY5IRYL-ZTQ2SKW-IQ4JEWL-QASAA4L-2PNRUVE-VFOVJQS" introducedBy=""></device>
++        <device id="YYRMB47-IAK37UD-7HBFDED-FSRHU7M-BRLXDIH-HD6LDBI-PDUUCA2-B76VPAB" introducedBy=""></device>
++        <minDiskFree unit="%">1</minDiskFree>
++        <versioning type="simple">
++            <param key="keep" val="10"></param>
++        </versioning>
++        <copiers>0</copiers>
++        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
++        <hashers>0</hashers>
++        <order>random</order>
++        <ignoreDelete>false</ignoreDelete>
++        <scanProgressIntervalS>0</scanProgressIntervalS>
++        <pullerPauseS>0</pullerPauseS>
++        <maxConflicts>10</maxConflicts>
++        <disableSparseFiles>false</disableSparseFiles>
++        <disableTempIndexes>false</disableTempIndexes>
++        <paused>false</paused>
++        <weakHashThresholdPct>25</weakHashThresholdPct>
++        <markerName>.stfolder</markerName>
++        <copyOwnershipFromParent>false</copyOwnershipFromParent>
++        <modTimeWindowS>0</modTimeWindowS>
++    </folder>
++    <folder id="tefsv-96xuy" label="senior-project" path="/home/orcan/prod/senior-project" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
++        <filesystemType>basic</filesystemType>
++        <device id="BEZTLIF-E3H4UF4-PY5IRYL-ZTQ2SKW-IQ4JEWL-QASAA4L-2PNRUVE-VFOVJQS" introducedBy=""></device>
++        <device id="YYRMB47-IAK37UD-7HBFDED-FSRHU7M-BRLXDIH-HD6LDBI-PDUUCA2-B76VPAB" introducedBy=""></device>
++        <minDiskFree unit="%">1</minDiskFree>
++        <versioning type="trashcan">
++            <param key="cleanoutDays" val="15"></param>
++        </versioning>
++        <copiers>0</copiers>
++        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
++        <hashers>0</hashers>
++        <order>random</order>
++        <ignoreDelete>false</ignoreDelete>
++        <scanProgressIntervalS>0</scanProgressIntervalS>
++        <pullerPauseS>0</pullerPauseS>
++        <maxConflicts>10</maxConflicts>
++        <disableSparseFiles>false</disableSparseFiles>
++        <disableTempIndexes>false</disableTempIndexes>
++        <paused>false</paused>
++        <weakHashThresholdPct>25</weakHashThresholdPct>
++        <markerName>.stfolder</markerName>
++        <copyOwnershipFromParent>false</copyOwnershipFromParent>
++        <modTimeWindowS>0</modTimeWindowS>
++    </folder>
+     <folder id="zk755-xo4ed" label="backup/signal" path="/home/orcan/.backup/signal" type="receiveonly" rescanIntervalS="24400" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+         <filesystemType>basic</filesystemType>
+         <device id="BEZTLIF-E3H4UF4-PY5IRYL-ZTQ2SKW-IQ4JEWL-QASAA4L-2PNRUVE-VFOVJQS" introducedBy=""></device>
+@@ -244,11 +292,13 @@
+         <trafficClass>0</trafficClass>
+         <defaultFolderPath>~</defaultFolderPath>
+         <setLowPriority>true</setLowPriority>
+-        <maxConcurrentScans>0</maxConcurrentScans>
++        <maxFolderConcurrency>0</maxFolderConcurrency>
+         <crashReportingURL>https://crash.syncthing.net/newcrash</crashReportingURL>
+         <crashReportingEnabled>true</crashReportingEnabled>
+         <stunKeepaliveStartS>180</stunKeepaliveStartS>
+         <stunKeepaliveMinS>20</stunKeepaliveMinS>
+         <stunServer>default</stunServer>
++        <databaseTuning>auto</databaseTuning>
++        <maxConcurrentIncomingRequestKiB>0</maxConcurrentIncomingRequestKiB>
+     </options>
+ </configuration>
+diff --git a/.config/tmux/tmux.conf b/.config/tmux/tmux.conf
+old mode 100755
+new mode 100644
+index 38c9b9c..a759e52
+--- a/.config/tmux/tmux.conf
++++ b/.config/tmux/tmux.conf
+@@ -1,38 +1,42 @@
++# Environment Variables {{{
++
+ set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.local/share/tmux/plugins'
+ 
+-# 0 is too far from ` ;)
++# Environment Variables }}}
++
++# Settings {{{
++
+ set -g base-index 1
+ setw -g pane-base-index 1
+ 
+-setw -g window-status-current-format ' #W '
+-setw -g window-status-format ' #W '
+-
++# Crucial!
+ set -g prefix C-space
+-bind C-space last-pane
+-bind space last-window
+ 
+ # Customizing status
+ set -g status-interval 10
+-set -g status-keys vi
+ 
+ # Automatically set window title
+ set-window-option -g automatic-rename on
+ set -g renumber-windows on
+ 
++set -g detach-on-destroy on
++
+ set-option -g set-titles on
+ # set-option -t term set-titles off
+ 
+ # set set-titles-string "$TERMINAL"
+ 
++# Enable mouse mode (tmux 2.1 and above)
++set -g mouse on
++
+ set -g default-terminal 'tmux-256color'
+ set -ga terminal-overrides ",st-256color:Tc"
+ 
+-
+ # History
+ set -g history-limit 50000
+ set -sg history-file "~/.local/share/tmux/history"
+ 
+-set -g display-time 1500
++set -g display-time 3000
+ 
+ # focus events enabled for terminals that support them
+ set -g focus-events on
+@@ -45,6 +49,20 @@ set -g set-clipboard external
+ setw -g mode-keys vi
+ setw -g monitor-activity off
+ 
++# No delay for escape key press
++set -sg escape-time 0
++
++# }}}
++
++# Bindings {{{
++
++#
++# I want tmux to be as close as possible to vim!
++#
++
++bind C-space last-pane
++bind space last-window
++
+ # bind P paste-buffer
+ bind -T copy-mode-vi v send-keys -X begin-selection
+ bind -T copy-mode-vi y send-keys -X copy-selection
+@@ -54,13 +72,19 @@ bind -r C-s split-window -v
+ bind v split-window -h
+ bind -r C-v split-window -h
+ 
+-bind -r C-t next-layout
++bind -r r next-layout
++bind -r R next-layout
++bind -r C-R next-layout
++bind -r C-r next-layout
+ 
+ bind -r - resize-pane -D 5
+ bind -r + resize-pane -U 5
+ bind -r < resize-pane -L 5
+ bind -r > resize-pane -R 5
+ 
++bind _ resize-pane -Z
++bind | resize-pane -Z
++
+ # bind -n C-M-j resize-pane -D 5
+ # bind -n C-M-k resize-pane -U 5
+ # bind -n C-M-h resize-pane -L 5
+@@ -109,12 +133,14 @@ bind Right select-pane -R
+ bind Up select-pane -U
+ bind Down select-pane -D
+ 
+-bind -r C-p previous-window
+-bind -r C-n next-window
+-bind -r C-i last-window 
+-
+ bind t clock-mode
+ 
++bind -r , previous-window
++bind -r . next-window
++bind -r C-6 last-window 
++
++# bind t clock-mode
++
+ bind M-= set-option status off
+ bind M-\- set-option status on
+ 
+@@ -133,11 +159,8 @@ bind R command-prompt -I "#S" "rename-session -- '%%'"
+ 
+ bind p paste
+ 
+-# Enable mouse mode (tmux 2.1 and above)
+-set -g mouse on
+ bind -T root MouseUp2Pane paste
+ 
+-
+ # Persist the selection!
+ unbind -T copy-mode-vi MouseDragEnd1Pane
+ 
+@@ -187,34 +210,44 @@ bind -T root WheelDownPane \
+ 	'if-shell -t= "#{?alternate_on,true,false} || echo \"#{tmux_commands_with_legacy_scroll}\" | grep -q \"#{pane_current_command}\"" \
+ 	    "send -t= Down" "send -Mt="'
+ 
+-# No delay for escape key press
+-set -sg escape-time 0
+-
+ # Reload tmux config
+-bind insert source-file ~/.config/tmux/tmux.conf \; display 'Configuration reloaded'
++bind ` source-file ~/.config/tmux/tmux.conf \; display 'Configuration reloaded'
++
++# Bindings }}}
++
++# Style {{{
++
++setw -g window-status-current-format ' #W '
++setw -g window-status-format ' #W '
+ 
+-# THEME
+ set -g status-style fg=colour7,bg=colour8,bold 
+-setw -g window-status-current-style fg=black,bg=colour2,bold
+-setw -g window-status-style fg=colour2,bg=default
++setw -g window-status-current-style fg=black,bg=colour4,bold
++setw -g window-status-style fg=colour4,bg=default,nobold
+ 
+ # Selection colors
+ set -wg mode-style bg=colour8,fg=white
+ 
+-set -g message-style bg=colour6,fg=colour0,bold
++set -g message-style bg=colour4,fg=colour0,bold
+ 
+ # pane border
+ set -g pane-border-style fg=colour8  
+-set -g pane-active-border-style fg=colour2
++set -g pane-active-border-style fg=colour4
+ 
+ setw -g clock-mode-colour colour6
+ 
++set -g @prefix_highlight_fg 'black' # default is 'colour231'
++set -g @prefix_highlight_bg 'colour10'  # default is 'colour04'
++
+ # set -g status-interval 60
+ set -g status-left-length 30
+-set -g status-left '  #[fg=colour6,bold]#S  #{prefix_highlight}'
+-set -g status-right '   '
++set -g status-left '  #[fg=colour2,bold]#S  #{prefix_highlight}  '
++set -g status-right ''
+ set -g status-justify right
+ 
++# }}}
++
++# Plugins {{{
++
+ # List of plugins
+ set -g @plugin 'tmux-plugins/tpm'
+ # set -g @plugin 'tmux-plugins/tmux-sensible'
+@@ -258,4 +291,6 @@ set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+ # # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+ run '~/.local/share/tmux/plugins/tpm/tpm'
+ 
+-# # vim foldmethod=marker
++# Plugins }}}
++
++# vim: foldmethod=marker
+diff --git a/.config/zathura/zathurarc b/.config/zathura/zathurarc
+index 6af29cd..3df4af9 100755
+--- a/.config/zathura/zathurarc
++++ b/.config/zathura/zathurarc
+@@ -2,7 +2,7 @@ set selection-clipboard clipboard
+ set font "JetBrainsMono Nerd Font 10"
+ 
+ set recolor                     "false"
+-set recolor-keephue             "true"
++set recolor-keephue             "false"
+ 
+ set statusbar-h-padding		0
+ set statusbar-v-padding		0
+@@ -24,17 +24,17 @@ map d scroll half-down
+ 
+ map ` mark_evaluate
+ map t toggle_page_mode
+-map r reload
+-map R rotate
++map <C-l> reload
++map r rotate
+ map = zoom in
++map + zoom default
+ map i recolor
+ map p print
+ 
+ 
+ # set guioptions none
+-# window-title-basename "true"
+ 
+-# # Base16 Tomorrow Night 
++# # Base16 Tomorrow Night {{{
+ # # Author: Chris Kempson (http://chriskempson.com)
+ # 
+ # set default-bg                  "#1d1f21"
+@@ -70,17 +70,19 @@ map p print
+ # set recolor                     "false"
+ # set recolor-keephue             "false"
+ 
+-# Base16 Classic Dark
++# }}}
++
++# Base16 Classic Dark {{{
+ # Author: Jason Heeris (http://heeris.id.au)
+ 
+ set default-bg                  "#1e2541"
+ set default-fg                  "#eeffff"
+ 
+-set statusbar-bg                "#1e2541"
+-set statusbar-fg                "#eeffff"
++set statusbar-bg                "#011627"
++set statusbar-fg                "#d6deeb"
+ 
+-set inputbar-bg                 "#2a335a"
+-set inputbar-fg                 "#eeffff"
++set inputbar-bg                 "#062844"
++set inputbar-fg                 "#d6deeb"
+ 
+ set notification-bg             "#151515"
+ set notification-fg             "#F5F5F5"
+@@ -113,3 +115,50 @@ set completion-group-fg     "#eeffff"
+ set recolor-lightcolor          "#1e2521"
+ set recolor-darkcolor           "#eeffff"
+ 
++# }}}
++
++# Night-owl {{{
++
++set default-bg                  "#011627"
++set default-fg                  "#d6deeb"
++
++set statusbar-bg                "#062844"
++set statusbar-fg                "#d6deeb"
++
++set inputbar-bg                 "#011627"
++set inputbar-fg                 "#d6deeb"
++
++set notification-bg             "#062844"
++set notification-fg             "#d6deeb"
++
++set notification-error-bg       "#ef5350"
++set notification-error-fg       "#ffffff"
++
++set notification-warning-bg     "#addb67"
++set notification-warning-fg     "#ffffff"
++
++set highlight-color             "#7fdbca"
++set highlight-active-color      "#6A9FB5"
++
++set completion-bg               "#011627"
++set completion-fg               "#d6deeb"
++
++set completion-highlight-bg     "#7fdeca"
++set completion-highlight-fg     "#011627"
++
++set completion-group-bg     "#062844"
++set completion-group-fg     "#d6deeb"
++
++# set tabbar-fg
++# set tabbar-bg
++
++# set tabbar-focus-bg
++# set tabbar-focus-bg
++
++
++set recolor-lightcolor          "#011627"
++set recolor-darkcolor           "#d6deeb"
++
++# }}}
++
++# vim: foldmethod=marker
+diff --git a/.config/zsh/.zshrc b/.config/zsh/.zshrc
+index 00f6f60..a998604 100644
+--- a/.config/zsh/.zshrc
++++ b/.config/zsh/.zshrc
+@@ -20,11 +20,11 @@ setopt share_history
+ # When searching for history entries in the line editor, do not display duplicates of a line previously found.
+ setopt hist_find_no_dups      
+ # Avoid duplication when adding a new command.
+-setopt hist_ignore_all_dups   
++# setopt hist_ignore_all_dups   
+ # If you run the same command multiple times in a row, only add it to the history once.
+-setopt hist_ignore_dups
++# setopt hist_ignore_dups
+ # Trim duplicated commands from the history before trimming unique commands.
+-setopt hist_expire_dups_first
++# setopt hist_expire_dups_first
+ # Remove command lines from the history list when the first character on the line is a space.
+ setopt hist_ignore_space      
+ # When writing out the history file, older commands that duplicate newer ones are omitted.
+@@ -115,13 +115,12 @@ bindkey -v '^?' backward-delete-char
+ 
+ # export KEYTIMEOUT=1
+ 
++# }}}
++
+ # Autosuggestions {{{
+ 
+-# export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+-# export ZSH_AUTOSUGGEST_USE_ASYNC=1
+-# export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=''
+-# export ZSH_AUTOSUGGEST_CLEAR_WIDGETS='vi-next-char'
+-# bindkey '^ ' autosuggest-accept
++export ZSH_AUTOSUGGEST_AUTOSUGGEST_STRATEGY=('match_prev_cmd', 'completion')
++bindkey '^Y' autosuggest-accept
+ 
+ # }}}
+ 
+@@ -147,6 +146,7 @@ bindkey '\C-e' edit-command-line
+ 
+ # }}}
+ 
++
+ # non-modal history {{{
+ bindkey -v '\C-p' history-search-backward
+ bindkey -v '\C-n' history-search-forward
+@@ -218,8 +218,12 @@ bindkey -v
+ 
+ alias ls="ls --color=auto"
+ 
++alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
++
+ alias reload="source $ZDOTDIR/.zshrc"
+ 
++alias fzf="fzf --color=16"
++
+ alias vim="nvim"
+ 
+ alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -hr | head -25"
+@@ -242,7 +246,7 @@ alias dwmconfig="$EDITOR ~/.local/lib/dwm/config.h"
+ alias surfconfig="$EDITOR ~/.local/lib/surf/config.h"
+ alias i3config="$EDITOR $XDG_CONFIG_HOME/i3/config"
+ alias i3blocksconfig="$EDITOR $XDG_CONFIG_HOME/i3blocks/config"
+-alias tmuxconfig="$EDITOR ~/.tmux/tmux.conf"
++alias tmuxconfig="$EDITOR ~/.tmux.conf"
+ alias roficonfig="$EDITOR $XDG_CONFIG_HOME/rofi/config"
+ alias dunstconfig="$EDITOR $XDG_CONFIG_HOME/dunst/dunstrc"
+ alias comptonconfig="$EDITOR $XDG_CONFIG_HOME/compton/compton.conf"
+@@ -271,9 +275,9 @@ alias makedmenu="sudo make -C $DMENU_HOME -f $DMENU_HOME/Makefile install"
+ # }}}
+ 
+ # Todo
+-alias todo="$EDITOR ~/doc/note/todo.txt"
+-alias t="todo.sh"
+-alias quick="$EDITOR ~/doc/note/quick.org"
++alias todo="$EDITOR $TODO"
++alias quick="$EDITOR $QUICK"
++alias calendar="$EDITOR $CALENDAR"
+ 
+ alias git-dotfiles='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
+ # }}}
+@@ -286,7 +290,7 @@ function mkcd {
+ }
+ 
+ function mkx {
+-  echo "#!/usr/bin/env sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
++  echo "#!/bin/sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
+ }
+ 
+ function dotsave {
+diff --git a/.config/zsh/zplug/packages.zsh b/.config/zsh/zplug/packages.zsh
+index 584c8cc..eedc80c 100644
+--- a/.config/zsh/zplug/packages.zsh
++++ b/.config/zsh/zplug/packages.zsh
+@@ -18,7 +18,7 @@ zplug "mengelbrecht/slimline"
+ zplug "zdharma/fast-syntax-highlighting", defer:2
+ # zplug "zsh-users/zsh-syntax-highlighting", from:github
+ 
+-zplug "zpm-zsh/ls"
++# zplug "zpm-zsh/ls"
+ 
+ zplug "plugins/colored-man-pages", from:oh-my-zsh
+ 
+@@ -36,7 +36,7 @@ export KEYTIMEOUT=1
+ 
+ # Aliases and completions {{{
+ 
+-# zplug "zsh-users/zsh-autosuggestions", defer:3
++zplug "zsh-users/zsh-autosuggestions", defer:3
+ 
+ zplug "hlissner/zsh-autopair", defer:2
+ 
+@@ -46,8 +46,6 @@ zplug "hschne/fzf-git"
+ 
+ zplug "mdumitru/git-aliases" 
+ 
+-zplug "MichaelAquilina/zsh-you-should-use"
+-
+ zplug "srijanshetty/zsh-pandoc-completion", lazy:true
+ 
+ zplug "akoenig/npm-run.plugin.zsh", lazy:true
+@@ -62,13 +60,9 @@ zplug "plugins/docker", from:oh-my-zsh, lazy:true
+ 
+ zplug "plugins/tmux", from:oh-my-zsh
+ 
+-zplug "plugins/extract", from:oh-my-zsh
+-
+ zplug "kutsan/zsh-system-clipboard"
+ 
+-# zplug "plugins/pipenv", from:oh-my-zsh, lazy:true
+-
+-zplug "soimort/translate-shell"
++zplug "plugins/pipenv", from:oh-my-zsh
+ 
+ # }}}
+ 
+diff --git a/.emacs.d/config.org b/.emacs.d/config.org
+deleted file mode 100644
+index dca6751..0000000
+--- a/.emacs.d/config.org
++++ /dev/null
+@@ -1,1009 +0,0 @@
+-#+TITLE: normacs
+-#+DESCRIPTION: A well documented configuration file for emacs. Powered by Org.
+-#+AUTHOR: nacro90
+-#+DATE: [2019-12-08 Sun]
+-#+TODO: EXPLAIN CONFIGURE FIX(f/@) DONE
+-#+STARTUP: indent
+-
+-Productivity comes from habit. If you feel that your habit is pulling
+-you back, then its time to get new shiny tools to build new shiny
+-habits onto.
+-
+-
+-* Setup
+-
+-** Editing this file must be easy!
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(defun find-config ()
+-  "Edit config.org"
+-  (interactive)
+-  (find-file "~/.emacs.d/config.org"))
+-
+-  (global-set-key (kbd "C-c I") 'find-config)
+-
+-#+END_SRC
+-
+-
+-
+-** Package sources
+-
+-Add repositories from which we'll load packages. I prefer to live on
+-the bleeding edge so have only enabled melpa. Setting
+-=package-enable-at-startup= to =nil= prevents a second package load
+-and slightly improves startup time.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (custom-set-variables 
+-   '(package-enable-at-startup nil)
+-   '(package-archives '(("gnu" . "http://mirrors.163.com/elpa/gnu/")
+-                        ("melpa" . "https://melpa.org/packages/")
+-                        ("org" . "http://orgmode.org/elpa/"))))
+-
+-#+END_SRC
+-
+-
+-** Initialize ~use-package~
+-
+-#+BEGIN_QUOTE
+-The ~use-package~ macro allows you to isolate package configuration in
+-your .emacs file in a way that is both performance-oriented and, well,
+-tidy. I created it because I have over 80 packages that I use in
+-Emacs, and things were getting difficult to manage. Yet with this
+-utility my total load time is around 2 seconds, with no loss of
+-functionality!
+-#+END_QUOTE
+-
+-If ~use-package~ is not installed, install it.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (unless (package-installed-p 'use-package)
+-    (package-refresh-contents)
+-    (package-install 'use-package)
+-    (eval-when-compile (require 'use-package)))
+-
+-#+END_SRC
+-
+-By default all packages should be installed from package manager as
+-that's the usual path. This is equivalent to setting ~:ensure t~ on
+-each call to ~use-package~. To disable set ~:ensure nil~ (this is done
+-automatically for any packages using ~:load-path~ so shouldn't
+-generally be needed).
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-value 'use-package-always-ensure t)
+-
+-#+END_SRC
+-
+-
+-* Appearance
+-
+-** Themes
+-
+-*** Night Owl
+-
+-I want something blue...
+-   
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package night-owl-theme
+-  :config
+-  (load-theme 'night-owl t))
+-
+-#+END_SRC
+-
+-
+-*** Solarized
+-
+-Solarized is my favorite colorscheme for once.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package solarized-theme
+-  :disabled
+-  :config
+-  (load-theme 'solarized-light t))
+-
+-#+END_SRC
+-
+-
+-
+-** CONFIGURE Focus mode via ~darkroom~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (defun toggle-numbers-depending-on-global-status ()
+-    "Toggles the display line number mode depending on global display line numbers"
+-    (if global-display-line-numbers-mode 
+-        (if display-line-numbers-mode 	
+-            (display-line-numbers-mode 0)  
+-            (display-line-numbers-mode 1))))
+-
+-
+-      (use-package darkroom
+-        :config
+-        (add-hook 'darkroom-mode-hook 'toggle-numbers-depending-on-global-status) ; Configure hook to hide line numbers
+-        (add-hook 'darkroom-tentative-mode-hook 'toggle-numbers-depending-on-global-status)) ; Configure hook to hide line numbers
+-
+-#+END_SRC
+-
+-
+-** Disable unnecessary elements
+-
+-- Disable startup screen
+-
+-  #+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-value 'inhibit-startup-screen t)
+-  
+-  #+END_SRC
+-  
+-- Disable scroll bar
+-  
+-  #+BEGIN_SRC emacs-lisp :results output silent
+-  
+-  (customize-set-variable 'scroll-bar-mode nil)
+-  
+-  #+END_SRC
+-  
+-- Disable menu bar
+-  
+-  #+BEGIN_SRC emacs-lisp :results output silent
+-    
+-  (customize-set-variable 'menu-bar-mode nil)
+-    
+-  #+END_SRC
+-  
+-- Disable tool bar
+-  
+-  #+BEGIN_SRC emacs-lisp :results output silent
+-  
+-  (customize-set-variable 'tool-bar-mode nil)
+-  
+-  #+END_SRC
+-  
+-
+-
+-** EXPLAIN Line numbers
+-
+-Line numbers, especially relative line numbers are crucial for my
+-development environment.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (custom-set-variables
+-   '(display-line-numbers-width 1)
+-   '(display-line-numbers-grow-only t)
+-   '(display-line-numbers-widen nil)
+-   '(display-line-numbers-width-start nil)
+-   '(display-line-numbers-type 'visual))
+-
+-  (global-display-line-numbers-mode)
+-
+-#+END_SRC
+-
+-
+-
+-** Highlight current line
+-
+-Highlighting the current line prevents me to lose focus on the cursor
+-and also helps me to track cursor while changing windows.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (global-hl-line-mode t)
+-
+-#+END_SRC
+-
+-
+-
+-** Font
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(add-to-list 'default-frame-alist '(font . "mononoki Nerd Font-12"))
+-
+-#+END_SRC
+-
+-
+-
+-** Show other paren
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(show-paren-mode t)
+-
+-#+END_SRC
+-
+-
+-
+-** Make prompts shorter
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(defalias 'yes-or-no-p 'y-or-n-p)
+-
+-#+END_SRC
+-
+-
+-** Indent guides
+-
+-Indent guides makes buffers easier to read.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package indent-guide
+-    :disabled
+-    :custom
+-    (indent-guide-delay 0.1)      ; Delay makes delay the guide update to idle
+-    :config
+-    (indent-guide-global-mode))
+-
+-#+END_SRC
+-
+-
+-** Beacon
+-
+-Beacon shines your point when changing between buffers.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package beacon
+-    :custom
+-    (beacon-color "#5881d8")
+-    :config
+-    (beacon-mode t))
+-
+-#+END_SRC
+- 
+-
+-** Smooth scroll
+-
+-This package offers a global minor mode which make emacs scroll
+-smoothly.  It keeps the point away from the top and bottom of the
+-current buffer's window in order to keep lines of context around the
+-point visible as much as possible, whilst minimising the frequency of
+-sudden scroll jumps which are visually confusing.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package smooth-scrolling
+-    :config
+-    (smooth-scrolling-mode 1))
+-
+-#+END_SRC
+-
+-
+-** Better Modeline
+-
+-~doom-modeline~ is my first pic of modelines.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package doom-modeline
+-    :hook (after-init . doom-modeline-mode))
+-
+-#+END_SRC
+-
+-
+-
+-** Highlight ~TODO~ comment
+-
+-Highlighting ~TODO~ items in comments is very useful in my workflow.
+-
+-~global-hl-todo-mode~ function is not working. So I added a hook to
+-every buffer change to enable it buffer-local for every buffer.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package hl-todo
+-    :config 
+-    (global-hl-todo-mode))
+-
+-#+END_SRC
+-
+-
+-
+-
+-** EXPLAIN Wrapping
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (global-visual-line-mode t)
+-
+-#+END_SRC
+-
+-
+-
+-* Files
+-
+-** Backup files and versioning
+-
+-~#filename#~ and ~filename~~ files drive me crazy. This centralises
+-the backup files created as I edit.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (custom-set-variables 
+-   '(backup-directory-alist '(("." . ,(concat user-emacs-directory "backup"))))
+-   '(save-place-file (concat user-emacs-directory "places"))
+-   '(backup-by-copying t)    ; Don't delink hardlinks
+-   '(version-control t)      ; Use version numbers on backups
+-   '(delete-old-versions t)  ; Automatically delete excess backups
+-   '(kept-new-versions 20)   ; how many of the newest versions to keep
+-   '(kept-old-versions 5))   ; and how many of the old
+-
+-#+END_SRC
+-
+-
+-
+-** Recent files
+-
+-~recent-mode~ is very powerful package for recent files.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-    (custom-set-variables 
+-     '(recentf-mode t)
+-     '(recentf-max-menu-items 50)
+-     '(recentf-max-saved-items 50))
+-
+-  (add-to-list 'recentf-exclude (expand-file-name "~/.emacs.d/elpa/.*"))
+-
+-#+END_SRC
+-
+-
+-** Save point places
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package saveplace
+-    :custom
+-    (save-place-mode t "Enable save place mode"))
+-
+-#+END_SRC
+-
+-
+-
+-** Uniquify buffer names style
+-
+-Same file names in different folders must be distinguishable to human
+-eye without loosing information. Emacs solves this problem with
+-different styles.
+-
+-| forward                     | ~bar/mumble/name~         | ~quux/mumble/name~         |
+-| reverse                     | ~name\mumble\bar~         | ~name\mumble\quux~         |
+-| post-forward                | ~name~ \vert ~bar/mumble~ | ~name~ \vert ~quux/mumble~ |
+-| post-forward-angle-brackets | ~name<bar/mumble>~        | ~name<quux/mumble>~        |
+-| nil                         | ~name~                    | ~name<2>~                  |
+-
+-I am setting this to ~forward~ which is provided in [[https://github.com/technomancy/better-defaults/blob/master/better-defaults.el][better defaults]].
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-variable 'uniquify-buffer-name-style 'forward)
+-
+-#+END_SRC
+-
+-
+-* Global keybindings
+-
+-** ~DEL~ \rightarrow ~C-h~
+-
+-Backspace key is hard to reach. I swapped it with ~C-h~ which also
+-backward deletes a char in all shells.
+-
+-Also I swapped ~M-<DEL>~ to ~M-h~.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(global-set-key (kbd "C-?") 'help-command)
+-(global-set-key (kbd "M-?") 'mark-paragraph)
+-(global-set-key (kbd "C-h") 'delete-backward-char)
+-(global-set-key (kbd "M-h") 'backward-kill-word)
+-  
+-#+END_SRC
+-
+-*[[https://www.emacswiki.org/emacs/BackspaceKey][This does not work on Linux Mint.]]*
+-
+-
+-** CONFIGURE ~C-S-i~ \rightarrow ~S-Tab~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-
+-
+-#+END_SRC
+-
+-
+-** EXPLAIN ~mwim~
+-  
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package mwim
+-    :bind (("C-a" . mwim-beginning-of-code-or-line-or-comment)
+-           ("C-e" . mwim-end-of-code-or-line)))
+-
+-#+END_SRC
+-
+-
+-** ~C-w~ to kill word
+-
+-In default shells ~C-w~ kills the word. 
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (defun normacs/backward-kill-word-or-region (&optional arg)
+-    "Calls `kill-region' when a region is active and
+-  `backward-kill-word' otherwise. ARG is passed to
+-  `backward-kill-word' if no region is active."
+-    (interactive "p")
+-    (if (region-active-p)
+-        ;; call interactively so kill-region handles rectangular selection
+-        ;; correctly (see https://github.com/syl20bnr/spacemacs/issues/3278)
+-        (call-interactively #'kill-region)
+-      (backward-kill-word arg)))
+-
+-#+END_SRC
+-
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (global-set-key (kbd "C-w") 'normacs/backward-kill-word-or-region)
+-
+-#+END_SRC
+-
+-
+-** Buffer list to ~ibuffer~
+-
+-~ibuffer~ is interactive buffer list extended on default buffer
+-list. It is listed in [[https://github.com/technomancy/better-defaults/blob/master/better-defaults.el][better defaults package]].
+-
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  ;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+-
+-#+END_SRC
+-
+-*** Updates
+-
+-**** <2019-12-28 Sat>
+-
+-Looks like evil does not work in ibuffer. So it is disabled now.
+-
+-
+-** CONFIGURE Regex search by default
+-
+-
+-
+-
+-* Major Modes
+-
+-** Markdown
+-
+-Markdown has different implementations like /Github Flavoured
+-Markdown/, /CommonMark/ etc.
+-
+-If file is ~README.md~ file. It is highly probable that the file is
+-for /GitHub/ or /Gitlab/.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-
+-  (use-package markdown-mode
+-    :commands (markdown-mode gfm-mode)
+-    :mode (("README\\.md\\'" . gfm-mode)
+-           ("\\.md\\'" . markdown-mode)
+-           ("\\.markdown\\'" . markdown-mode))
+-    :init 
+-    (customize-set-variable 'markdown-command "multimarkdown"))
+-
+-#+END_SRC
+-
+-
+-** Yaml
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package yaml-mode)
+-
+-#+END_SRC
+-
+-
+-** CSV
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package csv-mode)
+-
+-#+END_SRC
+-
+-
+-** CONFIGURE EPUB
+-
+-- Continious reading
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package nov)
+-
+-#+END_SRC
+-
+-
+-** ~sxhkd~
+-
+-~sxhkd~ is a /Simple X Hotkey Keyboard Deamon/. Its capabilities are
+-beyond any kind of window manager.
+-
+-There is no major mode custom package for configuration files for
+-~sxhkd~ (~sxhkdrc~). But according to [[https://www.reddit.com/r/emacs/comments/6fqj80/is_there_a_sxhkdrc_mode/dik7wn1?utm_source=share&utm_medium=web2x][this]] helpful reddit post it is
+-easy to create in emacs.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (define-generic-mode sxhkd-mode
+-    '(?#)
+-    '("alt" "Escape" "super" "ctrl" "space" "shift")
+-    nil
+-    '("sxhkdrc")
+-    nil
+-    "Simple mode for sxhkdrc files.")
+-
+-#+END_SRC
+-
+-
+-** Sh
+-
+-*** Sh files must be executable to do something useful!
+-
+-  ~executable-make-buffer-file-executable-if-script-p~ function have
+-  been created for this purpose. It makes the file executable
+-  depending on it needs to be executable via /first line bang/
+-  notation in script files. This function added ~after-save-hook~.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package sh-script
+-    :config
+-    (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p))
+-
+-#+END_SRC
+-
+-*** Company for shell development
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package company-shell)
+-
+-#+END_SRC
+-
+-
+-** JSON
+-
+-#+BEGIN_SRC emacs-lisp
+-
+-  (use-package json-mode)
+-
+-#+END_SRC
+-
+-
+-** Todo Txt
+-
+-#+BEGIN_SRC emacs-lisp
+-
+-  (use-package todotxt-mode)
+-
+-#+END_SRC
+-
+-* Tools
+-
+-** ~helm~
+-
+-~helm~ is extremely powerful narrowing application like ~fzf~ in
+-vim. It has some drop-in replacement functions like ~recentf~, ~M-x~,
+-~find-files~.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package helm
+-    :custom 
+-    (helm-allow-mouse t)
+-    :bind (("C-x C-r" . helm-mini)
+-           ("C-x b" . helm-mini)
+-           ("M-x" . helm-M-x)
+-           ("C-x C-f" . helm-find-files)
+-           ("M-s o" . helm-occur)
+-           :map helm-find-files-map
+-           ("C-w" . helm-find-files-up-one-level))
+-    :config
+-    (helm-mode t))
+-
+-#+END_SRC
+-
+-
+-
+-
+-** ~which-key~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package which-key 
+-    :config 
+-    (which-key-mode t))
+-
+-#+END_SRC
+-
+-
+-** ~undo-tree~
+-
+-~undo-tree~ package visualizes undo history as a tree for easy
+-navigation.
+-
+-I am using ~C-/~ to undo. Appearently ~C-x /~ is a good fit for this
+-package.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package undo-tree
+-  :bind ("C-x /" . undo-tree-visualize)
+-  :diminish undo-tree-mode
+-  :config
+-  (global-undo-tree-mode t))
+-
+-#+END_SRC
+-
+-
+-** Company
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package company
+-    :hook (after-init . global-company-mode))
+-
+-#+END_SRC
+-
+-
+-
+-** CONFIGURE Multiple cursors
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package multiple-cursors)
+-
+-#+END_SRC
+-
+-
+-** CONFIGURE ~projectile~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package projectile)
+-
+-#+END_SRC
+-
+-
+-
+-** CONFIGURE ~expand-region~ 
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package expand-region)
+-
+-#+END_SRC
+-
+-
+-** ~zzz-to-char~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package zzz-to-char
+-    :config
+-    (global-set-key (kbd "M-z") #'zzz-to-char))
+-
+-#+END_SRC
+-
+-** ~regex-tools~
+-
+-~regex-tools~ is very useful tool to evaluate the regular expressions
+-and monitoring their captures and results. In case you don't know
+-Regex drop everything and start to learn it right now. You can thank
+-me later
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package regex-tool)
+-
+-#+END_SRC
+-
+-** Git
+-
+-*** ~magit~
+-
+-Magit is an awesome interface to git. Summon it with `C-x g`.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package magit
+-  :bind ("C-x g" . magit-status))
+-
+-#+END_SRC
+-
+-
+-*** ~git-gutter~
+-
+-Display line changes in gutter based on git history. Enable it everywhere.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package git-gutter
+-  :config
+-  (global-git-gutter-mode 't)
+-  :diminish git-gutter-mode)
+-
+-#+END_SRC
+-
+-
+-*** ~git-timemachine~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package git-timemachine)
+-
+-#+END_SRC
+-
+-
+-* EXPLAIN Evil
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package evil
+-    :config
+-    (evil-mode 1)
+-    (customize-set-variable 'evil-want-C-u-scroll t)
+-
+-    (use-package evil-surround
+-      :config
+-      (global-evil-surround-mode))
+-
+-    (use-package evil-org
+-      :hook (org-mode . evil-org-mode))
+-
+-    (use-package evil-exchange
+-      :config
+-      (evil-exchange-install))
+-
+-    (use-package evil-replace-with-register
+-      :config
+-      (evil-replace-with-register-install))
+-
+-    (use-package evil-indent-textobject)
+-
+-    (use-package evil-textobj-entire)
+-
+-    (use-package evil-better-visual-line
+-      :config
+-      (evil-better-visual-line-on))
+-
+-    (use-package evil-vimish-fold
+-      :config
+-      (evil-vimish-fold-mode t))
+-
+-    (use-package evil-numbers
+-      :bind (:map evil-normal-state-map
+-             ("C-c +" . evil-numbers/inc-at-pt)
+-             ("C-c -" . evil-numbers/dec-at-pt)
+-             :map evil-visual-state-map
+-             ("C-c +" . evil-numbers/inc-at-pt)
+-             ("C-c -" . evil-numbers/dec-at-pt))))
+-
+-    (use-package evil-args
+-      :bind (:map evil-inner-text-objects-map
+-             ("a" . evil-inner-arg)
+-             :map evil-outer-text-objects-map
+-             ("a" . evil-outer-arg)
+-             :map evil-normal-state-map
+-             ("L" . evil-forward-arg)
+-             ("H" . evil-backward-arg)
+-             ("K" . evil-jump-out-args)
+-             :map evil-motion-state-map
+-             ("L" . evil-forward-arg)
+-             ("H" . evil-backward-arg)))
+-
+-#+END_SRC
+-
+-
+-* Org
+-
+-** Setup
+-
+-*** Default location of Org files
+-
+-Directory with Org files.
+-This is just a default location to look for Org files.  There is no need
+-at all to put your files into this directory.  It is used in the
+-following situations:
+-
+-- When a capture template specifies a target file that is not an
+-  absolute path.  The path will then be interpreted relative to
+-  ‘org-directory’
+-- When the value of variable ‘org-agenda-files’ is a single file, any
+-  relative paths in this file will be taken as relative to
+-  ‘org-directory’.
+-
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-variable 'org-directory "~/doc/org")
+-
+-#+END_SRC
+-
+-
+-*** CONFIGURE Shortcut to org directory
+-
+-
+-*** Quick notes
+-
+-Default target for storing notes.
+-
+-Used as a fall back file for org-capture.el, for templates that do not
+-specify a target file.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-variable 'org-default-notes-file (concat org-directory "/quick.org"))
+-
+-#+END_SRC
+-
+-
+-
+-*** TODO Dependencies
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (customize-set-variable 'org-enforce-todo-dependencies t)
+-
+-#+END_SRC
+-
+-
+-*** Property inheritance
+-
+-Org mode does not turn this on by default, because it can slow down
+-property searches significantly and is often not needed.
+-
+-#+BEGIN_SRC emacs-lisp
+-
+-(customize-set-variable 'org-use-property-inheritance t)
+-
+-#+END_SRC
+-
+-*** Agenda
+-
+-#+BEGIN_SRC emacs-lisp
+-  (customize-set-variable 'org-agenda-files (list "~/doc/org"))
+-#+END_SRC
+-
+-** Appearance
+-
+-*** Special bullet characters
+-
+-Improve the display of bullet points.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-  (use-package org-bullets
+-    :config 
+-    (customize-set-variable 'org-bullets-bullet-list '("∙"))
+-    (add-hook 'org-mode-hook 'org-bullets-mode))
+-
+-#+END_SRC
+-
+-
+-
+-** Hooks
+-
+-*** Disable auto-completion
+-
+-#+BEGIN_SRC emacs-lisp
+-  (defun normacs/org-mode-hook ()
+-    (company-mode -1))
+-  (add-hook 'org-mode-hook 'normacs/org-mode-hook)
+-#+END_SRC
+-
+-#+RESULTS:
+-| normacs/org-mode-hook | org-bullets-mode | evil-org-mode | er/add-org-mode-expansions | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-block-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
+-
+-*** CONFIGURE Disable indent guides
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-
+-
+-#+END_SRC
+-
+-
+-** Writing
+-
+-*** Disable splitting when ~M-RET~  
+-
+-When this command is used in the middle of a line, the line is split
+-and the rest of the line becomes the new headline. In order to prevent
+-splitting, the option is used below.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(customize-set-variable 'org-M-RET-may-split-line '(default . nil))
+-
+-#+END_SRC
+-
+-
+-*** Special Ctrl A/E
+-
+-Non-nil means ~C-a~ and ~C-e~ behave specially in headlines and items
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(customize-set-variable 'org-special-ctrl-a/e t)
+-
+-#+END_SRC
+-
+-
+-*** Native tab in source blocks
+-
+-If non-nil, the effect of TAB in a code block is as if it issued in
+-the language major mode buffer.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(setq org-src-tab-acts-natively t)
+-
+-#+END_SRC  
+-
+-
+-*** Startup indented by default
+-
+-Org does not need indented text below headers. However sometimes
+-indentation helps to track the text in crowded header
+-soup. Nevertheless it is extra processing for the machine. So the
+-~org-indent-mode~ should be used manually to prevent slow Org
+-experience.
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(setq org-startup-indented 'f)
+-
+-#+END_SRC
+-
+-
+-
+-
+-** Export
+-
+-*** ~htmlize~
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package htmlize)
+-
+-#+END_SRC
+-
+-
+-
+-
+-* MISC
+-
+-** Fireplace
+-
+-Even emacs needs to be warm...
+-
+-#+BEGIN_SRC emacs-lisp :results output silent
+-
+-(use-package fireplace)
+-
+-#+END_SRC
+-
+-#+RESULTS:
+diff --git a/.gitconfig b/.gitconfig
+deleted file mode 100644
+index bf93cb9..0000000
+--- a/.gitconfig
++++ /dev/null
+@@ -1,8 +0,0 @@
+-[user]
+-	email = orcan.tiryakioglu@gmail.com
+-	name = Orcan Tiryakioglu
+-[filesystem "N/A|13|/dev/mapper/crypthome"]
+-	timestampResolution = 6000 nanoseconds
+-	minRacyThreshold = 5859 microseconds
+-[core]
+-	editor = nvim
+diff --git a/.httpie/config.json b/.httpie/config.json
+deleted file mode 100644
+index 986fc2f..0000000
+--- a/.httpie/config.json
++++ /dev/null
+@@ -1,8 +0,0 @@
+-{
+-    "__meta__": {
+-        "about": "HTTPie configuration file",
+-        "help": "https://httpie.org/doc#config",
+-        "httpie": "1.0.3"
+-    },
+-    "default_options": []
+-}
+diff --git a/.local/bin/nanel/nanel b/.local/bin/nanel/nanel
+index 90c757f..6fae251 100755
+--- a/.local/bin/nanel/nanel
++++ b/.local/bin/nanel/nanel
+@@ -1,6 +1,7 @@
+ #!/bin/sh
+ 
+-export PANEL_NAME="$(basename $0)"
++PANEL_NAME="$(basename "$0")"
++export PANEL_NAME
+ 
+ #
+ # System
+@@ -34,11 +35,11 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+ mkfifo "$PANEL_FIFO"
+ 
+ 
+-while read block upd_type upd_val; do
++while read -r block upd_type upd_val; do
+ 
+     # Ignore comments
+     if [ "$block" != "${block#\#}" ] || [ -z "${block#\#}" ]; then
+-	continue
++        continue
+     fi
+ 
+     block_executable="$PROJECT_BLOCK_ROOT/$block"
+@@ -54,22 +55,22 @@ while read block upd_type upd_val; do
+ 	    while true; do
+ 		echo "$block"
+ 		sleep "$upd_val"
+-	    done > $PANEL_FIFO &
++	    done > "$PANEL_FIFO" &
+ 	    ;;
+ 	
+ 	'pace')
+-	    echo "$block" > $PANEL_FIFO &
+-	    sh -c "$upd_val" | while read line; do
++	    echo "$block" > "$PANEL_FIFO" &
++	    sh -c "$upd_val" | while read -r line; do
+ 		echo "$block"
+-	    done > $PANEL_FIFO &
++	    done > "$PANEL_FIFO" &
+ 	    ;;
+ 
+ 	'once')
+-	    echo "$block" > $PANEL_FIFO &
++	    echo "$block" > "$PANEL_FIFO" &
+ 	    ;;
+ 	
+ 	'signal') # TODO 
+-	    trap "$executable" "$upd_val" > $PANEL_FIFO &
++	    trap "$executable" "$upd_val" > "$PANEL_FIFO" &
+ 	    ;;
+ 
+ 	'repeat')
+@@ -80,14 +81,14 @@ while read block upd_type upd_val; do
+ 
+ 	*)
+     esac
+-done < $BLOCK_CONFIG
++done < "$BLOCK_CONFIG"
+ 
+ # bspc subscribe report > "$PANEL_FIFO" &
+ 
+ . $PROJECT_CONF_ROOT/colors
+ . $PROJECT_CONF_ROOT/visual
+ 
+-$PROJECT_EXEC_ROOT/fifo-parser < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh > /dev/null 2>&1 &
++"$PROJECT_EXEC_ROOT/fifo-parser" < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh > /dev/null 2>&1 &
+ 
+ # Adjust X layer order
+ panel_ids=($(xdo id -m -a "$PANEL_WM_NAME"))
+diff --git a/.local/bin/setup-screens b/.local/bin/setup-screens
+index 70f5b34..73ae157 100755
+--- a/.local/bin/setup-screens
++++ b/.local/bin/setup-screens
+@@ -1,22 +1,27 @@
+ #!/usr/bin/env sh
+ 
+-# set -x 
++SCREENLAYOUT_BIN=$HOME/.local/bin/screenlayout
+ 
+ monitors="$(xrandr)"
+-dp_exists="$(echo "$monitors" | grep -c "^DP[1-9] connected")"
+-hdmi_exists="$(echo "$monitors" | grep -c "^HDMI[1-9] connected")"
++dpx_result="$(echo "$monitors" | grep -A1 '^DP[1-9] connected')"
++dpx_not_exists=$? # Return code of 'dpx_result'
++hdmi_result="$(echo "$monitors" | grep -A1 '^HDMI[1-9] connected')"
++hdmi_not_exists=$? # Return code of 'dpx_result'
+ 
+-if [ "$dp_exists" -eq '1' ] && [ "$hdmi_exists" -eq '1' ]; then
+-  ~/.screenlayout/holy-home.sh
+-elif [ "$dp_exists" -eq '1' ]; then
+-  ~/.screenlayout/home-topbottom.sh
+-  notify-send "WTF?"
+-elif [ "$hdmi_exists" -eq '1' ]; then
+-  ~/.screenlayout/work-topbottom.sh
++if [ "$dpx_not_exists" -eq '0' ] && [ "$hdmi_not_exists" -eq '0' ]; then
++  "$SCREENLAYOUT_BIN/holy-home.sh"
++elif [ "$dpx_not_exists" -eq '0' ]; then
++  if [ "$(echo $dpx_result | grep -c 1920)" -eq 1 ]; then
++    "$SCREENLAYOUT_BIN/work-topbottom.sh"
++  fi
++elif [ "$hdmi_not_exists" -eq '0' ]; then
++  "$SCREENLAYOUT_BIN/work-topbottom.sh"
+ else
+-  ~/.screenlayout/laptop.sh
++  "$SCREENLAYOUT_BIN/laptop.sh"
+ fi
+ 
+ ~/.local/bin/init-compton
+ ~/.local/bin/configure-wallpaper
+ ~/.local/bin/init-xautolock
++kill -USR1 -x sxhkd
++
+diff --git a/.profile b/.profile
+index 6442d24..cabaadf 100644
+--- a/.profile
++++ b/.profile
+@@ -6,37 +6,57 @@
+ 
+ # set PATH so it includes user's private bin recuresively if it exists
+ if [ -d "$HOME/.local/bin" ]; then
+-  PATH="$(find $HOME/.local/bin -type d | tr '\n' ':')$PATH"
++  PATH="$(find "$HOME/.local/bin" -type d | tr '\n' ':')$PATH"
+ fi
+ 
+ export XDG_CONFIG_HOME="$HOME/.config"
+ export XDG_DATA_HOME="$HOME/.local/share"
+ export XDG_CACHE_HOME="$HOME/.cache/"
+ 
+-export DWM_HOME='/home/orcan/.local/lib/dwm'
+-export SURF_HOME='/home/orcan/.local/lib/surf'
+-export ST_HOME='/home/orcan/.local/lib/st'
+-export DMENU_HOME='/home/orcan/.local/lib/dmenu'
++export DWM_HOME="$HOME/.local/lib/dwm"
++export SURF_HOME="$HOME/.local/lib/surf"
++export ST_HOME="$HOME/.local/lib/st"
++export DMENU_HOME="$HOME/.local/lib/dmenu"
+ export VIM_HOME="$XDG_CONFIG_HOME/nvim"
+ 
+ export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+ 
++export HISTFILE="$XDG_DATA_HOME/bash/history"
++
++export CARGO_HOME="$XDG_DATA_HOME/cargo"
++
++export NVM_DIR="$XDG_DATA_HOME/nvm"
++
++export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc" 
++
++export PYLINTHOME="$XDG_CACHE_HOME/pylint"
++
++export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME/httpie"
++
++export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
++
++export IPYTHONDIR="$XDG_CONFIG_HOME/jupyter"
++export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
++
++export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
++
++export GNUPGHOME="$XDG_DATA_HOME/gnupg"
++
+ # Java home
+ export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+ export PATH=${PATH}:${JAVA_HOME}/bin
+ 
+-export PASSWORD_STORE_DIR=$HOME/.pass/pass
+-
+ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig
+ 
+ export EDITOR='nvim'
+ 
+ 
+-export FZF_DEFAULT_COMMAND='find . -not -path "*/.git/*" 2>/dev/null'
++# export FZF_DEFAULT_COMMAND='find . -not -path "*/.git/*" 2>/dev/null'
+ export FZF_TMUX=1
++export FZF_DEFAULT_OPTS='--color=16 --bind=ctrl-b:page-up --bind=ctrl-f:page-down --bind=ctrl-u:half-page-up --bind=ctrl-d:half-page-down --preview='\''pistol {}'\''
+ 
+ export DOTFILES_REPO="$HOME/.dot"
+ 
+-export TODO="$HOME/doc/note/todo.txt"
+-export QUICK="$HOME/doc/note/quick.txt"
+-export CALENDAR="$HOME/doc/note/calendar"
++export TODO="$HOME/note/todo.txt"
++export QUICK="$HOME/note/quick.md"
++export CALENDAR="$HOME/note/calendar"
+diff --git a/.screenlayout/holy-home.sh b/.screenlayout/holy-home.sh
+deleted file mode 100755
+index 25e1d6d..0000000
+--- a/.screenlayout/holy-home.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+-xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --mode 1280x1024 --pos 1920x56 --rotate normal --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
+diff --git a/.screenlayout/home-topbottom-wide.sh b/.screenlayout/home-topbottom-wide.sh
+deleted file mode 100755
+index 2c63af9..0000000
+--- a/.screenlayout/home-topbottom-wide.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+-xrandr --output eDP1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+diff --git a/.screenlayout/home-topbottom.sh b/.screenlayout/home-topbottom.sh
+deleted file mode 100755
+index b1ed0fe..0000000
+--- a/.screenlayout/home-topbottom.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+-xrandr --output eDP1 --mode 1920x1080 --pos 0x1229 --rotate normal --output DP1 --primary --mode 1280x1024 --pos 142x0 --scale 1.2 --rotate normal --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+diff --git a/.screenlayout/laptop.sh b/.screenlayout/laptop.sh
+deleted file mode 100755
+index 7b02dbf..0000000
+--- a/.screenlayout/laptop.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+-xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off
+diff --git a/.screenlayout/work-topbottom.sh b/.screenlayout/work-topbottom.sh
+deleted file mode 100755
+index 0961166..0000000
+--- a/.screenlayout/work-topbottom.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+-xrandr --output eDP1 --mode 1920x1080 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output VIRTUAL1 --off
+diff --git a/.vim/.vimrc b/.vim/.vimrc
+deleted file mode 100755
+index 80caee3..0000000
+--- a/.vim/.vimrc
++++ /dev/null
+@@ -1,190 +0,0 @@
+-call plug#begin('~/.local/share/nvim/plugged/')
+-
+-Plug 'chriskempson/base16-vim'
+-
+-" Plug '/usr/local/opt/fzf'
+-Plug 'junegunn/fzf.vim'
+-
+-Plug 'junegunn/goyo.vim'
+-
+-Plug 'mboughaba/i3config.vim'
+-
+-Plug 'itchyny/lightline.vim'
+-
+-Plug 'scrooloose/nerdtree'
+-Plug 'Xuyuanp/nerdtree-git-plugin'
+-
+-Plug 'freitass/todo.txt-vim'
+-
+-
+-Plug 'airblade/vim-gitgutter'
+-
+-Plug 'nathanaelkane/vim-indent-guides'
+-
+-Plug 'plasticboy/vim-markdown'
+-
+-Plug 'vim-pandoc/vim-pandoc'
+-Plug 'vim-pandoc/vim-pandoc-syntax'
+-
+-Plug 'tpope/vim-surround'
+-
+-Plug 'cespare/vim-toml'
+-
+-Plug 'ycm-core/YouCompleteMe'
+-
+-Plug 'starcraftman/vim-eclim'
+-
+-Plug 'tomasr/molokai'
+-Plug 'flazz/vim-colorschemes'
+-
+-Plug 'terryma/vim-multiple-cursors'
+-
+-Plug 'tpope/vim-speeddating'
+-
+-Plug 'tpope/vim-repeat'
+-
+-Plug 'majutsushi/tagbar'
+-
+-Plug 'scrooloose/nerdcommenter'
+-
+-call plug#end()
+-
+-set nocompatible
+-syntax on
+-filetype plugin indent on
+-
+-
+-" execute pathogen#infect()
+-" set rtp+=~/.fzf
+-
+-" set clipboard=unnamed
+-
+-" let g:solarized_termtrans=1
+-" let g:solarized_termcolors=16
+-" let g:solarized_visibility="low"
+-" set t_Co=256
+-set termguicolors "Enable 24 bit color support
+-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+-set background=dark
+-colorscheme base16-tomorrow-night
+-
+-highlight Normal ctermbg=NONE guibg=NONE
+-highlight NonText ctermbg=NONE guibg=NONE
+-
+-
+-hi MatchParen ctermbg=black ctermfg=white
+-
+-"let mapleader = ","
+-nmap <F3> :NERDTreeToggle<CR>
+-nmap <leader>ve :e ~/.vimrc<CR>
+-nmap <leader>vr :source ~/.vimrc<CR>
+-nmap <c-p> :Buffers<CR>
+-nmap <c-n> :Files<CR>
+-nmap [b :bprev<CR>
+-nmap ]b :bnext<CR>
+-nmap <c-q> :YcmCompleter GetDoc<CR>
+-
+-command Q q
+-command W w
+-
+-let python_highlight_all = 1
+-
+-let g:vim_markdown_math=1
+-let g:vim_markdown_frontmatter=1
+-let g:vim_markdown_conceal_code_blocks = 0
+-let g:vim_markdown_strikethrough = 1
+-
+-" Turkish deasciifier
+-let g:turkish_deasciifier_path = 'turkish-deasciify'
+-vmap <leader>tr :<c-u>call Turkish_Deasciify()<CR>
+-vmap <leader>rt :<c-u>call Turkish_Asciify()<CR>
+-
+-set hidden "It hides buffers instead of closing them
+-
+-set title
+-set wildmenu "Visual autocomplete for command menu
+-set wildignore=*.swp,*.bak,*.pyc,*.class "Ignore build and temp files
+-set fileformat=unix
+-set foldlevelstart=10
+-set foldnestmax=10
+-
+-set ignorecase
+-set smartcase
+-set hlsearch
+-set incsearch
+-
+-set number
+-set relativenumber
+-set nowrap
+-
+-set nospell
+-
+-set scrolloff=2
+-set nostartofline
+-
+-set isk+=(,),[,],_,$,@,%,#,- " none word dividers
+-
+-" better backup, swap and undos storage
+-set directory=~/.vim/tmp/swap     " directory to place swap files in
+-set backup                        " make backup files
+-set backupdir=~/.vim/tmp/backup  " where to put backup files
+-set undofile                      " persistent undos - undo after you re-open the file
+-set undodir=~/.vim/tmp/undo
+-set viminfo+=n~/.vim/tmp/info
+-set history=1000
+-set noswapfile
+-
+-" store yankring history file there too
+-let g:yankring_history_dir = '~/.vim/dirs/'
+-
+-" create needed directories if they don't exist
+-if !isdirectory(&backupdir)
+-    call mkdir(&backupdir, "p")
+-endif
+-if !isdirectory(&directory)
+-    call mkdir(&directory, "p")
+-endif
+-if !isdirectory(&undodir)
+-    call mkdir(&undodir, "p")
+-endif
+-
+-let g:ycm_autoclose_preview_window_after_insertion=1
+-
+-" set visualbell
+-set noerrorbells
+-
+-"Lightline
+-set laststatus=2
+-set noshowmode
+-set showcmd
+-set ttimeout ttimeoutlen=30 "For esc delay
+-
+-let g:lightline = {
+-      \ 'colorscheme': 'default',
+-      \ }
+-
+-autocmd Filetype python source ~/.vim/ftplugin/python.vim
+-autocmd Filetype markdown source ~/.vim/ftplugin/markdown.vim
+-autocmd Filetype todo source ~/.vim/ftplugin/todo.vim
+-
+-" mapping to make movements operate on 1 screen line in wrap mode
+-function! ScreenMovement(movement)
+-   if &wrap
+-      return "g" . a:movement
+-   else
+-      return a:movement
+-   endif
+-endfunction
+-onoremap <silent> <expr> j ScreenMovement("j")
+-onoremap <silent> <expr> k ScreenMovement("k")
+-onoremap <silent> <expr> 0 ScreenMovement("0")
+-onoremap <silent> <expr> ^ ScreenMovement("^")
+-onoremap <silent> <expr> $ ScreenMovement("$")
+-nnoremap <silent> <expr> j ScreenMovement("j")
+-nnoremap <silent> <expr> k ScreenMovement("k")
+-nnoremap <silent> <expr> 0 ScreenMovement("0")
+-nnoremap <silent> <expr> ^ ScreenMovement("^")
+-nnoremap <silent> <expr> $ ScreenMovement("$")
+-
+-let $JAVA_TOOL_OPTIONS = '-javaagent:/home/orcan/.local/lib/lombok/lombok.jar -Xbootclasspath/a:/home/orcan/.local/lib/lombok/lombok.jar'
+diff --git a/.vim/ftplugin/java.vim b/.vim/ftplugin/java.vim
+deleted file mode 100755
+index bebd2d9..0000000
+--- a/.vim/ftplugin/java.vim
++++ /dev/null
+@@ -1,9 +0,0 @@
+-filetype indent on
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
+-set shiftwidth=4
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set foldenable "Enable folding
+-setlocal suffixesadd=.java
+diff --git a/.vim/ftplugin/ledger.vim b/.vim/ftplugin/ledger.vim
+deleted file mode 100755
+index 657c7d7..0000000
+--- a/.vim/ftplugin/ledger.vim
++++ /dev/null
+@@ -1,9 +0,0 @@
+-filetype indent off
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set cursorline "Underline current line
+-set colorcolumn=81
+-
+diff --git a/.vim/ftplugin/markdown.vim b/.vim/ftplugin/markdown.vim
+deleted file mode 100755
+index 50b7acc..0000000
+--- a/.vim/ftplugin/markdown.vim
++++ /dev/null
+@@ -1,32 +0,0 @@
+-au! BufRead,BufNewFile *.mkd set filetype=markdown
+-au! BufRead,BufNewFile *.md  set filetype=markdown
+-
+-setlocal autoindent
+-" setlocal nonumber "No line numbers
+-setlocal shiftwidth=2
+-setlocal tabstop=2
+-setlocal expandtab
+-set conceallevel=2
+-
+-set nospell
+-
+-" set list "Display EOL's
+-" set listchars=eol:¬
+-set wrap "Enable the soft wrap
+-set linebreak "Soft wrap by spaces, don't cut word
+-
+-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+-" match OverLength /\%81v.\+/
+-
+-"t -> Autoformat while typing
+-"l -> 
+-"n -> Respect list indentation
+-"q -> Autoformat html comments
+-"r -> Format insert new lines with <Enter>
+-" set formatoptions=tlnqr
+-
+-" For turkish keyboards iI confusion
+-nnoremap ı i
+-
+-"Custom syntaxes
+-syntax match markdownMustache /{{.*}}/
+diff --git a/.vim/ftplugin/pandoc.vim b/.vim/ftplugin/pandoc.vim
+deleted file mode 100644
+index ab4b338..0000000
+--- a/.vim/ftplugin/pandoc.vim
++++ /dev/null
+@@ -1,3 +0,0 @@
+-set nospell
+-set nowrap
+-set foldmethod=manual
+diff --git a/.vim/ftplugin/python.vim b/.vim/ftplugin/python.vim
+deleted file mode 100755
+index 9d5bf5d..0000000
+--- a/.vim/ftplugin/python.vim
++++ /dev/null
+@@ -1,25 +0,0 @@
+-set tabstop=4 "Specifies length of TAB character
+-set softtabstop=4 "Specifies how many spaces is TAB
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set cursorline "Underline current line
+-filetype indent on
+-set foldenable "Enable folding
+-set foldmethod=indent "Setting folding method to indent
+-set autoindent
+-
+-set wrap
+-set linebreak
+-
+-let python_highlight_all = 1
+-
+-" Reformat python file
+-nnoremap <leader>l :w<bar>!black %<CR>
+-" Discover and check the python tests
+-nnoremap <leader>t :w<bar>!python -m unittest discover<CR>
+-nnoremap <leader>r :w<bar>!python %<CR>
+-
+-let b:python_version_2 = 0
+-let &syntax=&syntax
+-
+diff --git a/.vim/ftplugin/sh.vim b/.vim/ftplugin/sh.vim
+deleted file mode 100755
+index abbbf4c..0000000
+--- a/.vim/ftplugin/sh.vim
++++ /dev/null
+@@ -1,12 +0,0 @@
+-filetype indent on
+-set tabstop=2 "Specifies length of TAB character
+-set softtabstop=2 "Specifies how many spaces is TAB
+-set shiftwidth=2
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set cursorline "Underline current line
+-set foldenable "Enable folding
+-set foldmethod=indent "Setting folding method to indent
+-set autoindent
+-set nowrap
+diff --git a/.vim/ftplugin/todo.vim b/.vim/ftplugin/todo.vim
+deleted file mode 100755
+index 1d9602e..0000000
+--- a/.vim/ftplugin/todo.vim
++++ /dev/null
+@@ -1 +0,0 @@
+-" colorscheme hashpunk
+diff --git a/.vim/ftplugin/zsh.vim b/.vim/ftplugin/zsh.vim
+deleted file mode 100644
+index abbbf4c..0000000
+--- a/.vim/ftplugin/zsh.vim
++++ /dev/null
+@@ -1,12 +0,0 @@
+-filetype indent on
+-set tabstop=2 "Specifies length of TAB character
+-set softtabstop=2 "Specifies how many spaces is TAB
+-set shiftwidth=2
+-set expandtab "Tabs becomes spaces
+-set number "Set line numbers
+-set showcmd "Show command in bottom bar
+-set cursorline "Underline current line
+-set foldenable "Enable folding
+-set foldmethod=indent "Setting folding method to indent
+-set autoindent
+-set nowrap
+diff --git a/.vim/syntax/python.vim b/.vim/syntax/python.vim
+deleted file mode 100755
+index 2e8c48a..0000000
+--- a/.vim/syntax/python.vim
++++ /dev/null
+@@ -1,576 +0,0 @@
+-" Vim syntax file
+-" Language:     Python
+-" Maintainer:   Dmitry Vasiliev <dima at hlabs dot org>
+-" URL:          https://github.com/hdima/python-syntax
+-" Last Change:  2013-11-18
+-" Filenames:    *.py
+-" Version:      3.3.6
+-"
+-" Based on python.vim (from Vim 6.1 distribution)
+-" by Neil Schemenauer <nas at python dot ca>
+-"
+-" Please use the following channels for reporting bugs, offering suggestions or
+-" feedback:
+-
+-" - python.vim issue tracker: https://github.com/hdima/python-syntax/issues
+-" - Email: Dmitry Vasiliev (dima at hlabs.org)
+-" - Send a message or follow me for updates on Twitter: `@hdima
+-"   <https://twitter.com/hdima>`__
+-"
+-" Contributors
+-" ============
+-"
+-" List of the contributors in alphabetical order:
+-"
+-"   Andrea Riciputi
+-"   Anton Butanaev
+-"   Caleb Adamantine
+-"   Elizabeth Myers
+-"   Jeroen Ruigrok van der Werven
+-"   John Eikenberry
+-"   Marc Weber
+-"   Pedro Algarvio
+-"   pydave at GitHub
+-"   Will Gray
+-"   Yuri Habrusiev
+-"
+-" Options
+-" =======
+-"
+-"    :let OPTION_NAME = 1                   Enable option
+-"    :let OPTION_NAME = 0                   Disable option
+-"
+-"
+-" Option to select Python version
+-" -------------------------------
+-"
+-"    python_version_2                       Enable highlighting for Python 2
+-"                                           (Python 3 highlighting is enabled
+-"                                           by default). Can also be set as
+-"                                           a buffer (b:python_version_2)
+-"                                           variable.
+-"
+-"    You can also use the following local to buffer commands to switch
+-"    between two highlighting modes:
+-"
+-"    :Python2Syntax                         Switch to Python 2 highlighting
+-"                                           mode
+-"    :Python3Syntax                         Switch to Python 3 highlighting
+-"                                           mode
+-"
+-" Option names used by the script
+-" -------------------------------
+-"
+-"    python_highlight_builtins              Highlight builtin functions and
+-"                                           objects
+-"      python_highlight_builtin_objs        Highlight builtin objects only
+-"      python_highlight_builtin_funcs       Highlight builtin functions only
+-"    python_highlight_exceptions            Highlight standard exceptions
+-"    python_highlight_string_formatting     Highlight % string formatting
+-"    python_highlight_string_format         Highlight str.format syntax
+-"    python_highlight_string_templates      Highlight string.Template syntax
+-"    python_highlight_indent_errors         Highlight indentation errors
+-"    python_highlight_space_errors          Highlight trailing spaces
+-"    python_highlight_doctests              Highlight doc-tests
+-"    python_print_as_function               Highlight 'print' statement as
+-"                                           function for Python 2
+-"    python_highlight_file_headers_as_comments
+-"                                           Highlight shebang and coding
+-"                                           headers as comments
+-"
+-"    python_highlight_all                   Enable all the options above
+-"                                           NOTE: This option don't override
+-"                                           any previously set options
+-"
+-"    python_slow_sync                       Can be set to 0 for slow machines
+-"
+-
+-" For version 5.x: Clear all syntax items
+-" For versions greater than 6.x: Quit when a syntax file was already loaded
+-if version < 600
+-  syntax clear
+-elseif exists("b:current_syntax")
+-  finish
+-endif
+-
+-"
+-" Commands
+-"
+-command! -buffer Python2Syntax let b:python_version_2 = 1 | let &syntax=&syntax
+-command! -buffer Python3Syntax let b:python_version_2 = 0 | let &syntax=&syntax
+-
+-" Enable option if it's not defined
+-function! s:EnableByDefault(name)
+-  if !exists(a:name)
+-    let {a:name} = 1
+-  endif
+-endfunction
+-
+-" Check if option is enabled
+-function! s:Enabled(name)
+-  return exists(a:name) && {a:name}
+-endfunction
+-
+-" Is it Python 2 syntax?
+-function! s:Python2Syntax()
+-  if exists("b:python_version_2")
+-      return b:python_version_2
+-  endif
+-  return s:Enabled("g:python_version_2")
+-endfunction
+-
+-"
+-" Default options
+-"
+-
+-call s:EnableByDefault("g:python_slow_sync")
+-
+-if s:Enabled("g:python_highlight_all")
+-  call s:EnableByDefault("g:python_highlight_builtins")
+-  if s:Enabled("g:python_highlight_builtins")
+-    call s:EnableByDefault("g:python_highlight_builtin_objs")
+-    call s:EnableByDefault("g:python_highlight_builtin_funcs")
+-  endif
+-  call s:EnableByDefault("g:python_highlight_exceptions")
+-  call s:EnableByDefault("g:python_highlight_string_formatting")
+-  call s:EnableByDefault("g:python_highlight_string_format")
+-  call s:EnableByDefault("g:python_highlight_string_templates")
+-  call s:EnableByDefault("g:python_highlight_indent_errors")
+-  call s:EnableByDefault("g:python_highlight_space_errors")
+-  call s:EnableByDefault("g:python_highlight_doctests")
+-  call s:EnableByDefault("g:python_print_as_function")
+-endif
+-
+-"
+-" Keywords
+-"
+-
+-syn keyword pythonStatement     break continue del
+-syn keyword pythonStatement     exec return
+-syn keyword pythonStatement     pass raise
+-syn keyword pythonStatement     global assert
+-syn keyword pythonStatement     lambda
+-syn keyword pythonStatement     with
+-syn keyword pythonStatement     def class nextgroup=pythonFunction skipwhite
+-syn keyword pythonRepeat        for while
+-syn keyword pythonConditional   if elif else
+-syn keyword pythonImport        import
+-syn keyword pythonException     try except finally
+-syn keyword pythonOperator      and in is not or
+-syn keyword pythonIgnore 	_
+-
+-syn match	pythonBracket	"[()]"
+-syn match	pythonBraces	"[{}]"
+-syn match	pythonComma	","
+-syn match	pythonOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
+-syn match	pythonOperator	"<<\|>>\|&\||\|++\|--\|->"
+-syn match	pythonOperator	"[!~*&%<>^|=+-]"
+-syn match	pythonOperator	"/[^/*=]"
+-syn match	pythonOperator	"/$"
+-syn match	pythonOperator	"&&\|||"
+-" syn match	pythonArgument	"(\([_a-zA-Z0-9, ]*[ =]*["_,\w\d\s+-\*/\.]*\)*)" contains=pythonString,pythonBracket,pythonOperator,pythonNumber,pythonComma
+-
+-
+-" syn match pythonOperator "\%(+\|-\|\*\|/\|\*\*\|//\|<\|>\|-=\|/=\|\*\*=\|\*=\|&&=\|&=\|&&\|||=\||=\|||\|%=\|+=\|!\~\|!=\|=\)"
+-
+-syn match pythonStatement   "\<yield\>" display
+-syn match pythonImport      "\<from\>" display
+-
+-if s:Python2Syntax()
+-  if !s:Enabled("g:python_print_as_function")
+-    syn keyword pythonStatement  print
+-  endif
+-  syn keyword pythonImport      as
+-  syn match   pythonFunction    "[a-zA-Z_][a-zA-Z0-9_]*" display contained
+-else
+-  syn keyword pythonStatement   as nonlocal None
+-  syn match   pythonStatement   "\<yield\s\+from\>" display
+-  syn keyword pythonBoolean     True False
+-  syn match   pythonFunction    "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
+-endif
+-
+-"
+-" Decorators (new in Python 2.4)
+-"
+-
+-syn match   pythonDecorator	"@" display nextgroup=pythonDottedName skipwhite
+-syn match   pythonDottedName "[a-zA-Z_][a-zA-Z0-9_]*\%(\.[a-zA-Z_][a-zA-Z0-9_]*\)*" display contained
+-syn match   pythonDot        "\." display containedin=pythonDottedName
+-syn match   pythonComma        "," display
+-syn match   pythonColon        ":" display
+-
+-"
+-" Comments
+-"
+-
+-syn match   pythonComment	"#.*$" display contains=pythonTodo,@Spell
+-if !s:Enabled("g:python_highlight_file_headers_as_comments")
+-  syn match   pythonRun		"\%^#!.*$"
+-  syn match   pythonCoding	"\%^.*\%(\n.*\)\?#.*coding[:=]\s*[0-9A-Za-z-_.]\+.*$"
+-endif
+-syn keyword pythonTodo		TODO FIXME XXX contained
+-
+-"
+-" Errors
+-"
+-
+-syn match pythonError		"\<\d\+\D\+\>" display
+-syn match pythonError		"[$?]" display
+-syn match pythonError		"[&|]\{2,}" display
+-syn match pythonError		"[=]\{3,}" display
+-
+-" Mixing spaces and tabs also may be used for pretty formatting multiline
+-" statements
+-if s:Enabled("g:python_highlight_indent_errors")
+-  syn match pythonIndentError	"^\s*\%( \t\|\t \)\s*\S"me=e-1 display
+-endif
+-
+-" Trailing space errors
+-if s:Enabled("g:python_highlight_space_errors")
+-  syn match pythonSpaceError	"\s\+$" display
+-endif
+-
+-"
+-" Strings
+-"
+-
+-if s:Python2Syntax()
+-  " Python 2 strings
+-  syn region pythonString   start=+[bB]\='+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonString   start=+[bB]\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonString   start=+[bB]\="""+ end=+"""+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonString   start=+[bB]\='''+ end=+'''+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest,pythonSpaceError,@Spell
+-else
+-  " Python 3 byte strings
+-  syn region pythonBytes		start=+[bB]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonBytesError,pythonBytesContent,@Spell
+-  syn region pythonBytes		start=+[bB]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonBytesError,pythonBytesContent,@Spell
+-  syn region pythonBytes		start=+[bB]"""+ end=+"""+ keepend contains=pythonBytesError,pythonBytesContent,pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonBytes		start=+[bB]'''+ end=+'''+ keepend contains=pythonBytesError,pythonBytesContent,pythonDocTest,pythonSpaceError,@Spell
+-
+-  syn match pythonBytesError    ".\+" display contained
+-  syn match pythonBytesContent  "[\u0000-\u00ff]\+" display contained contains=pythonBytesEscape,pythonBytesEscapeError
+-endif
+-
+-syn match pythonBytesEscape       +\\[abfnrtv'"\\]+ display contained
+-syn match pythonBytesEscape       "\\\o\o\=\o\=" display contained
+-syn match pythonBytesEscapeError  "\\\o\{,2}[89]" display contained
+-syn match pythonBytesEscape       "\\x\x\{2}" display contained
+-syn match pythonBytesEscapeError  "\\x\x\=\X" display contained
+-syn match pythonBytesEscape       "\\$"
+-
+-syn match pythonUniEscape         "\\u\x\{4}" display contained
+-syn match pythonUniEscapeError    "\\u\x\{,3}\X" display contained
+-syn match pythonUniEscape         "\\U\x\{8}" display contained
+-syn match pythonUniEscapeError    "\\U\x\{,7}\X" display contained
+-syn match pythonUniEscape         "\\N{[A-Z ]\+}" display contained
+-syn match pythonUniEscapeError    "\\N{[^A-Z ]\+}" display contained
+-
+-if s:Python2Syntax()
+-  " Python 2 Unicode strings
+-  syn region pythonUniString  start=+[uU]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonUniString  start=+[uU]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonUniString  start=+[uU]"""+ end=+"""+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonUniString  start=+[uU]'''+ end=+'''+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest,pythonSpaceError,@Spell
+-else
+-  " Python 3 strings
+-  syn region pythonString   start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonString   start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,@Spell
+-  syn region pythonString   start=+"""+ end=+"""+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonString   start=+'''+ end=+'''+ keepend contains=pythonBytesEscape,pythonBytesEscapeError,pythonUniEscape,pythonUniEscapeError,pythonDocTest,pythonSpaceError,@Spell
+-endif
+-
+-if s:Python2Syntax()
+-  " Python 2 Unicode raw strings
+-  syn region pythonUniRawString start=+[uU][rR]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonRawEscape,pythonUniRawEscape,pythonUniRawEscapeError,@Spell
+-  syn region pythonUniRawString start=+[uU][rR]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonRawEscape,pythonUniRawEscape,pythonUniRawEscapeError,@Spell
+-  syn region pythonUniRawString start=+[uU][rR]"""+ end=+"""+ keepend contains=pythonUniRawEscape,pythonUniRawEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonUniRawString start=+[uU][rR]'''+ end=+'''+ keepend contains=pythonUniRawEscape,pythonUniRawEscapeError,pythonDocTest,pythonSpaceError,@Spell
+-
+-  syn match  pythonUniRawEscape       "\([^\\]\(\\\\\)*\)\@<=\\u\x\{4}" display contained
+-  syn match  pythonUniRawEscapeError  "\([^\\]\(\\\\\)*\)\@<=\\u\x\{,3}\X" display contained
+-endif
+-
+-" Python 2/3 raw strings
+-if s:Python2Syntax()
+-  syn region pythonRawString  start=+[bB]\=[rR]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawString  start=+[bB]\=[rR]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawString  start=+[bB]\=[rR]"""+ end=+"""+ keepend contains=pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonRawString  start=+[bB]\=[rR]'''+ end=+'''+ keepend contains=pythonDocTest,pythonSpaceError,@Spell
+-else
+-  syn region pythonRawString  start=+[rR]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawString  start=+[rR]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawString  start=+[rR]"""+ end=+"""+ keepend contains=pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonRawString  start=+[rR]'''+ end=+'''+ keepend contains=pythonDocTest,pythonSpaceError,@Spell
+-
+-  syn region pythonRawBytes  start=+[bB][rR]'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawBytes  start=+[bB][rR]"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonRawEscape,@Spell
+-  syn region pythonRawBytes  start=+[bB][rR]"""+ end=+"""+ keepend contains=pythonDocTest2,pythonSpaceError,@Spell
+-  syn region pythonRawBytes  start=+[bB][rR]'''+ end=+'''+ keepend contains=pythonDocTest,pythonSpaceError,@Spell
+-endif
+-
+-syn match pythonRawEscape +\\['"]+ display transparent contained
+-
+-if s:Enabled("g:python_highlight_string_formatting")
+-  " % operator string formatting
+-  if s:Python2Syntax()
+-    syn match pythonStrFormatting	"%\%(([^)]\+)\)\=[-#0 +]*\d*\%(\.\d\+\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-    syn match pythonStrFormatting	"%[-#0 +]*\%(\*\|\d\+\)\=\%(\.\%(\*\|\d\+\)\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-  else
+-    syn match pythonStrFormatting	"%\%(([^)]\+)\)\=[-#0 +]*\d*\%(\.\d\+\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonRawString
+-    syn match pythonStrFormatting	"%[-#0 +]*\%(\*\|\d\+\)\=\%(\.\%(\*\|\d\+\)\)\=[hlL]\=[diouxXeEfFgGcrs%]" contained containedin=pythonString,pythonRawString
+-  endif
+-endif
+-
+-if s:Enabled("g:python_highlight_string_format")
+-  " str.format syntax
+-  if s:Python2Syntax()
+-    syn match pythonStrFormat "{{\|}}" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-    syn match pythonStrFormat	"{\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)\=\%(\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\[\%(\d\+\|[^!:\}]\+\)\]\)*\%(![rsa]\)\=\%(:\%({\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)}\|\%([^}]\=[<>=^]\)\=[ +-]\=#\=0\=\d*,\=\%(\.\d\+\)\=[bcdeEfFgGnosxX%]\=\)\=\)\=}" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-  else
+-    syn match pythonStrFormat "{{\|}}" contained containedin=pythonString,pythonRawString
+-    syn match pythonStrFormat	"{\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)\=\%(\.\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\[\%(\d\+\|[^!:\}]\+\)\]\)*\%(![rsa]\)\=\%(:\%({\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)}\|\%([^}]\=[<>=^]\)\=[ +-]\=#\=0\=\d*,\=\%(\.\d\+\)\=[bcdeEfFgGnosxX%]\=\)\=\)\=}" contained containedin=pythonString,pythonRawString
+-  endif
+-endif
+-
+-if s:Enabled("g:python_highlight_string_templates")
+-  " string.Template format
+-  if s:Python2Syntax()
+-    syn match pythonStrTemplate	"\$\$" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-    syn match pythonStrTemplate	"\${[a-zA-Z_][a-zA-Z0-9_]*}" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-    syn match pythonStrTemplate	"\$[a-zA-Z_][a-zA-Z0-9_]*" contained containedin=pythonString,pythonUniString,pythonUniRawString,pythonRawString
+-  else
+-    syn match pythonStrTemplate	"\$\$" contained containedin=pythonString,pythonRawString
+-    syn match pythonStrTemplate	"\${[a-zA-Z_][a-zA-Z0-9_]*}" contained containedin=pythonString,pythonRawString
+-    syn match pythonStrTemplate	"\$[a-zA-Z_][a-zA-Z0-9_]*" contained containedin=pythonString,pythonRawString
+-  endif
+-endif
+-
+-if s:Enabled("g:python_highlight_doctests")
+-  " DocTests
+-  syn region pythonDocTest	start="^\s*>>>" end=+'''+he=s-1 end="^\s*$" contained
+-  syn region pythonDocTest2	start="^\s*>>>" end=+"""+he=s-1 end="^\s*$" contained
+-endif
+-
+-"
+-" Numbers (ints, longs, floats, complex)
+-"
+-
+-if s:Python2Syntax()
+-  syn match   pythonHexError	"\<0[xX]\x*[g-zG-Z]\+\x*[lL]\=\>" display
+-  syn match   pythonOctError	"\<0[oO]\=\o*\D\+\d*[lL]\=\>" display
+-  syn match   pythonBinError	"\<0[bB][01]*\D\+\d*[lL]\=\>" display
+-
+-  syn match   pythonHexNumber	"\<0[xX]\x\+[lL]\=\>" display
+-  syn match   pythonOctNumber "\<0[oO]\o\+[lL]\=\>" display
+-  syn match   pythonBinNumber "\<0[bB][01]\+[lL]\=\>" display
+-
+-  syn match   pythonNumberError	"\<\d\+\D[lL]\=\>" display
+-  syn match   pythonNumber	"\<\d[lL]\=\>" display
+-  syn match   pythonNumber	"\<[0-9]\d\+[lL]\=\>" display
+-  syn match   pythonNumber	"\<\d\+[lLjJ]\>" display
+-
+-  syn match   pythonOctError	"\<0[oO]\=\o*[8-9]\d*[lL]\=\>" display
+-  syn match   pythonBinError	"\<0[bB][01]*[2-9]\d*[lL]\=\>" display
+-else
+-  syn match   pythonHexError	"\<0[xX]\x*[g-zG-Z]\x*\>" display
+-  syn match   pythonOctError	"\<0[oO]\=\o*\D\+\d*\>" display
+-  syn match   pythonBinError	"\<0[bB][01]*\D\+\d*\>" display
+-
+-  syn match   pythonHexNumber	"\<0[xX]\x\+\>" display
+-  syn match   pythonOctNumber "\<0[oO]\o\+\>" display
+-  syn match   pythonBinNumber "\<0[bB][01]\+\>" display
+-
+-  syn match   pythonNumberError	"\<\d\+\D\>" display
+-  syn match   pythonNumberError	"\<0\d\+\>" display
+-  syn match   pythonNumber	"\<\d\>" display
+-  syn match   pythonNumber	"\<[1-9]\d\+\>" display
+-  syn match   pythonNumber	"\<\d\+[jJ]\>" display
+-
+-  syn match   pythonOctError	"\<0[oO]\=\o*[8-9]\d*\>" display
+-  syn match   pythonBinError	"\<0[bB][01]*[2-9]\d*\>" display
+-endif
+-
+-syn match   pythonFloat		"\.\d\+\%([eE][+-]\=\d\+\)\=[jJ]\=\>" display
+-syn match   pythonFloat		"\<\d\+[eE][+-]\=\d\+[jJ]\=\>" display
+-syn match   pythonFloat		"\<\d\+\.\d*\%([eE][+-]\=\d\+\)\=[jJ]\=" display
+-
+-"
+-" Builtin objects and types
+-"
+-
+-if s:Enabled("g:python_highlight_builtin_objs")
+-  if s:Python2Syntax()
+-    syn keyword pythonBuiltinObj	None
+-    syn keyword pythonBoolean		True False
+-  endif
+-  syn keyword pythonBuiltinObj	Ellipsis NotImplemented
+-  syn keyword pythonBuiltinObj	__debug__ __doc__ __file__ __name__ __package__
+-  syn keyword pythonBuiltinObj  self cls
+-endif
+-
+-"
+-" Builtin functions
+-"
+-
+-if s:Enabled("g:python_highlight_builtin_funcs")
+-  if s:Python2Syntax()
+-    syn keyword pythonBuiltinFunc	apply basestring buffer callable coerce
+-    syn keyword pythonBuiltinFunc	execfile file help intern long raw_input
+-    syn keyword pythonBuiltinFunc	reduce reload unichr unicode xrange
+-    if s:Enabled("g:python_print_as_function")
+-      syn keyword pythonBuiltinFunc	print
+-    endif
+-  else
+-    syn keyword pythonBuiltinFunc	ascii exec memoryview print
+-  endif
+-  syn keyword pythonBuiltinFunc	__import__ abs all any
+-  syn keyword pythonBuiltinFunc	bin bool bytearray bytes
+-  syn keyword pythonBuiltinFunc	chr classmethod cmp compile complex
+-  syn keyword pythonBuiltinFunc	delattr dict dir divmod enumerate eval
+-  syn keyword pythonBuiltinFunc	filter float format frozenset getattr
+-  syn keyword pythonBuiltinFunc	globals hasattr hash hex id
+-  syn keyword pythonBuiltinFunc	input int isinstance
+-  syn keyword pythonBuiltinFunc	issubclass iter len list locals map max
+-  syn keyword pythonBuiltinFunc	min next object oct open ord
+-  syn keyword pythonBuiltinFunc	pow property range
+-  syn keyword pythonBuiltinFunc	repr reversed round set setattr
+-  syn keyword pythonBuiltinFunc	slice sorted staticmethod str sum super tuple
+-  syn keyword pythonBuiltinFunc	type vars zip
+-endif
+-
+-"
+-" Builtin exceptions and warnings
+-"
+-
+-if s:Enabled("g:python_highlight_exceptions")
+-  if s:Python2Syntax()
+-    syn keyword pythonExClass	StandardError
+-  else
+-    syn keyword pythonExClass	BlockingIOError ChildProcessError
+-    syn keyword pythonExClass	ConnectionError BrokenPipeError
+-    syn keyword pythonExClass	ConnectionAbortedError ConnectionRefusedError
+-    syn keyword pythonExClass	ConnectionResetError FileExistsError
+-    syn keyword pythonExClass	FileNotFoundError InterruptedError
+-    syn keyword pythonExClass	IsADirectoryError NotADirectoryError
+-    syn keyword pythonExClass	PermissionError ProcessLookupError TimeoutError
+-
+-    syn keyword pythonExClass	ResourceWarning
+-  endif
+-  syn keyword pythonExClass	BaseException
+-  syn keyword pythonExClass	Exception ArithmeticError
+-  syn keyword pythonExClass	LookupError EnvironmentError
+-
+-  syn keyword pythonExClass	AssertionError AttributeError BufferError EOFError
+-  syn keyword pythonExClass	FloatingPointError GeneratorExit IOError
+-  syn keyword pythonExClass	ImportError IndexError KeyError
+-  syn keyword pythonExClass	KeyboardInterrupt MemoryError NameError
+-  syn keyword pythonExClass	NotImplementedError OSError OverflowError
+-  syn keyword pythonExClass	ReferenceError RuntimeError StopIteration
+-  syn keyword pythonExClass	SyntaxError IndentationError TabError
+-  syn keyword pythonExClass	SystemError SystemExit TypeError
+-  syn keyword pythonExClass	UnboundLocalError UnicodeError
+-  syn keyword pythonExClass	UnicodeEncodeError UnicodeDecodeError
+-  syn keyword pythonExClass	UnicodeTranslateError ValueError VMSError
+-  syn keyword pythonExClass	WindowsError ZeroDivisionError
+-
+-  syn keyword pythonExClass	Warning UserWarning BytesWarning DeprecationWarning
+-  syn keyword pythonExClass	PendingDepricationWarning SyntaxWarning
+-  syn keyword pythonExClass	RuntimeWarning FutureWarning
+-  syn keyword pythonExClass	ImportWarning UnicodeWarning
+-endif
+-
+-if s:Enabled("g:python_slow_sync")
+-  syn sync minlines=2000
+-else
+-  " This is fast but code inside triple quoted strings screws it up. It
+-  " is impossible to fix because the only way to know if you are inside a
+-  " triple quoted string is to start from the beginning of the file.
+-  syn sync match pythonSync grouphere NONE "):$"
+-  syn sync maxlines=200
+-endif
+-
+-if version >= 508 || !exists("did_python_syn_inits")
+-  if version <= 508
+-    let did_python_syn_inits = 1
+-    command -nargs=+ HiLink hi link <args>
+-  else
+-    command -nargs=+ HiLink hi def link <args>
+-  endif
+-
+-  HiLink pythonStatement        Statement
+-  HiLink pythonImport           Include
+-  HiLink pythonFunction         Function
+-  HiLink pythonConditional      Conditional
+-  HiLink pythonRepeat           Repeat
+-  HiLink pythonException        Exception
+-  HiLink pythonOperator         Operator
+-  HiLink pythonConstant         Constant
+-
+-  HiLink pythonDecorator        Define
+-  HiLink pythonDottedName       Function
+-  HiLink pythonDot              Delimeter
+-  HiLink pythonComma 		Delimeter
+-  HiLink pythonColon 		Delimeter
+-  HiLink pythonBracket 		Delimeter
+-  HiLink pythonBraces 		Delimeter
+-
+-  HiLink pythonComment          Comment
+-  HiLink pythonIgnore		Ignore
+-  if !s:Enabled("g:python_highlight_file_headers_as_comments")
+-    HiLink pythonCoding           Special
+-    HiLink pythonRun              Special
+-  endif
+-  HiLink pythonTodo             Todo
+-
+-  HiLink pythonError            Error
+-  HiLink pythonIndentError      Error
+-  HiLink pythonSpaceError       Error
+-
+-  HiLink pythonString           String
+-  HiLink pythonRawString        String
+-
+-  HiLink pythonUniEscape        Special
+-  HiLink pythonUniEscapeError   Error
+-
+-  if s:Python2Syntax()
+-    HiLink pythonUniString          String
+-    HiLink pythonUniRawString       String
+-    HiLink pythonUniRawEscape       Special
+-    HiLink pythonUniRawEscapeError  Error
+-  else
+-    HiLink pythonBytes              String
+-    HiLink pythonRawBytes           String
+-    HiLink pythonBytesContent       String
+-    HiLink pythonBytesError         Error
+-    HiLink pythonBytesEscape        Special
+-    HiLink pythonBytesEscapeError   Error
+-  endif
+-
+-  HiLink pythonStrFormatting    Special
+-  HiLink pythonStrFormat        Special
+-  HiLink pythonStrTemplate      Special
+-
+-  HiLink pythonDocTest          Special
+-  HiLink pythonDocTest2         Special
+-
+-  HiLink pythonNumber           Number
+-  HiLink pythonHexNumber        Number
+-  HiLink pythonOctNumber        Number
+-  HiLink pythonBinNumber        Number
+-  HiLink pythonFloat            Float
+-  HiLink pythonNumberError      Error
+-  HiLink pythonOctError         Error
+-  HiLink pythonHexError         Error
+-  HiLink pythonBinError         Error
+-
+-  HiLink pythonBoolean          Boolean
+-
+-  HiLink pythonBuiltinObj       Structure
+-  HiLink pythonBuiltinFunc      Function
+-
+-  HiLink pythonExClass          Structure
+-
+-  delcommand HiLink
+-endif
+-
+-let b:current_syntax = "python-orcan"
+diff --git a/.xinitrc b/.xinitrc
+index b8337c3..8b3e658 100755
+--- a/.xinitrc
++++ b/.xinitrc
+@@ -2,10 +2,10 @@
+ wmname LG3D
+ export _JAVA_AWT_WM_NONREPARENTING=1
+ 
+-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
++[ -f ~/.Xresources ] && xrdb -merge -I"$HOME" ~/.Xresources
+ 
+ export TERMINAL='st'
+-export BROWSER='firefox'
++export BROWSER='brave'
+ export VISUAL="vim"
+ export IMGVIEWER='sxiv'
+ export PDFVIEWER='zathura'
+@@ -15,7 +15,7 @@ export FILEBROWSER='lf'
+ export SXHKD_SHELL='/bin/sh'
+ 
+ # Brave, ..
+-export GDK_DPI_SCALE=1.2
++export GDK_DPI_SCALE=1.1
+ # KeePassXC, ...
+ export QT_SCALE_FACTOR=1.1
+ # export WINIT_HIDPI_FACTOR=1.1
+#+END_SRC

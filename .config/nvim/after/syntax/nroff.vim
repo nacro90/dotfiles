@@ -43,6 +43,5 @@ syntax match nroffSpecialChar "\\(Righttssrgerentical" conceal cchar=→
 syntax match nroffSpecialChar "\\(Leftghttssrgerentical" conceal cchar=←
 syntax match nroffSpecialChar "\\(Plusftghttssrgerentical" conceal cchar=±
 
-
-highlight! link Conceal Normal
+syntax match nroffIgnore "\\&" conceal
 

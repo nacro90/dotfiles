@@ -24,7 +24,7 @@ set linebreak
 " match OverLength /\%81v.\+/
 
 "t -> Autoformat while typing
-"l -> 
+"l ->
 "n -> Respect list indentation
 "q -> Autoformat html comments
 "r -> Format insert new lines with <Enter>
@@ -32,3 +32,10 @@ set linebreak
 
 " Mappings
 " autocmd! BufWritePre *.md,*.mkd,*.markdown substitute
+
+nnoremap <leader>. <Cmd>.HeaderIncrease<CR>
+nnoremap <leader>, <Cmd>.HeaderDecrease<CR>
+
+" Mark as done
+" TODO Enhance
+nnoremap <leader>x <Cmd>normal! 0f[lrX<CR>

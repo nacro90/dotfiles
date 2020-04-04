@@ -20,11 +20,11 @@ setopt share_history
 # When searching for history entries in the line editor, do not display duplicates of a line previously found.
 setopt hist_find_no_dups      
 # Avoid duplication when adding a new command.
-setopt hist_ignore_all_dups   
+# setopt hist_ignore_all_dups   
 # If you run the same command multiple times in a row, only add it to the history once.
-setopt hist_ignore_dups
+# setopt hist_ignore_dups
 # Trim duplicated commands from the history before trimming unique commands.
-setopt hist_expire_dups_first
+# setopt hist_expire_dups_first
 # Remove command lines from the history list when the first character on the line is a space.
 setopt hist_ignore_space      
 # When writing out the history file, older commands that duplicate newer ones are omitted.
@@ -115,13 +115,12 @@ bindkey -v '^?' backward-delete-char
 
 # export KEYTIMEOUT=1
 
+# }}}
+
 # Autosuggestions {{{
 
-# export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-# export ZSH_AUTOSUGGEST_USE_ASYNC=1
-# export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=''
-# export ZSH_AUTOSUGGEST_CLEAR_WIDGETS='vi-next-char'
-# bindkey '^ ' autosuggest-accept
+export ZSH_AUTOSUGGEST_AUTOSUGGEST_STRATEGY=('match_prev_cmd', 'completion')
+bindkey '^Y' autosuggest-accept
 
 # }}}
 
@@ -146,6 +145,7 @@ zle -N edit-command-line
 bindkey '\C-e' edit-command-line
 
 # }}}
+
 
 # non-modal history {{{
 bindkey -v '\C-p' history-search-backward
@@ -218,7 +218,11 @@ bindkey -v
 
 alias ls="ls --color=auto"
 
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+
 alias reload="source $ZDOTDIR/.zshrc"
+
+alias fzf="fzf --color=16"
 
 alias vim="nvim"
 
@@ -242,7 +246,7 @@ alias dwmconfig="$EDITOR ~/.local/lib/dwm/config.h"
 alias surfconfig="$EDITOR ~/.local/lib/surf/config.h"
 alias i3config="$EDITOR $XDG_CONFIG_HOME/i3/config"
 alias i3blocksconfig="$EDITOR $XDG_CONFIG_HOME/i3blocks/config"
-alias tmuxconfig="$EDITOR ~/.tmux/tmux.conf"
+alias tmuxconfig="$EDITOR ~/.tmux.conf"
 alias roficonfig="$EDITOR $XDG_CONFIG_HOME/rofi/config"
 alias dunstconfig="$EDITOR $XDG_CONFIG_HOME/dunst/dunstrc"
 alias comptonconfig="$EDITOR $XDG_CONFIG_HOME/compton/compton.conf"
@@ -271,9 +275,9 @@ alias makedmenu="sudo make -C $DMENU_HOME -f $DMENU_HOME/Makefile install"
 # }}}
 
 # Todo
-alias todo="$EDITOR ~/doc/note/todo.txt"
-alias t="todo.sh"
-alias quick="$EDITOR ~/doc/note/quick.org"
+alias todo="$EDITOR $TODO"
+alias quick="$EDITOR $QUICK"
+alias calendar="$EDITOR $CALENDAR"
 
 alias git-dotfiles='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
 # }}}
@@ -286,7 +290,7 @@ function mkcd {
 }
 
 function mkx {
-  echo "#!/usr/bin/env sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
+  echo "#!/bin/sh\n\n\n# vim: ft=sh" >> "$1" && chmod +x "$1" && $EDITOR "$1"
 }
 
 function dotsave {

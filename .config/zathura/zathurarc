@@ -2,7 +2,7 @@ set selection-clipboard clipboard
 set font "JetBrainsMono Nerd Font 10"
 
 set recolor                     "false"
-set recolor-keephue             "true"
+set recolor-keephue             "false"
 
 set statusbar-h-padding		0
 set statusbar-v-padding		0
@@ -24,17 +24,17 @@ map d scroll half-down
 
 map ` mark_evaluate
 map t toggle_page_mode
-map r reload
-map R rotate
+map <C-l> reload
+map r rotate
 map = zoom in
+map + zoom default
 map i recolor
 map p print
 
 
 # set guioptions none
-# window-title-basename "true"
 
-# # Base16 Tomorrow Night 
+# # Base16 Tomorrow Night {{{
 # # Author: Chris Kempson (http://chriskempson.com)
 # 
 # set default-bg                  "#1d1f21"
@@ -70,17 +70,19 @@ map p print
 # set recolor                     "false"
 # set recolor-keephue             "false"
 
-# Base16 Classic Dark
+# }}}
+
+# Base16 Classic Dark {{{
 # Author: Jason Heeris (http://heeris.id.au)
 
 set default-bg                  "#1e2541"
 set default-fg                  "#eeffff"
 
-set statusbar-bg                "#1e2541"
-set statusbar-fg                "#eeffff"
+set statusbar-bg                "#011627"
+set statusbar-fg                "#d6deeb"
 
-set inputbar-bg                 "#2a335a"
-set inputbar-fg                 "#eeffff"
+set inputbar-bg                 "#062844"
+set inputbar-fg                 "#d6deeb"
 
 set notification-bg             "#151515"
 set notification-fg             "#F5F5F5"
@@ -113,3 +115,50 @@ set completion-group-fg     "#eeffff"
 set recolor-lightcolor          "#1e2521"
 set recolor-darkcolor           "#eeffff"
 
+# }}}
+
+# Night-owl {{{
+
+set default-bg                  "#011627"
+set default-fg                  "#d6deeb"
+
+set statusbar-bg                "#062844"
+set statusbar-fg                "#d6deeb"
+
+set inputbar-bg                 "#011627"
+set inputbar-fg                 "#d6deeb"
+
+set notification-bg             "#062844"
+set notification-fg             "#d6deeb"
+
+set notification-error-bg       "#ef5350"
+set notification-error-fg       "#ffffff"
+
+set notification-warning-bg     "#addb67"
+set notification-warning-fg     "#ffffff"
+
+set highlight-color             "#7fdbca"
+set highlight-active-color      "#6A9FB5"
+
+set completion-bg               "#011627"
+set completion-fg               "#d6deeb"
+
+set completion-highlight-bg     "#7fdeca"
+set completion-highlight-fg     "#011627"
+
+set completion-group-bg     "#062844"
+set completion-group-fg     "#d6deeb"
+
+# set tabbar-fg
+# set tabbar-bg
+
+# set tabbar-focus-bg
+# set tabbar-focus-bg
+
+
+set recolor-lightcolor          "#011627"
+set recolor-darkcolor           "#d6deeb"
+
+# }}}
+
+# vim: foldmethod=marker

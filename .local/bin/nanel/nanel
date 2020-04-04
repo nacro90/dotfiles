@@ -1,6 +1,7 @@
 #!/bin/sh
 
-export PANEL_NAME="$(basename $0)"
+PANEL_NAME="$(basename "$0")"
+export PANEL_NAME
 
 #
 # System
@@ -34,11 +35,11 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 
 
-while read block upd_type upd_val; do
+while read -r block upd_type upd_val; do
 
     # Ignore comments
     if [ "$block" != "${block#\#}" ] || [ -z "${block#\#}" ]; then
-	continue
+        continue
     fi
 
     block_executable="$PROJECT_BLOCK_ROOT/$block"
@@ -54,22 +55,22 @@ while read block upd_type upd_val; do
 	    while true; do
 		echo "$block"
 		sleep "$upd_val"
-	    done > $PANEL_FIFO &
+	    done > "$PANEL_FIFO" &
 	    ;;
 	
 	'pace')
-	    echo "$block" > $PANEL_FIFO &
-	    sh -c "$upd_val" | while read line; do
+	    echo "$block" > "$PANEL_FIFO" &
+	    sh -c "$upd_val" | while read -r line; do
 		echo "$block"
-	    done > $PANEL_FIFO &
+	    done > "$PANEL_FIFO" &
 	    ;;
 
 	'once')
-	    echo "$block" > $PANEL_FIFO &
+	    echo "$block" > "$PANEL_FIFO" &
 	    ;;
 	
 	'signal') # TODO 
-	    trap "$executable" "$upd_val" > $PANEL_FIFO &
+	    trap "$executable" "$upd_val" > "$PANEL_FIFO" &
 	    ;;
 
 	'repeat')
@@ -80,14 +81,14 @@ while read block upd_type upd_val; do
 
 	*)
     esac
-done < $BLOCK_CONFIG
+done < "$BLOCK_CONFIG"
 
 # bspc subscribe report > "$PANEL_FIFO" &
 
 . $PROJECT_CONF_ROOT/colors
 . $PROJECT_CONF_ROOT/visual
 
-$PROJECT_EXEC_ROOT/fifo-parser < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh > /dev/null 2>&1 &
+"$PROJECT_EXEC_ROOT/fifo-parser" < "$PANEL_FIFO" | lemonbar -a 32 -u 2 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh > /dev/null 2>&1 &
 
 # Adjust X layer order
 panel_ids=($(xdo id -m -a "$PANEL_WM_NAME"))

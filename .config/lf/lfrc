@@ -12,7 +12,7 @@ set smartcase on
 # interpreter for shell commands (needs to be POSIX compatible)
 set shell sh
 
-set previewer ~/.config/lf/scope.sh
+set previewer /usr/bin/pistol
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -42,6 +42,8 @@ set scrolloff 10
 map e
 map r
 map g
+
+map i $/usr/bin/pistol $f | $PAGER -R
 
 
 # Plain esc relaods and redraws
@@ -90,7 +92,7 @@ map ` mark-load
 map zz fit
 
 # Find with fzf
-map f $lf -remote "send $id select $(ls | fzf)"
+map f $lf -remote "send $id select $(ls -A | fzf)"
 map F $lf -remote "send $id select $(fzf)"
 
 # Unselect and uncut

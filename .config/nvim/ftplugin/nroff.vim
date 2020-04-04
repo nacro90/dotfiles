@@ -44,11 +44,14 @@ let nroff_space_errors = 1
 " inoremap <buffer> <nowait> Ş \[u015E]
 " }}}
 
-setlocal conceallevel=1
+" Hide conceals that don't have conceal character
+setlocal conceallevel=2
 " In groff there is no need to track lines because of the shortiness
 setlocal nocursorline
 " It's a classic
-setlocal textwidth=80
+setlocal textwidth=79
+" Typesetting does not bear with softwraps!
+setlocal nowrap
 
 " Trailing whitespaces in lines can be problematic in groff
 autocmd BufWritePre *.roff %substitute/\s\+$//e

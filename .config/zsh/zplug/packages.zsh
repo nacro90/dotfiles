@@ -18,7 +18,7 @@ zplug "mengelbrecht/slimline"
 zplug "zdharma/fast-syntax-highlighting", defer:2
 # zplug "zsh-users/zsh-syntax-highlighting", from:github
 
-zplug "zpm-zsh/ls"
+# zplug "zpm-zsh/ls"
 
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 
@@ -36,7 +36,7 @@ export KEYTIMEOUT=1
 
 # Aliases and completions {{{
 
-# zplug "zsh-users/zsh-autosuggestions", defer:3
+zplug "zsh-users/zsh-autosuggestions", defer:3
 
 zplug "hlissner/zsh-autopair", defer:2
 
@@ -45,8 +45,6 @@ zplug "plugins/fzf", from:oh-my-zsh
 zplug "hschne/fzf-git"
 
 zplug "mdumitru/git-aliases" 
-
-zplug "MichaelAquilina/zsh-you-should-use"
 
 zplug "srijanshetty/zsh-pandoc-completion", lazy:true
 
@@ -62,13 +60,9 @@ zplug "plugins/docker", from:oh-my-zsh, lazy:true
 
 zplug "plugins/tmux", from:oh-my-zsh
 
-zplug "plugins/extract", from:oh-my-zsh
-
 zplug "kutsan/zsh-system-clipboard"
 
-# zplug "plugins/pipenv", from:oh-my-zsh, lazy:true
-
-zplug "soimort/translate-shell"
+zplug "plugins/pipenv", from:oh-my-zsh
 
 # }}}
 

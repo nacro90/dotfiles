@@ -1,22 +1,27 @@
 #!/usr/bin/env sh
 
-# set -x 
+SCREENLAYOUT_BIN=$HOME/.local/bin/screenlayout
 
 monitors="$(xrandr)"
-dp_exists="$(echo "$monitors" | grep -c "^DP[1-9] connected")"
-hdmi_exists="$(echo "$monitors" | grep -c "^HDMI[1-9] connected")"
+dpx_result="$(echo "$monitors" | grep -A1 '^DP[1-9] connected')"
+dpx_not_exists=$? # Return code of 'dpx_result'
+hdmi_result="$(echo "$monitors" | grep -A1 '^HDMI[1-9] connected')"
+hdmi_not_exists=$? # Return code of 'dpx_result'
 
-if [ "$dp_exists" -eq '1' ] && [ "$hdmi_exists" -eq '1' ]; then
-  ~/.screenlayout/holy-home.sh
-elif [ "$dp_exists" -eq '1' ]; then
-  ~/.screenlayout/home-topbottom.sh
-  notify-send "WTF?"
-elif [ "$hdmi_exists" -eq '1' ]; then
-  ~/.screenlayout/work-topbottom.sh
+if [ "$dpx_not_exists" -eq '0' ] && [ "$hdmi_not_exists" -eq '0' ]; then
+  "$SCREENLAYOUT_BIN/holy-home.sh"
+elif [ "$dpx_not_exists" -eq '0' ]; then
+  if [ "$(echo $dpx_result | grep -c 1920)" -eq 1 ]; then
+    "$SCREENLAYOUT_BIN/work-topbottom.sh"
+  fi
+elif [ "$hdmi_not_exists" -eq '0' ]; then
+  "$SCREENLAYOUT_BIN/work-topbottom.sh"
 else
-  ~/.screenlayout/laptop.sh
+  "$SCREENLAYOUT_BIN/laptop.sh"
 fi
 
 ~/.local/bin/init-compton
 ~/.local/bin/configure-wallpaper
 ~/.local/bin/init-xautolock
+kill -USR1 -x sxhkd
+

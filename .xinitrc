@@ -2,10 +2,10 @@
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[ -f ~/.Xresources ] && xrdb -merge -I"$HOME" ~/.Xresources
 
 export TERMINAL='st'
-export BROWSER='firefox'
+export BROWSER='brave'
 export VISUAL="vim"
 export IMGVIEWER='sxiv'
 export PDFVIEWER='zathura'
@@ -15,7 +15,7 @@ export FILEBROWSER='lf'
 export SXHKD_SHELL='/bin/sh'
 
 # Brave, ..
-export GDK_DPI_SCALE=1.2
+export GDK_DPI_SCALE=1.1
 # KeePassXC, ...
 export QT_SCALE_FACTOR=1.1
 # export WINIT_HIDPI_FACTOR=1.1

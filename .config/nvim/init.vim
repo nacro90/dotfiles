@@ -1,21 +1,28 @@
 " Include other source files {{{
 source $XDG_CONFIG_HOME/nvim/util.vim
 " }}}
+
+
 " vim-plug {{{
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent execute "!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+" Setup {{{
+let s:plug_vim = $XDG_CONFIG_HOME . '/nvim/autoload/plug.vim'
+if empty(glob(s:plug_vim))
+    silent execute "!curl -fLo " . s:plug_vim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin($XDG_DATA_HOME . '/nvim/plugged')
+
+" }}}
 
 " Themes {{{
 Plug 'chriskempson/base16-vim'
-Plug 'dracula/vim'
+" Plug 'dracla/vim'
 Plug 'tomasr/molokai'
 Plug 'flazz/vim-colorschemes'
 Plug 'haishanh/night-owl.vim'
+Plug 'challenger-deep-theme/vim'
 " }}}
 
 " Visual plugins {{{
@@ -31,24 +38,26 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'mbbill/undotree'
 
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+Plug 'norcalli/nvim-colorizer.lua'
+
 Plug 'tpope/vim-fugitive'
-Plug 'shumphrey/fugitive-gitlab.vim'
-Plug 'tpope/vim-rhubarb'
 
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'jistr/vim-nerdtree-tabs'
 
 " }}}
 
 " File Types {{{
-Plug 'mboughaba/i3config.vim', { 'for': 'i3config' }
-
 Plug 'freitass/todo.txt-vim', { 'for': 'todo' }
 
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
+Plug 'baskerville/vim-sxhkdrc', { 'for': 'sxhkdrc' }
+
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.mustache', 'html.handlebars'] }
 
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
@@ -57,6 +66,7 @@ Plug 'jceb/vim-orgmode', { 'for': 'org' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 " }}}
 
 " Editing {{{
@@ -78,6 +88,8 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'preservim/nerdcommenter'
 
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'danro/rename.vim'
 
 Plug 'tommcdo/vim-exchange'
@@ -88,11 +100,9 @@ Plug 'kana/vim-textobj-entire'
 
 Plug 'kana/vim-textobj-indent'
 
-Plug 'roxma/vim-paste-easy'
+" Plug 'roxma/vim-paste-easy'
 
 Plug 'machakann/vim-highlightedyank'
-
-Plug 'tpope/vim-abolish'
 
 Plug 'vim-scripts/ReplaceWithRegister'
 
@@ -103,17 +113,30 @@ Plug 'vim-scripts/Parameter-Text-Objects'
 
 Plug 'neomake/neomake'
 
-Plug 'godlygeek/tabular'
-
-Plug 'thaerkh/vim-workspace'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'tpope/vim-obsession'
 
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ }
+
+Plug 'ptzz/lf.vim'
+Plug 'rbgrouleff/bclose.vim'
+
 Plug 'majutsushi/tagbar'
 
-Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
-
 Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " }}}
 
@@ -184,6 +207,9 @@ set incsearch
 " Preview :substitute command in a split
 set inccommand=split
 
+" Set max height of completion window to human levels
+set pumheight=15
+
 set autoindent
 " Detect non-interactive changes in files
 set autoread
@@ -212,6 +238,9 @@ set nostartofline
 " Persistent undo file
 set undofile
 
+" This option controls the behavior when switching between buffers.
+set switchbuf=usetab
+
 " Dont' display mode (Lightline)
 set noshowmode
 set laststatus=2
@@ -227,23 +256,39 @@ set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 " don't give |ins-completion-menu| messages.
-set shortmess+=c
+if has("patch-7.4.314")
+    set shortmess+=c
+endif
 " always show signcolumns
 set signcolumn=yes
 " Don't update screen while running macros
 set lazyredraw
 " Word boundaries
 set iskeyword-=.             " Regard . as a word boundary
-set iskeyword-=_             " Regard _ as a word boundary
 set iskeyword-=#             " Regard # as a word boundary
 
 "}}}
 
 
-" Key bindings {{{
+" Mappings {{{
 
 " Turkish keyboard flaws
 nnoremap ı i
+
+nnoremap <leader>n <Cmd>NERDTree<CR>
+
+nnoremap <leader>zz <Cmd>call orcan#init#LanguageClientToggle()<CR>
+
+" C-w is life {{{
+
+nnoremap <C-w>. <Cmd>tabnext<CR>
+nnoremap <C-w>, <Cmd>tabprevious<CR>
+nnoremap <C-w><C-.> <Cmd>tabnext<CR>
+nnoremap <C-w><C-,> <Cmd>tabprevious<CR>
+
+nnoremap <C-w>m <Cmd>tabedit<CR>
+nnoremap <C-w><C-m> <Cmd>tabedit<CR>
+" }}}
 
 " Nvim configuration {{{
 " function! EditVimrc()
@@ -252,11 +297,22 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " }}}
 
+" Fast resizing {{{
+noremap <C-w><lt> 5<C-w><lt>
+noremap <C-w>> 5<C-w>>
+noremap <C-w>+ 3<C-w>+
+noremap <C-w>- 3<C-w>-
+"}}}
+
+" Append new line {{{
+" TODO inoremap <silent> <M-m>
+" }}}
+
 " Edit personal main todo file {{{
-" 
+"
 function IEditTodo()
     if exists("$TODO") && filereadable($TODO)
-        pedit $TODO
+        vsplit $TODO
     else
         echoerr "Environment variable '$TODO' has not been set"
     endif
@@ -268,7 +324,7 @@ nnoremap <leader>et :call IEditTodo()<CR>
 " Edit personal calendar file {{{
 function IEditCalendar()
     if exists("$CALENDAR") && filereadable($CALENDAR)
-        pedit $CALENDAR
+        vsplit $CALENDAR
     else
         echoerr "Environment variable '$CALENDAR' has not been set"
     endif
@@ -280,7 +336,7 @@ nnoremap <leader>ec :call IEditCalendar()<CR>
 " Edit personal quick notes file {{{
 function IEditQuickNote()
     if exists("$QUICK") && filereadable($QUICK)
-        pedit $QUICK
+        vsplit $QUICK
     else
         echoerr "Environment variable '$QUICK' has not been set"
     endif
@@ -291,7 +347,7 @@ nnoremap <leader>eq :call IEditQuickNote()<CR>
 
 " Terminal {{{
 " Focuses the terminal window by default
-nnoremap <leader>t :10split term://zsh<CR>i
+nnoremap <leader>t :10split term://zsh<CR>
 " }}}
 
 " Kill current buffer {{{
@@ -324,17 +380,20 @@ nmap gX gx$
 nmap gR gr$
 " }}}
 
+" Colorizer
+" nnoremap <leader>v <Cmd>ColorizerToggle<CR>
+
 "Autoformat
-nnoremap <leader>f :Autoformat<CR>
+nnoremap <leader>f <Cmd>Autoformat<CR>
 
 " Goyo
-nnoremap <leader>z :Goyo<CR>
+nnoremap <leader>v <Cmd>Goyo<CR>
 
 " Undo tree
-nnoremap <leader>u :UndotreeToggle<CR>
+nnoremap <leader>u <Cmd>UndotreeToggle<CR>
 
 " Easy configure the corresponding filetype {{{
-function! ConfigureFiletype(folder, filetype)
+function! s:ConfigureFiletype(folder, filetype)
 
     function! CreateExecuteScript(ft) closure
         let l:execString = printf('%s/nvim/%s/%s.vim', $XDG_CONFIG_HOME, a:folder, a:ft)
@@ -347,7 +406,7 @@ function! ConfigureFiletype(folder, filetype)
                     \ 'default': &filetype,
                     \ 'cancelreturn': -1
                     \ })
-        if l:filetype == -1
+        if l:filetype == -1 || (empty(l:filetype) && empty(&l:filetype))
             return
         elseif empty(filetype)
             execute CreateExecuteScript(&l:filetype)
@@ -359,9 +418,9 @@ function! ConfigureFiletype(folder, filetype)
     endif
 endfunction
 
-command! ConfigureFtplugin :call ConfigureFiletype('ftplugin', '') 
+command! ConfigureFtplugin :call s:ConfigureFiletype('ftplugin', '')
 nnoremap <leader>ef :ConfigureFtplugin<CR>
-command! ConfigureSyntax :call ConfigureFiletype('syntax', '')
+command! ConfigureSyntax :call s:ConfigureFiletype('after/syntax', '')
 nnoremap <leader>es :ConfigureSyntax<CR>
 " }}}
 
@@ -377,18 +436,13 @@ endfunction
 cnoremap <expr> %% ExpandPercentageIfInCommand()
 " }}}
 
-" Clear search highlighting before redraw
-function! AdvancedRedraw()
-    set hlsearch!
-    if exists("*lightline#update")
-        call lightline#update()
-    endif
-    redraw
-endfunction
+" Clear search highlighting before redraw {{{
 
-nnoremap <silent> <C-l> :call AdvancedRedraw()<CR>
+nnoremap <silent> <C-l> :nohlsearch<bar>redraw<CR>
 " Clear search higlighting in insert mode and command-line mode
-noremap! <silent> <C-l> <Cmd>call AdvancedRedraw()<CR>
+noremap! <silent> <C-l> <Cmd>nohlsearch<bar>redraw<CR>
+
+" }}}
 
 " Pad current line with new lines
 nnoremap <M-o> m0o<ESC>kO<ESC>`0
@@ -399,32 +453,34 @@ nnoremap Y y$
 
 " FZF {{{
 " TODO if exists("*fzf#run")
-    " FZF buffer list
-    nnoremap <leader>b :Buffers<CR>
-    " FZF file list
-    nnoremap <leader>f :Files<CR>
-    " FZF Occurence list
-    nnoremap <leader>o :BLines<CR>
-    " FZF Global occurence list
-    nnoremap <leader>O :Lines<CR>
-    " FZF Recent files list
-    nnoremap <leader>r :History<CR>
-    " FZF Search history list
-    nnoremap <leader>/ :History/<CR>
-    " FZF Command history list
-    nnoremap <leader>: :History:<CR>
+" FZF buffer list
+nnoremap <leader>b <Cmd>Buffers<CR>
+" FZF file list
+nnoremap <leader>f <Cmd>Files<CR>
+" FZF Occurence list
+nnoremap <leader>o <Cmd>BLines<CR>
+" FZF Global occurence list
+nnoremap <leader>O <Cmd>Lines<CR>
+" FZF Recent files list
+nnoremap <leader>r <Cmd>History<CR>
+" FZF Grep
+nnoremap <leader>g <Cmd>Rg<CR>
+" FZF Search history list
+nnoremap q/ <Cmd>History/<CR>
+" FZF Command history list
+nnoremap q: <Cmd>History:<CR>
 " else
-    " echom "FZF is not installed. Mapping primitive equivalents"
-    " " Buffer list
-    " nnoremap <leader>b :buffers<CR>
-    " " File list
-    " nnoremap <leader>f :Hexplore<CR>
-    " " Recent files list
-    " nnoremap <leader>r :browse oldfiles<CR>
-    " " Search history list
-    " nnoremap <leader>/ q/
-    " " Command history list
-    " nnoremap <leader>: q:
+" echom "FZF is not installed. Mapping primitive equivalents"
+" " Buffer list
+" nnoremap <leader>b :buffers<CR>
+" " File list
+" nnoremap <leader>f :Hexplore<CR>
+" " Recent files list
+" nnoremap <leader>r :browse oldfiles<CR>
+" " Search history list
+" nnoremap <leader>/ q/
+" " Command history list
+" nnoremap <leader>: q:
 " endif
 
 " }}}
@@ -434,55 +490,56 @@ nnoremap Y y$
 
 " GitGutter {{{
 
-nnoremap <leader>ggl :GitGutterLineHighlightsToggle<CR>
-nnoremap <leader>ggn :GitGutterLineNrHighlightsToggle<CR>
-nnoremap <leader>ggb :GitGutterBufferToggle<CR>
-nnoremap <leader>ggg :GitGutterToggle<CR>
-nnoremap <leader>ggs :GitGutterSignsToggle<CR>
+" Don't need to assign keys to these
+" nnoremap <leader>ggl :GitGutterLineHighlightsToggle<CR>
+" nnoremap <leader>ggn :GitGutterLineNrHighlightsToggle<CR>
+" nnoremap <leader>ggb :GitGutterBufferToggle<CR>
+" nnoremap <leader>ggg :GitGutterToggle<CR>
+" nnoremap <leader>ggs :GitGutterSignsToggle<CR>
 
 nnoremap ]h :GitGutterNextHunk<CR>
 nnoremap [h :GitGutterPrevHunk<CR>
 
-nnoremap <leader>ghs :GitGutterStageHunk<CR>
-nnoremap <leader>ghu :GitGutterUndoHunk<CR>
-
 " }}}
 
 " Fugitive {{{
-" Git status
-nnoremap <leader>gs :Gstatus<CR>
-" Fetch
-nnoremap <leader>gf :Gfetch<CR>
-" Pull
-nnoremap <leader>gpl :Gpull<CR>
-" Push
-nnoremap <leader>gps :Gpush<CR>
-" Vertical diff split
-nnoremap <leader>gd :Gvdiffsplit<CR>
-" Revert
-nnoremap <leader>gr :Gread<CR>
-" Write / stage
-nnoremap <leader>gw :Gwrite<CR>
-" Commit
-nnoremap <leader>gc :Gcommit<CR>
-" Merge
-nnoremap <leader>gm :Gmerge<CR>
-" Log
-nnoremap <leader>gl :Glog!<CR>
-" Blame
-nnoremap <leader>gb :Gblame<CR>
+"
+" I am using command line more...
+"
+" " Git status
+" nnoremap <leader>gs <Cmd>Git<CR>
+" " Fetch
+" nnoremap <leader>gf <Cmd>Git-fetch<CR>
+" " Pull
+" nnoremap <leader>gpl <Cmd>Git pull<CR>
+" " Push
+" nnoremap <leader>gps <Cmd>G-push<CR>
+" " Vertical diff split
+" nnoremap <leader>gd <Cmd>Gvdiffsplit<CR>
+" " Revert
+" nnoremap <leader>gr <Cmd>Gread<CR>
+" " Write / stage
+" nnoremap <leader>gw <Cmd>Gwrite<CR>
+" " Commit
+" nnoremap <leader>gc <Cmd>Git commit<CR>
+" " Merge
+" nnoremap <leader>gm <Cmd>Git merge<CR>
+" " Log
+" nnoremap <leader>glg <Cmd>Gclog<CR>
+" " Blame
+" nnoremap <leader>gb <Cmd>Git-blame<CR>
 
-" G-edit - Show HEAD version of the file
-" on current buffer
-nnoremap <leader>goo :Gedit<CR>
-" on vertical split
-nnoremap <leader>gov :Gvsplit<CR>
-" on horizontal split
-nnoremap <leader>gos :Gsplit<CR>
-" on new tab
-nnoremap <leader>got :Gtabedit<CR>
-" on popup
-nnoremap <leader>gop :Gpedit<CR>
+" " G-edit - Show HEAD version of the file
+" " on current buffer
+" nnoremap <leader>goo :Gedit<CR>
+" " on vertical split
+" nnoremap <leader>gov :Gvsplit<CR>
+" " on horizontal split
+" nnoremap <leader>gos :Gsplit<CR>
+" " on new tab
+" nnoremap <leader>got :Gtabedit<CR>
+" " on popup
+" nnoremap <leader>gop :Gpedit<CR>
 "
 
 " }}}
@@ -532,8 +589,66 @@ nnoremap <silent> <expr> $ ScreenMovement("$")
 
 " Plugin configurations {{{
 
-" NERDTree {{{
-nnoremap <leader>n :NERDTreeToggle<CR>
+" LanguageClient {{{
+"
+let g:LanguageClient_autoStart = 0
+" Custom variable to track language client status
+let g:language_client_started = g:LanguageClient_autoStart
+
+" }}}
+
+" Easy navigation with terminal {{{
+
+if (has('nvim'))
+    tnoremap <C-w>m <Cmd>tabedit<CR>
+    tnoremap <C-w><C-m> <Cmd>tabedit<CR>
+    tnoremap <C-w>, <Cmd>tabprevious<CR>
+    tnoremap <C-w><C-,> <Cmd>tabprevious<CR>
+    tnoremap <C-w>. <Cmd>tabnext<CR>
+    tnoremap <C-w><C-.> <Cmd>tabnext<CR>
+    tnoremap <C-w>q <Cmd>wincmd q<CR>
+    tnoremap <C-w><C-q> <Cmd>wincmd q<CR>
+    tnoremap <C-w>c <Cmd>wincmd c<CR>
+    tnoremap <C-w><C-c> <Cmd>wincmd c<CR>
+    tnoremap <C-w>h <Cmd>wincmd h<CR>
+    tnoremap <C-w><C-h> <Cmd>wincmd h<CR>
+    tnoremap <C-w>j <Cmd>wincmd j<CR>
+    tnoremap <C-w><C-j> <Cmd>wincmd j<CR>
+    tnoremap <C-w>k <Cmd>wincmd k<CR>
+    tnoremap <C-w><C-k> <Cmd>wincmd k<CR>
+    tnoremap <C-w>l <Cmd>wincmd l<CR>
+    tnoremap <C-w><C-l> <Cmd>wincmd l<CR>
+
+    tnoremap <C-l> <Cmd>nohlsearch<CR>
+    tnoremap <expr> <M-r> '<C-\><C-N>"' . nr2char(getchar()) . 'pi'
+endif
+
+" }}}
+
+" Deoplete {{{
+let g:deoplete#enable_at_startup = 1
+
+function g:Multiple_cursors_before()
+    call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+function g:Multiple_cursors_after()
+    call deoplete#custom#buffer_option('auto_complete', v:true)
+endfunction
+
+" }}}
+
+" Colorizer {{{
+
+lua require 'colorizer'.setup()
+
+" }}}
+
+" File explorer {{{
+let g:netrw_liststyle=3
+let g:netrw_chgwin=2
+let g:netrw_winsize=20
+let g:netrw_preview=1
+let g:netrw_banner=0
 " }}}
 
 " Lightline {{{
@@ -580,21 +695,52 @@ highlight HighlightedyankRegion cterm=reverse gui=reverse
 
 " Autocommands {{{
 
-" Saving views {{{
-augroup AutoSaveFolds
+" Auto View {{{
+
+let g:skipview_files = [
+            \ '[EXAMPLE PLUGIN BUFFER]'
+            \ ]
+function! MakeViewCheck()
+    if has('quickfix') && &buftype =~ 'nofile'
+        " Buffer is marked as not a file
+        return 0
+    endif
+    if empty(glob(expand('%:p')))
+        " File does not exist on disk
+        return 0
+    endif
+    if len($TEMP) && expand('%:p:h') == $TEMP
+        " We're in a temp dir
+        return 0
+    endif
+    if len($TMP) && expand('%:p:h') == $TMP
+        " Also in temp dir
+        return 0
+    endif
+    if index(g:skipview_files, expand('%')) >= 0
+        " File is in skip list
+        return 0
+    endif
+    return 1
+endfunction
+augroup AutoView
     autocmd!
-    autocmd BufWinLeave ?* mkview
-    autocmd BufWinEnter ?* silent! loadview
-augroup END
+    " Autosave & Load Views.
+    autocmd BufWritePost,BufLeave,WinLeave ?* if MakeViewCheck() | silent! mkview | endif
+    autocmd BufWinEnter ?* if MakeViewCheck() | silent! loadview | endif
+augroup end
 
 " }}}
 
-" Link filetypes {{{
-augroup FileTypes
-    autocmd!
-augroup END
-" }}}
+" Terminal auto insert {{{
 
+augroup orcan_init_vim_terminal
+    autocmd!
+    " Start insert when swithing to a terminal
+    autocmd BufWinEnter,WinEnter term://* startinsert
+augroup end
+
+" }}}
 " }}}
 
 
@@ -603,4 +749,4 @@ highlight! link Conceal Visual
 " highlight NonText ctermbg=NONE guibg=NONE
 " highlight Folded ctermbg=NONE guibg=NONE
 
-" vim: foldmethod=marker
+" vim: foldmethod=marker ft=vim
