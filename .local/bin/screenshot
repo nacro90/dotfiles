@@ -23,8 +23,8 @@ OPTIONS:
 SCREENSHOT_EXEC='maim --bordersize=3 --padding=-3 --quiet --color=0.13,0.92,0.44,1 --tolerance=50'
 XCLIP_EXEC='xclip -selection clipboard -t image/png'
 NOTIF_EXEC='notify-send -u low'
-NOTIF_MSG_COPY='Copied screenshot'
-NOTIF_MSG_SAVE='Saved to file'
+NOTIF_MSG_COPY='Copied'
+NOTIF_MSG_SAVE='Copied and saved'
 
 SAVE_PATH="$(printf '%s/%s.png' "$SCREENSHOT_DIR" "$(date +%s)")"
 
@@ -55,12 +55,15 @@ shift $((OPTIND-1))
 case $1 in
   select)
     area_param='--select'
+    notif_indicator='selection'
     ;;
   all)
     area_param='--'
+    notif_indicator='whole screen'
     ;;
   window)
     area_param="--window=$(xdotool getactivewindow)"
+    notif_indicator='focused window'
     ;;
   '')
     printf "Area type is missing\n\n"
@@ -75,10 +78,11 @@ case $1 in
 esac
 
 if ! $save; then
-  $SCREENSHOT_EXEC "$area_param" | $XCLIP_EXEC && $NOTIF_EXEC "$NOTIF_MSG_COPY"
+  $SCREENSHOT_EXEC "$area_param" | \
+    $XCLIP_EXEC && $NOTIF_EXEC "$NOTIF_MSG_COPY $notif_indicator"
 else
   $SCREENSHOT_EXEC "$area_param" "$SAVE_PATH" && $XCLIP_EXEC < "$SAVE_PATH" && \
-    $NOTIF_EXEC "$NOTIF_MSG_COPY" "$NOTIF_MSG_SAVE $SAVE_PATH"
+    $NOTIF_EXEC "$NOTIF_MSG_SAVE $notif_indicator" "$SAVE_PATH"
 fi
 
 
