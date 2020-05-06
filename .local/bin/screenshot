@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-export SCRIPT_VERSION="0.0.1"
+export SCRIPT_VERSION='0.0.1'
 
 SCREENSHOT_DIR="$HOME/pic/screenshot"
 
@@ -22,7 +22,7 @@ OPTIONS:
 
 SCREENSHOT_EXEC='maim --bordersize=3 --padding=-3 --quiet --color=0.13,0.92,0.44,1 --tolerance=50'
 XCLIP_EXEC='xclip -selection clipboard -t image/png'
-NOTIF_EXEC='notify-send -u low'
+NOTIF_EXEC='notify-send --urgency low'
 NOTIF_MSG_COPY='Copied'
 NOTIF_MSG_SAVE='Copied and saved'
 

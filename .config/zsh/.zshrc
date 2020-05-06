@@ -9,7 +9,7 @@ HISTSIZE=50000
 # The history is trimmed when its length excedes SAVEHIST by 20%.
 SAVEHIST=10000
 
-HISTFILE="$HOME/.local/share/zsh/history"
+HISTFILE="$XDG_DATA_HOME/zsh/history"
 
 # Time stamp the history, and more.
 setopt extended_history
@@ -222,8 +222,6 @@ alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 
 alias reload="source $ZDOTDIR/.zshrc"
 
-alias fzf="fzf --color=16"
-
 alias vim="nvim"
 
 alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -hr | head -25"
@@ -231,6 +229,10 @@ alias pacman-list-packages="pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/
 alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
 alias dotgit="/usr/bin/git --git-dir=$HOME/.config/dotgit/repo --work-tree=$HOME" 
+
+alias -g C='| xclip -selection clipboard'
+
+alias cal='cal -m'
 
 # Config aliases {{{
 alias zshconfig="$EDITOR $ZDOTDIR/.zshrc"
@@ -307,4 +309,4 @@ pfetch
 
 # }}}
 
-source /home/orcan/.config/broot/launcher/bash/br
+# source /home/orcan/.config/broot/launcher/bash/br

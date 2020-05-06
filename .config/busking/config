@@ -1,0 +1,8 @@
+image/* = $IMGVIEWER
+text/* = $EDITOR?:$TERMINAL
+application/pdf = $PDFVIEWER
+video/* = $MEDIAPLAYER
+inode/directory = $FILEBROWSER?:$TERMINAL
+application/csv = $EDITOR?:$TERMINAL
+
+# vim: filetype=config

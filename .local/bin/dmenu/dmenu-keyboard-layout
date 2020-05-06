@@ -1,12 +1,14 @@
 #!/usr/bin/env sh
 
-layouts="us\ntr" 
+layouts=\
+"us
+tr
+dvorak"
 
-selected_layout="$(echo -e "$layouts" | dmenu -p 'Keyboard layout')"
+selected_layout="$(echo "$layouts" | dmenu -p 'Keyboard layout')"
 
 if [ -n "$selected_layout" ]; then
   setxkbmap -layout "$selected_layout"
-  /bin/kill -SIGRTMIN+2 $(pidof dwmblocks) 
   notify-send -u low 'Keyboard layout has changed' "$selected_layout"
 fi
 

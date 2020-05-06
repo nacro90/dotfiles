@@ -1,14 +1,6 @@
 # nacro90
 # Shell independent profile file
 
-# ~/bin to path
-[ -d "$HOME/bin" ] && PATH="${PATH}:${HOME}/bin"
-
-# set PATH so it includes user's private bin recuresively if it exists
-if [ -d "$HOME/.local/bin" ]; then
-  PATH="$(find "$HOME/.local/bin" -type d | tr '\n' ':')$PATH"
-fi
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache/"
@@ -42,21 +34,39 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
-# Java home
+export GOPATH="$XDG_DATA_HOME/go"
+
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export PATH=${PATH}:${JAVA_HOME}/bin
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/x86_64-linux-gnu/pkgconfig
 
 export EDITOR='nvim'
-
+export VISUAL="$EDITOR"
+export FILEBROWSER='lf'
 
 # export FZF_DEFAULT_COMMAND='find . -not -path "*/.git/*" 2>/dev/null'
 export FZF_TMUX=1
-export FZF_DEFAULT_OPTS='--color=16 --bind=ctrl-b:page-up --bind=ctrl-f:page-down --bind=ctrl-u:half-page-up --bind=ctrl-d:half-page-down --preview='\''pistol {}'\''
+export FZF_DEFAULT_OPTS="--color=16 --reverse --info=inline --marker='* ' --bind=change:top --bind=ctrl-b:page-up --bind=ctrl-f:page-down --bind=ctrl-u:half-page-up --bind=ctrl-d:half-page-down --preview='pistol {}'"
+export FZF_CTRL_R_OPTS='--no-info --preview='
 
 export DOTFILES_REPO="$HOME/.dot"
 
 export TODO="$HOME/note/todo.txt"
 export QUICK="$HOME/note/quick.md"
 export CALENDAR="$HOME/note/calendar"
+
+
+export PATH="$PATH:$HOME/$GOPATH/bin"
+export PATH="$PATH:$JAVA_HOME/bin"
+
+# ~/bin to path
+if [ -d "$HOME/bin" ]; then
+  PATH="$(find "$HOME/bin" -type d | tr '\n' ':')$PATH"
+fi
+
+
+# set PATH so it includes user's private bin recuresively if it exists
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$(find "$HOME/.local/bin" -type d | tr '\n' ':')$PATH"
+fi
+

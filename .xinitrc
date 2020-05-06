@@ -4,13 +4,13 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 [ -f ~/.Xresources ] && xrdb -merge -I"$HOME" ~/.Xresources
 
+export OPENER='xdg-open'
+
 export TERMINAL='st'
 export BROWSER='brave'
-export VISUAL="vim"
 export IMGVIEWER='sxiv'
 export PDFVIEWER='zathura'
 export MEDIAPLAYER='mpv'
-export FILEBROWSER='lf'
 
 export SXHKD_SHELL='/bin/sh'
 

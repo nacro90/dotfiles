@@ -45,6 +45,7 @@ map g
 
 map i $/usr/bin/pistol $f | $PAGER -R
 
+map ga mime-show
 
 # Plain esc relaods and redraws
 map <esc> :{{
@@ -240,15 +241,13 @@ cmd touch $touch "$@"
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
-cmd open ${{
-    case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
-        image/*) $IMGVIEWER $fx &;;
-        application/pdf) $PDFVIEWER $fx &;;
-        video/* | audio/*) $MEDIAPLAYER $fx &;;
-        application/vnd.openxmlformats-officedocument*|application/msword) libreconvert.sh $fx;;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+cmd open &{{
+    xdg-open $f
+}}
+
+
+cmd mime-show %{{
+    file -i $f
 }}
 
 
@@ -341,6 +340,8 @@ map <enter> open
 # Set columns according to terminal width
 cmd fit ${{
     w=$(tput cols)
+    if [ $w -le 40 ]; then
+        lf -remote "send $id set ratios 1; set preview!"
     if [ $w -le 80 ]; then
         lf -remote "send $id set ratios 1:2"
     elif [ $w -le 160 ]; then

@@ -1,0 +1,902 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<title>GSMArena.com - mobile phone reviews, news, specifications and more...</title>
+
+
+
+
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/16425/adRecover.js?ts=1527752433225'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+
+
+<link rel="stylesheet" href="https://fdn.gsmarena.com/vv/assets10/css/gsmarena.css?v=88">
+
+<link rel="shortcut icon" href="https://fdn.gsmarena.com/imgroot/static/favicon.ico">
+
+
+
+
+<script type="text/javascript" src="//dsh7ky7308k4b.cloudfront.net/publishers/gsmarenacom.min.js"></script>
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+	
+	googletag.defineSlot('/8095840/.2_A.34912.3_gsmarena.com_tier1', [728, 90], 'div-gpt-ad-top728x90gsmarenadesktop-0').setTargeting('pageid', '1').addService(googletag.pubads());
+	
+	googletag.defineSlot('/8095840/.2_A.35452.4_gsmarena.com_tier1', [300, 250], 'div-gpt-ad-gsmarenacom35452').setTargeting('pageid', '1').addService(googletag.pubads());
+	
+	googletag.defineSlot('/8095840/.2_A.34911.7_gsmarena.com_tier1', [[300, 250], [300, 600]], 'div-gpt-ad-300x600btfgsmarenadesktop-0').setTargeting('pageid', '1').addService(googletag.pubads());
+	
+	googletag.defineSlot('/8095840/.2_A.34919.46_gsmarena.com_tier1', ['fluid'], 'div-gpt-ad-1536149699860-0').setTargeting('pageid', '1').addService(googletag.pubads());
+
+
+
+	googletag.enableServices();
+  });
+</script>
+<link rel="stylesheet" href="https://fdn.gsmarena.com/vv/assets10/css/index.css?v=23">
+
+
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta name="description" content="GSMArena.com - The ultimate resource for GSM handset information" />
+<meta name="keywords" content="GSM,mobile,phone,Nokia,Sony,Apple,iPhone,Motorola,Alcatel,Xiaomi,Samsung,Oppo,Oneplus,cellphone,specifications,information,info,opinion,review,pictures,photos" />
+<link rel="alternate" type="application/rss+xml" title="GSMArena.com RSS feed" href="https://www.gsmarena.com/rss-news-reviews.php3" />
+
+<link rel="canonical" href="https://www.gsmarena.com">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.gsmarena.com">
+
+</head>
+<body>
+
+
+
+<script type="text/javascript" src="https://fdn.gsmarena.com/vv/assets10/js/misc.js?v=45"></script>
+
+<script language='JavaScript' type='text/javascript'>
+function phpads_deliverActiveX(content)
+{
+	document.write(content);	
+}
+</script>
+<header id="header" class="row">
+<div class="wrapper clearfix">
+<div class="top-bar clearfix">
+<!-- HAMBURGER MENU -->
+<button type="button" role="button" aria-label="Toggle Navigation" class="lines-button minus focused">
+<span class="lines"></span>
+</button>
+<!-- /HAMBURGER MENU -->
+
+
+
+<!-- LOGO -->
+<div id="logo">
+<a href="/">
+
+<object type="image/svg+xml" data="https://fdn.gsmarena.com/vv/assets10/i/logo.svg"><img src="https://fdn.gsmarena.com/vv/assets10/i/logo-fallback.gif" alt="GSMArena.com"></object>
+<span>GSMArena.com</span></a>
+</div>
+
+
+
+<div id="nav" role="main">
+<form action="res.php3" method="get" id="topsearch">
+    <input type="text" placeholder="Search" tabindex="201" accesskey="s" id="topsearch-text" name="sSearch" autocomplete="off" />
+    <span id="quick-search-button">
+      <input type="submit" value="Go" />
+      <i class="head-icon icomoon-liga icon-search-left"></i>
+    </span>
+    
+
+</form>
+</div>
+
+
+<div id="social-connect">
+<a href="tipus.php3" class="tip-icon">
+  <i class="head-icon icon-tip-us icomoon-liga"></i><br><span class="icon-count">Tip us</span>
+</a>
+<a href="https://www.facebook.com/GSMArenacom-189627474421/" class="fb-icon" target="_blank" rel="noopener">
+  <i class="head-icon icon-soc-fb2 icomoon-liga"></i><br><span class="icon-count">884k</span>
+</a>
+<a href="https://twitter.com/gsmarena_com" class="tw-icon" target="_blank" rel="noopener">
+  <i class="head-icon icon-soc-twitter2 icomoon-liga"></i><br><span class="icon-count">149k</span>
+</a>
+
+<a href="https://www.instagram.com/gsmarenateam/" class="ig-icon" target="_blank" rel="noopener">
+  <i class="head-icon icon-instagram icomoon-liga"></i>
+  <span class="icon-count">NEW!</span>
+</a>
+<a href="https://www.youtube.com/channel/UCbLq9tsbo8peV22VxbDAfXA?sub_confirmation=1" class="yt-icon" target="_blank" rel="noopener">
+  <i class="head-icon icon-soc-youtube icomoon-liga"></i><br><span class="icon-count">756k</span>
+</a>
+<a href="rss-news-reviews.php3" class="rss-icon">
+  <i class="head-icon icon-soc-rss2 icomoon-liga"></i><br><span class="icon-count">RSS</span>
+</a>
+
+
+
+
+	<a href="#" onclick="return false;" class="login-icon" id="login-active">
+	  <i class="head-icon icon-login"></i><br><span class="icon-count" style="right:4px;">Log in</span>
+	</a>
+
+	<span class="tooltip" id="login-popup2">
+<form action="login.php3" method="post">
+<input type="Hidden" name="sSource" value="MA%3D%3D">  
+	<p>Login</p>
+	<label for="email"></label>
+	<input type="email" id="email" name="sEmail" maxlength="50" value="" required="" autocomplete="false">
+
+	<label for="upass"></label>
+	<input type="password" id="upass" name="sPassword" placeholder="Your password" maxlength="20" pattern="\S{6,}" required="" autocomplete="false">
+
+	<input class="button" type="submit" value="Log in" id="nick-submit">
+</form>
+	<a class="forgot" href="forgot.php3">I forgot my password</a>
+	</span>
+ <a href="register.php3" class="signup-icon no-margin-right"><i class="head-icon icon-user-plus"></i><span class="icon-count">Sign up</span></a>  
+              </div>  
+           </div>                 
+<ul id="menu" class="main-menu-list">
+	<li><a href="/">Home</a></li>
+	<li><a href="news.php3">News</a></li>
+	<li><a href="reviews.php3">Reviews</a></li>
+  <li><a href="videos.php3">Videos</a></li>
+	<li><a href="news.php3?sTag=Featured">Featured</a></li>
+	<li><a href="search.php3">Phone Finder</a></li>
+	<li><a href="tools.php3">Tools</a></li>
+	<li><a href="glossary.php3">Glossary</a></li>
+	<li><a href="network-bands.php3">Coverage</a></li>
+	<li><a href="contact.php3">Contact</a></li>                   
+</ul>
+  
+
+
+      <!-- SOCIAL CONNECT -->
+    </div>
+    
+
+</header> <!--- HEADER END -->
+
+
+		
+
+<div id="wrapper" class="l-container">
+<div id="outer" class="row">
+
+
+<div id="subHeader" class="col">
+<div id="topPromo">		
+		<div class="alt-display is-review" style="background-image: url(https://fdn.gsmarena.com/imgroot/reviews/19/xiaomi-redmi-k20-pro/-347x151/thumb.jpg)">
+		  <a class="table-cell reviews-xl-snazzy" href="xiaomi_redmi_k20_pro_mi_9t_pro-review-1973.php">
+			  <div class="module-review-xl-title">
+				    	
+			    	<strong>Xiaomi Redmi K20 Pro/Mi 9T Pro review</strong>
+			   
+			  
+		 	  </div>
+		 </a>
+	  </div>
+</div><div id="topAdv" class="l-box" adonis-marker data-pan-sizes="[[728,90]]"><!-- /8095840/.2_A.34912.3_gsmarena.com_tier1 -->
+<div id='div-gpt-ad-top728x90gsmarenadesktop-0' style='height:90px; width:728px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-top728x90gsmarenadesktop-0'); });
+</script>
+</div>
+	</div>   
+</div>
+
+
+<div id="body">
+
+<div class="main float-right has-trending"> 
+
+<div class="review-column-index" id="review-sample" style="position:relative;">
+<div class="review-column-list">
+<article class="review-column-list-item review-column-list-item-main ">
+<a href="honor_9x-review-2011.php" class="block-link">    
+	<header>
+	  
+	  <h3>Honor 9X review</h3>
+	</header>                            
+	<img class="review-list-item-image" src="https://fdn.gsmarena.com/imgroot/reviews/19/honor-9x/-728x314/thumb.jpg" alt="Honor 9X review" />
+</a>
+<footer class="meta-line has-border">
+  <time class="meta-item-time float-left">
+  <i class="head-icon icon-clock2"></i>3 hours ago</time>
+  <a class="meta-item-comments float-right" href="reviewcomm-2011.php"><i class="head-icon icon-comments"></i>7</a>
+</footer>
+	
+</article>
+
+<div class="review-column-list-item review-column-list-item-secondary">
+	<article>
+	
+	  <a href="nokia_7_2-review-2010.php" class="block-link">
+		<header>
+			  
+		  <h3>Nokia 7.2 review</h3>
+		</header>
+		<img class="review-list-item-image" src="https://fdn.gsmarena.com/imgroot/reviews/19/nokia-72/-347x151/gsmarena_001.jpg" alt="Nokia 7.2 review" />
+	  </a>
+	  <footer class="meta-line has-border clearfix">
+		<a class="meta-item-comments float-right" href="reviewcomm-2010.php"><i class="head-icon icon-comments"></i>69</a>
+	  </footer>
+	</article>
+	<article>
+		
+	  <a href="motorola_one_zoom-review-2009.php" class="block-link">
+		<header>
+		  
+		  <h3>Motorola One Zoom review</h3>
+		</header>
+		<img class="review-list-item-image" src="https://fdn.gsmarena.com/imgroot/reviews/19/motorola-one-zoom/-347x151/gsmarena_001.jpg" alt="Motorola One Zoom review" />
+	  </a>
+	  <footer class="meta-line">
+		<a class="meta-item-comments float-right" href="reviewcomm-2009.php"><i class="head-icon icon-comments"></i>28</a>
+	  </footer>
+	</article>
+	<!-- MORE REVIEWS TOGGLE -->
+   
+<div class="more-reviews-list-container">
+
+<h4>More reviews 
+  <a href="reviews.php3" class="right">View all</a>
+</h4>
+
+<ul class="more-reviews-list">
+		
+		  <li><a href="oneplus_7t_pro-review-2008.php" class="block-link">OnePlus 7T Pro review</a></li>
+		
+		  <li><a href="vivo_v17_pro-review-2006.php" class="block-link">vivo V17 Pro review</a></li>
+		
+		  <li><a href="oneplus_7t_pro_mclaren_edition_hands_on-review-2007.php" class="block-link">OnePlus 7T Pro McLaren Edition hands-on review</a></li>
+		
+		  <li><a href="vivo_nex_3_5g-review-2005.php" class="block-link">vivo NEX 3 5G review</a></li>
+		
+		  <li><a href="realme_x2_pro_hands_on-review-2004.php" class="block-link">Realme X2, X2 Pro hands-on review</a></li>
+		
+		  <li><a href="zte_nubia_z20-review-2003.php" class="block-link">ZTE nubia Z20 review</a></li>
+</ul>
+</div>
+
+<a href="#" class="more-reviews-list-toggle block-link">&#9650;</a>
+  
+
+</div>
+
+</div>
+
+
+<!-- <a href="#" style="position:absolute;top:0;left:0;z-index:20; display:block;width:100%;height:100%"></a>
+<img src="i/review-sample-10.jpg" class="hide" style="position:absolute;top:0;left:0;z-index:10;" alt="" />
+<img src="i/review-sample-11.jpg" style="position:absolute;top:0;left:0;z-index:5;" alt="" /> -->
+</div>
+
+
+	
+
+
+
+
+	<div class="feat">
+	<section class="feat-container flex-container">
+
+			<div class="flex-column flex-size-2">
+			<article class="feat-item flex-item"><div class="meta-line"><span class="meta-item-time"><i class="head-icon icon-clock2"></i>4 hours ago</span><a class="meta-item-comments" href="newscomm-39802.php"><i class="head-icon icon-comments"></i>13</a></div><header class="feat-item-header"><h3 class="feat-item-title">Moto G8 Plus and E6 Play go official as Moto One Macro goes global</h3></header><span class="feat-item-image" style="background-image:url('https://fdn.gsmarena.com/imgroot/news/19/10/motorola-e6-play-g8-plus/-728x314/gsmarena_005.jpg');"></span><a href="motorola_g8_plus_and_e6_play_go_official_alongside_moto_one_macros_global_debut-news-39802.php" class="feat-item-link link-faux"></a></article>		</div>
+		<div class="flex-column">
+			<article class="feat-item flex-item"><div class="meta-line"><span class="meta-item-time"><i class="head-icon icon-clock2"></i>7 hours ago</span><a class="meta-item-comments" href="newscomm-39793.php"><i class="head-icon icon-comments"></i>25</a></div><header class="feat-item-header"><h3 class="feat-item-title">Honor 9X is going international with 48MP rear and pop-up selfie cameras</h3></header><span class="feat-item-image" style="background-image:url('https://fdn.gsmarena.com/imgroot/news/19/10/honor-9x-official/-344x215/gsmarena_000.jpg');"></span><a href="the_honor_9x_is_going_international_with_48mp_rear_cam_and_popup_selfie_camera-news-39793.php" class="feat-item-link link-faux"></a></article>			<article class="feat-item flex-item"><div class="meta-line"><span class="meta-item-time"><i class="head-icon icon-clock2"></i>10 hours ago</span><a class="meta-item-comments" href="newscomm-39787.php"><i class="head-icon icon-comments"></i>27</a></div><header class="feat-item-header"><h3 class="feat-item-title">Google lists manufacturers that will ship Android 10 updates this year</h3></header><span class="feat-item-image" style="background-image:url('https://fdn.gsmarena.com/imgroot/news/19/10/google-android-10-major-manufactureres-before-end-of-2019/-344x215/gsmarena_002.jpg');"></span><a href="google_confirms_most_major_manufacturers_will_ship_stable_build_of_android_10_to_some_devices_before-news-39787.php" class="feat-item-link link-faux"></a></article>		</div>
+	
+	</section>
+
+
+</div>
+
+<div class="news-column-index">
+
+
+<div class="trending-now-index clearfix">
+<h4 class="trending-now-title left">
+Trending now
+</h4>
+<div class="article-tags clearfix left">
+<p>
+<a href="news.php3?sSearch=iPhone%2011"><b>iPhone 11</b></a><a href="news.php3?sSearch=Redmi%20Note"><b>Redmi Note</b></a><a href="news.php3?sSearch=Galaxy%20M30s"><b>Galaxy M30s</b></a><a href="news.php3?sSearch=Nokia%207.2"><b>Nokia 7.2</b></a><a href="news.php3?sSearch=Xperia%205"><b>Xperia 5</b></a><a href="news.php3?sSearch=Mate%2030"><b>Mate 30</b></a><a href="news.php3?sSearch=Galaxy%20Note"><b>Galaxy Note</b></a>
+</p>
+</div>
+</div>
+
+
+<div class="floating-title">
+
+
+
+<div class="news-item">
+	<a href="moto_g8_play_shows_up_in_online_store_before_its_even_announced-news-39799.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/moto-one-g8-play-in-store-early/-344x215/gsmarena_000.jpg" alt="Moto G8 Play shows up in online store before it's even announced">
+		</div>
+		<h3>Moto G8 Play shows up in online store before it's even announced</h3>
+		<p>Someone jumped the gun, but won't stop us from looking at the specs and images of the phone.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>3 minutes ago</span>
+		<a class="meta-item-comments" href="newscomm-39799.php"><i class="head-icon icon-comments"></i>0</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="apple_to_focus_on_iphone_11_production_at_the_expense_of_11_pro_duo-news-39800.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/apple-focus-on-iphone-11/-344x215/gsmarena_003.jpg" alt="Apple to focus on iPhone 11 production at the expense of 11 Pro duo">
+		</div>
+		<h3>Apple to focus on iPhone 11 production at the expense of 11 Pro duo</h3>
+		<p>The iPhone 11 is expected to keep selling strongly heading into the Holiday season.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>1 hour ago</span>
+		<a class="meta-item-comments" href="newscomm-39800.php"><i class="head-icon icon-comments"></i>6</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="google_promises_update_to_enable_90hz_on_pixel_4_in_more_brightness_conditions-news-39796.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/pixel-4-90hz-update/-344x215/gsmarena_000.jpg" alt="Google promises update to enable 90Hz on Pixel 4 in "more brightness conditions"">
+		</div>
+		<h3>Google promises update to enable 90Hz on Pixel 4 in "more brightness conditions"</h3>
+		<p>The update will be rolled out in the coming weeks, but there are no details on the new lower bound for the brightness if you want the 90Hz refresh rate.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>2 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39796.php"><i class="head-icon icon-comments"></i>18</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="samsungs_android_10_beta_for_the_s10_series_is_now_avaiable_in_india_poland_and_france-news-39794.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/samsung-oneui2-beta-india-poland-france/-344x215/gsmarena_003.jpg" alt="Samsung’s Android 10 beta for the S10 series expands to India, Poland and France">
+		</div>
+		<h3>Samsung’s Android 10 beta for the S10 series expands to India, Poland and France</h3>
+		<p>The list of countries is expected to grow in the coming days.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>3 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39794.php"><i class="head-icon icon-comments"></i>0</a>
+	</div>
+</div>
+
+<div class="post">
+	<article class="feat-item flex-item">
+		<div class="meta-line">
+			<span class="meta-item-time"><i class="head-icon icon-clock2"></i>4 hours ago</span>
+			<a class="meta-item-comments" href="newscomm-39802.php"><i class="head-icon icon-comments"></i>13</a>
+		</div>
+		<header class="feat-item-header">
+			<h3 class="feat-item-title">Moto G8 Plus and E6 Play go official as Moto One Macro goes global</h3><br>
+		</header>
+		<span class="feat-item-image" style="background-image:url('https://fdn.gsmarena.com/imgroot/news/19/10/motorola-e6-play-g8-plus/-728x314/gsmarena_005.jpg');"></span>
+		<a href="motorola_g8_plus_and_e6_play_go_official_alongside_moto_one_macros_global_debut-news-39802.php" class="feat-item-link link-faux"></a>
+</div>
+
+
+<div style="margin-bottom: 10px;">
+<!-- /8095840/.2_A.34919.46_gsmarena.com_tier1 -->
+<div id='div-gpt-ad-1536149699860-0' style='height:168px; width: 707px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1536149699860-0'); });
+</script>
+</div>
+</div>
+
+<div class="news-item">
+	<a href="honor_v30_5g_huawei_nova_6_5g_tenaa-news-39789.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/honor-v30-coming-in-november/-344x215/gsmarena_000.jpg" alt="Honor V30 5G and Huawei Nova 6 5G get TENAA certified">
+		</div>
+		<h3>Honor V30 5G and Huawei Nova 6 5G get TENAA certified</h3>
+		<p>There's no word on when the Nova 6 will arrive, but the V30 is coming next month.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>5 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39789.php"><i class="head-icon icon-comments"></i>2</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="samsung_unveils_12gb_ram_plus_ufs_30_storage_combo_packages_for_midrangers-news-39791.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/samsung-12gb-umcp/-344x215/gsmarena_000.jpg" alt="Samsung unveils 12GB RAM plus UFS 3.0 storage combo packages for mid-rangers">
+		</div>
+		<h3>Samsung unveils 12GB RAM plus UFS 3.0 storage combo packages for mid-rangers</h3>
+		<p>The multi-chip packages combine several LPDDR4X RAM chips and UFS 3.0 storage.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>6 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39791.php"><i class="head-icon icon-comments"></i>18</a>
+	</div>
+</div>
+
+<div class="post">
+	<article class="feat-item flex-item">
+		<div class="meta-line">
+			<span class="meta-item-time"><i class="head-icon icon-clock2"></i>7 hours ago</span>
+			<a class="meta-item-comments" href="newscomm-39793.php"><i class="head-icon icon-comments"></i>25</a>
+		</div>
+		<header class="feat-item-header">
+			<h3 class="feat-item-title">Honor 9X is going international with 48MP rear and pop-up selfie cameras</h3><br>
+		</header>
+		<span class="feat-item-image" style="background-image:url('https://fdn.gsmarena.com/imgroot/news/19/10/honor-9x-official/-728x314/gsmarena_000.jpg');"></span>
+		<a href="the_honor_9x_is_going_international_with_48mp_rear_cam_and_popup_selfie_camera-news-39793.php" class="feat-item-link link-faux"></a>
+</div>
+
+<div class="news-item">
+	<a href="pixel_4_video_teardown_shows_its_not_the_easiest_phone_to_take_apart-news-39790.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/pixel-4-teardown/-344x215/gsmarena_003.jpg" alt="Pixel 4 video teardown shows it's not the easiest phone to take apart">
+		</div>
+		<h3>Pixel 4 video teardown shows it's not the easiest phone to take apart</h3>
+		<p>Lots of screws and brackets inside Google's latest flagship. </p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>8 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39790.php"><i class="head-icon icon-comments"></i>4</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="android_10based_emui_public_beta_is_now_hitting_huawei_mate_20_smartphones-news-39788.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/05/huawei-mate-20-pro-android-q-beta-back/-344x215/gsmarena_001.jpg" alt="Android 10-based EMUI beta now available for Huawei Mate 20 family">
+		</div>
+		<h3>Android 10-based EMUI beta now available for Huawei Mate 20 family</h3>
+		<p>If everything goes well in China with the bug reports, the stable update should follow soon.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>9 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39788.php"><i class="head-icon icon-comments"></i>18</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="google_confirms_most_major_manufacturers_will_ship_stable_build_of_android_10_to_some_devices_before-news-39787.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/google-android-10-major-manufactureres-before-end-of-2019/-344x215/gsmarena_002.jpg" alt="Google lists manufacturers that will ship Android 10 updates this year">
+		</div>
+		<h3>Google lists manufacturers that will ship Android 10 updates this year</h3>
+		<p>Asus, LG, Motorola, Oppo, Realme, Samsung and Sony are among the companies expected to ship a stable version of Android 10 before the year's end.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>10 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39787.php"><i class="head-icon icon-comments"></i>27</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="samsung_galaxy_s10_note10_fingerprint_bug_software_fix-news-39786.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/samsung-galaxy-s10-fingerprint-bug-update/-344x215/gsmarena_001.jpg" alt="Samsung Galaxy S10 and Note10 receiving a fix for fingerprint flaw">
+		</div>
+		<h3>Samsung Galaxy S10 and Note10 receiving a fix for fingerprint flaw</h3>
+		<p>The updates are currently seeding in South Korea and will be rolled out in other countries in 24 hours.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>10 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39786.php"><i class="head-icon icon-comments"></i>21</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="oneplus_7_7_pro_oxygenos_open_beta_4-news-39783.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/05/oneplus-7-pro-out-us/-344x215/gsmarena_001.jpg" alt="OnePlus announces OxygenOS Open Beta 4 for OnePlus 7 and 7 Pro">
+		</div>
+		<h3>OnePlus announces OxygenOS Open Beta 4 for OnePlus 7 and 7 Pro</h3>
+		<p>But the update is currently only available for the Pro variant.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>11 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39783.php"><i class="head-icon icon-comments"></i>0</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="huawei_band_4_specs_price-news-39785.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/huawei-band-4-official/-344x215/gsmarena_001.jpg" alt="Huawei Band 4 arrives with a color display and USB-A charging port">
+		</div>
+		<h3>Huawei Band 4 arrives with a color display and USB-A charging port</h3>
+		<p>It's a rebadged Honor 5i with a pill-shaped button.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>12 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39785.php"><i class="head-icon icon-comments"></i>8</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="samsung_announces_exynos_990_with_120hz_display_support-news-39784.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/samsung-exynos-990-modem-5123-ofic/-344x215/gsmarena_000.jpg" alt="Samsung announces Exynos 990 with 120Hz display support">
+		</div>
+		<h3>Samsung announces Exynos 990 with 120Hz display support</h3>
+		<p>The platform comes alongside a brand new 5G modem  - Exynos Modem 5123.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>13 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39784.php"><i class="head-icon icon-comments"></i>39</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="our_oneplus_7t_pro_video_review_is_up-news-39782.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/oneplus-7t-pro-video-review/-344x215/gsmarena_001.jpg" alt="Our OnePlus 7T Pro video review is up">
+		</div>
+		<h3>Our OnePlus 7T Pro video review is up</h3>
+		<p>Is the smallest upgrade in the history of phone successors worth it?</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>15 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39782.php"><i class="head-icon icon-comments"></i>2</a>
+	</div>
+</div>
+
+
+<div style="margin-bottom: 10px;">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-fr-1q+80-2x-fz"
+     data-ad-client="ca-pub-9508420272844734"
+     data-ad-slot="8228585564"></ins>
+<script>
+	 (adsbygoogle = window.adsbygoogle||[]).requestNonPersonalizedAds = 1;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<div class="news-item">
+	<a href="samsung_to_soon_push_one_ui_20_beta_based_on_android_10_for_galaxy_s10series-news-39774.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/galaxy-s10-rumored-oneuie-2-beta/-344x215/gsmarena_000.jpg" alt="Samsung Galaxy S10 second One UI 2.0 beta coming soon">
+		</div>
+		<h3>Samsung Galaxy S10 second One UI 2.0 beta coming soon</h3>
+		<p>Samsung dropped a hint through the changelog of one of its apps.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>17 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39774.php"><i class="head-icon icon-comments"></i>7</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="moto_g8_plus_spotted_in_the_geekbench_database_with_snapdragon_665_chipset-news-39780.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/moto-g8-plus-geekbench/-344x215/gsmarena_000.jpg" alt="Moto G8 Plus spotted in the Geekbench database with Snapdragon 665 chipset">
+		</div>
+		<h3>Moto G8 Plus spotted in the Geekbench database with Snapdragon 665 chipset</h3>
+		<p>The info from Geekbench matches up with the early rumors of the device.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>18 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39780.php"><i class="head-icon icon-comments"></i>12</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="huawei_mate_xs_coming_in_march_2020-news-39779.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/huawei-mate-xs-coming-march-2020/-344x215/gsmarena_000.jpg" alt="Huawei Mate Xs coming with Kirin 990 5G in March 2020">
+		</div>
+		<h3>Huawei Mate Xs coming with Kirin 990 5G in March 2020</h3>
+		<p>The second foldable phone in Huawei's lineup will come with the Kirin 990 5G SoC. </p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>20 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39779.php"><i class="head-icon icon-comments"></i>19</a>
+	</div>
+</div>
+
+<div class="news-item">
+	<a href="xiaomi_debuts_at_7_in_fortunes_future_50__a_list_of_companies_with_the_best_longterm_growth_potentia-news-39778.php">
+		<div class="news-item-media-wrap left">
+			<img src="https://fdn.gsmarena.com/imgroot/news/19/10/xiaomi-n7-in-future-50-list/-344x215/gsmarena_000.jpg" alt="Xiaomi debuts at #7 in Fortune's Future 50 list of companies with greatest growth potential">
+		</div>
+		<h3>Xiaomi debuts at #7 in Fortune's Future 50 list of companies with greatest growth potential</h3>
+		<p>It's just about the only smartphone maker on the list - the only other entry is Alphabet (Google). But that's probably not because of phones.</p>
+	</a>
+	<div class="meta-line">
+		<span class="meta-item-time"><i class="head-icon icon-clock2"></i>21 hours ago</span>
+		<a class="meta-item-comments" href="newscomm-39778.php"><i class="head-icon icon-comments"></i>13</a>
+	</div>
+</div>
+
+
+
+
+</div>
+
+<br class="clear" />
+
+</div>
+
+					
+
+
+</div>
+
+<aside class="sidebar col left">
+
+<div class="brandmenu-v2 light l-box clearfix">
+<p class="pad">
+<a href="search.php3" class="pad-single pad-finder">
+<i class="head-icon icon-search-right"></i>
+<span>Phone finder</span></a>
+</p>
+<ul>
+<li><a href="samsung-phones-9.php">Samsung</a></li><li><a href="apple-phones-48.php">Apple</a></li><li><a href="huawei-phones-58.php">Huawei</a></li><li><a href="nokia-phones-1.php">Nokia</a></li><li><a href="sony-phones-7.php">Sony</a></li><li><a href="lg-phones-20.php">LG</a></li><li><a href="htc-phones-45.php">HTC</a></li><li><a href="motorola-phones-4.php">Motorola</a></li><li><a href="lenovo-phones-73.php">Lenovo</a></li><li><a href="xiaomi-phones-80.php">Xiaomi</a></li><li><a href="google-phones-107.php">Google</a></li><li><a href="honor-phones-121.php">Honor</a></li><li><a href="oppo-phones-82.php">Oppo</a></li><li><a href="realme-phones-118.php">Realme</a></li><li><a href="oneplus-phones-95.php">OnePlus</a></li><li><a href="vivo-phones-98.php">vivo</a></li><li><a href="meizu-phones-74.php">Meizu</a></li><li><a href="blackberry-phones-36.php">BlackBerry</a></li><li><a href="asus-phones-46.php">Asus</a></li><li><a href="alcatel-phones-5.php">Alcatel</a></li><li><a href="zte-phones-62.php">ZTE</a></li><li><a href="microsoft-phones-64.php">Microsoft</a></li><li><a href="vodafone-phones-53.php">Vodafone</a></li><li><a href="energizer-phones-106.php">Energizer</a></li><li><a href="cat-phones-89.php">Cat</a></li><li><a href="sharp-phones-23.php">Sharp</a></li><li><a href="micromax-phones-66.php">Micromax</a></li><li><a href="blu-phones-67.php">BLU</a></li><li><a href="acer-phones-59.php">Acer</a></li><li><a href="infinix-phones-119.php">Infinix</a></li><li><a href="tecno-phones-120.php">Tecno</a></li><li><a href="wiko-phones-96.php">Wiko</a></li><li><a href="panasonic-phones-6.php">Panasonic</a></li><li><a href="yu-phones-100.php">YU</a></li><li><a href="verykool-phones-70.php">verykool</a></li><li><a href="plum-phones-72.php">Plum</a></li></ul>
+
+<p class="pad">
+<a href="makers.php3" class="pad-multiple pad-allbrands">
+  <i class="head-icon icon-mobile-phone231"></i>
+  <span>All brands</span>
+</a>
+<a href="rumored.php3" class="pad-multiple pad-rumormill">
+  <i class="head-icon icon-rumored"></i>
+  <span>Rumor mill</span>
+</a>
+</p>
+</div>
+<div class="adv banner-mpu" adonis-marker data-pan-sizes="[[300,250]]">
+<!-- /8095840/.2_A.35452.4_gsmarena.com_tier1 -->
+<div id='div-gpt-ad-gsmarenacom35452' style='height:250px; width:300px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-gsmarenacom35452'); });
+</script>
+</div>
+	</div>
+
+
+<div class="module module-phones module-instores">
+<h4 class="section-heading">Latest devices</h4>
+<div style="overflow:hidden"><a href="honor_9x-9931.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/honor-9x.jpg"><br>Honor 9X</a><a href="oneplus_7t_pro_5g_mclaren-9928.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/oneplus-7t-pro-5g-mclaren-edition-.jpg"><br>OnePlus 7T Pro 5G McLaren</a><a href="meizu_16t-9926.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/meizu-16t.jpg"><br>Meizu 16T</a><a href="motorola_moto_g8_plus-9916.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/motorola-g8-plus-offic.jpg"><br>Motorola Moto G8 Plus</a><a href="motorola_moto_e6_play-9932.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/motorola-moto-e6-play-.jpg"><br>Motorola Moto E6 Play</a><a href="huawei_nova_5z-9922.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/huawei-nova-5z.jpg"><br>Huawei nova 5z</a></div>		
+</div>
+
+<div class="module module-phones module-instores">
+<h4 class="section-heading">In stores now</h4>
+<div style="overflow:hidden"><a href="huawei_mate_30_pro_5g-9880.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/huawei-mate30-pro-5g.jpg"><br>Huawei Mate 30 Pro 5G</a><a href="huawei_mate_30_5g-9881.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/huawei-mate30-5g.jpg"><br>Huawei Mate 30 5G</a><a href="google_pixel_4_xl-9895.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg"><br>Google Pixel 4 XL</a><a href="google_pixel_4-9896.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/google-pixel-4-r1.jpg"><br>Google Pixel 4</a><a href="realme_x2_pro-9904.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/realme-x2-pro.jpg"><br>Realme X2 Pro</a><a href="oppo_reno_ace-9894.php" class="module-phones-link"><img src="https://cdn2.gsmarena.com/vv/bigpic/oppo-reno-ace.jpg"><br>Oppo Reno Ace</a></div>		
+</div>
+
+			
+
+
+
+
+
+
+
+
+<div class="module module-rankings s3">
+<h4 class="section-heading">Top 10 by daily interest</h4>
+<table class="module-fit green" cellspacing="0">
+<colgroup>
+  <col class="numb">
+  <col class="phon">
+  <col class="hits">
+  <col class="dummy">
+</colgroup>
+<thead>              
+  <tr>
+	<th scope="col" id="th3a" abbr="">&nbsp;</th>
+	<th scope="col" id="th3b" abbr="">Device</th>
+	<th scope="col" id="th3c" abbr="">Daily hits</th>
+	<th scope="col">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>             
+<tr>
+<tr><td headers="th3a">1.</td><th headers="th3b"><a href="xiaomi_redmi_note_8_pro-9812.php"><nobr>Xiaomi Redmi Note 8 Pro</nobr></a></th><td headers="th3c">69,600</td><td></td></tr><tr><td headers="th3a">2.</td><th headers="th3b"><a href="xiaomi_redmi_note_8-9814.php"><nobr>Xiaomi Redmi Note 8</nobr></a></th><td headers="th3c">44,595</td><td></td></tr><tr><td headers="th3a">3.</td><th headers="th3b"><a href="oneplus_7t_pro_5g_mclaren-9928.php"><nobr>OnePlus 7T Pro 5G McLaren</nobr></a></th><td headers="th3c">31,300</td><td></td></tr><tr><td headers="th3a">4.</td><th headers="th3b"><a href="meizu_16t-9926.php"><nobr>Meizu 16T</nobr></a></th><td headers="th3c">30,929</td><td></td></tr><tr><td headers="th3a">5.</td><th headers="th3b"><a href="realme_x2_pro-9904.php"><nobr>Realme X2 Pro</nobr></a></th><td headers="th3c">30,479</td><td></td></tr><tr><td headers="th3a">6.</td><th headers="th3b"><a href="samsung_galaxy_a50-9554.php"><nobr>Samsung Galaxy A50</nobr></a></th><td headers="th3c">28,624</td><td></td></tr><tr><td headers="th3a">7.</td><th headers="th3b"><a href="realme_5_pro-9801.php"><nobr>Realme 5 Pro</nobr></a></th><td headers="th3c">26,873</td><td></td></tr><tr><td headers="th3a">8.</td><th headers="th3b"><a href="apple_iphone_11_pro_max-9846.php"><nobr>Apple iPhone 11 Pro Max</nobr></a></th><td headers="th3c">25,181</td><td></td></tr><tr><td headers="th3a">9.</td><th headers="th3b"><a href="huawei_nova_5z-9922.php"><nobr>Huawei nova 5z</nobr></a></th><td headers="th3c">25,123</td><td></td></tr><tr><td headers="th3a">10.</td><th headers="th3b"><a href="xiaomi_redmi_8-9800.php"><nobr>Xiaomi Redmi 8</nobr></a></th><td headers="th3c">24,081</td><td></td></tr></tbody>
+
+</table>
+</div>
+
+<div class="module module-rankings s3">
+<h4 class="section-heading">Top 10 by fans</h4>
+<table class="module-fit blue" cellspacing="0">
+<colgroup>
+  <col class="numb">
+  <col class="phon">
+  <col class="hits">
+  <col class="dummy">
+</colgroup>
+<thead>              
+  <tr>
+	<th scope="col" id="th3a" abbr="">&nbsp;</th>
+	<th scope="col" id="th3b" abbr="">Device</th>
+	<th scope="col" id="th3c" abbr="">Favorites</th>
+	<th scope="col">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>             
+<tr>
+<tr><td headers="th3a">1.</td><th headers="th3b"><a href="xiaomi_pocophone_f1-9293.php"><nobr>Xiaomi Pocophone F1</nobr></a></th><td headers="th3c">1,562</td><td></td></tr><tr><td headers="th3a">2.</td><th headers="th3b"><a href="xiaomi_redmi_note_7-9513.php"><nobr>Xiaomi Redmi Note 7</nobr></a></th><td headers="th3c">988</td><td></td></tr><tr><td headers="th3a">3.</td><th headers="th3b"><a href="xiaomi_redmi_k20_pro-9708.php"><nobr>Xiaomi Redmi K20 Pro</nobr></a></th><td headers="th3c">804</td><td></td></tr><tr><td headers="th3a">4.</td><th headers="th3b"><a href="samsung_galaxy_s10+-9535.php"><nobr>Samsung Galaxy S10+</nobr></a></th><td headers="th3c">780</td><td></td></tr><tr><td headers="th3a">5.</td><th headers="th3b"><a href="samsung_galaxy_a50-9554.php"><nobr>Samsung Galaxy A50</nobr></a></th><td headers="th3c">753</td><td></td></tr><tr><td headers="th3a">6.</td><th headers="th3b"><a href="huawei_mate_20_pro-9343.php"><nobr>Huawei Mate 20 Pro</nobr></a></th><td headers="th3c">743</td><td></td></tr><tr><td headers="th3a">7.</td><th headers="th3b"><a href="nokia_6_1_plus_(nokia_x6)-9178.php"><nobr>Nokia 6.1 Plus (Nokia X6)</nobr></a></th><td headers="th3c">720</td><td></td></tr><tr><td headers="th3a">8.</td><th headers="th3b"><a href="oneplus_7_pro-9689.php"><nobr>OnePlus 7 Pro</nobr></a></th><td headers="th3c">632</td><td></td></tr><tr><td headers="th3a">9.</td><th headers="th3b"><a href="xiaomi_redmi_note_7_pro-9521.php"><nobr>Xiaomi Redmi Note 7 Pro</nobr></a></th><td headers="th3c">629</td><td></td></tr><tr><td headers="th3a">10.</td><th headers="th3b"><a href="xiaomi_mi_9-9507.php"><nobr>Xiaomi Mi 9</nobr></a></th><td headers="th3c">592</td><td></td></tr></tbody>
+
+</table>
+</div> 
+
+
+ 
+<div class="adv banner-mpu" adonis-marker data-pan-sizes="[[300,600],[300,250]]">
+<!-- /8095840/.2_A.34911.7_gsmarena.com_tier1 -->
+<div id='div-gpt-ad-300x600btfgsmarenadesktop-0'  style='height:600px; width:300px;'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-300x600btfgsmarenadesktop-0'); });
+</script>
+</div>
+</div>
+
+			
+
+<style>
+.module-fit.purple { 
+    width: 100%; 
+}
+.module-fit.purple td {
+    text-align: left;
+}
+
+.module-rankings .purple tbody tr:nth-child(odd) {
+    background-color: #fff2ee;
+}
+</style>
+
+
+
+
+
+
+<div class="module module-rankings s3">
+<h4 class="section-heading">Popular comparisons</h4>
+<table class="module-fit purple" cellspacing="0">
+<tbody>             
+<tr><th><a href="compare.php3?idPhone1=9554&idPhone2=9646">Samsung Galaxy A50 vs. Galaxy A70</a</th></tr><tr><th><a href="compare.php3?idPhone1=9812&idPhone2=9814">Xiaomi Redmi Note 8 Pro vs. Redmi Note 8</a</th></tr><tr><th><a href="compare.php3?idPhone1=9847&idPhone2=9848">Apple iPhone 11 Pro vs. Apple iPhone 11</a</th></tr><tr><th><a href="compare.php3?idPhone1=9554&idPhone2=9806">Samsung Galaxy A50 vs. Galaxy A50s</a</th></tr><tr><th><a href="compare.php3?idPhone1=9689&idPhone2=9816">OnePlus 7 Pro vs. OnePlus 7T</a</th></tr><tr><th><a href="compare.php3?idPhone1=9846&idPhone2=9847">Apple iPhone 11 Pro Max vs. iPhone 11 Pro</a</th></tr><tr><th><a href="compare.php3?idPhone1=9623&idPhone2=9816">OnePlus 7 vs. OnePlus 7T</a</th></tr><tr><th><a href="compare.php3?idPhone1=9320&idPhone2=9848">Apple iPhone XR vs. Apple iPhone 11</a</th></tr><tr><th><a href="compare.php3?idPhone1=9319&idPhone2=9846">Apple iPhone XS Max vs. iPhone 11 Pro Max</a</th></tr><tr><th><a href="compare.php3?idPhone1=9732&idPhone2=9846">Samsung Galaxy Note10+ vs. iPhone 11 Pro Max</a</th></tr><tr><th><a href="compare.php3?idPhone1=8858&idPhone2=9318">Apple iPhone X vs. Apple iPhone XS</a</th></tr></tbody>
+
+</table>
+</div>
+
+<div id="footer-side">
+<div class="footer-inner">
+<div class="footer-logo">
+    <a href="/" class="gsma-logo">
+       <img src="https://cdn2.gsmarena.com/w/css/logo-gsmarena-com.gif" alt="" />
+    </a>
+    <a id="footer-mobile-v" href="https://www.gsmarena.com/switch.php3?ver=mobile&amp;ref=MA%3D%3D"><i class="head-icon icon-touch-1"></i>Mobile version</a>
+</div>
+<div id="footmenu">
+    <p>
+    	<a href="news.php3">News</a>
+		<a href="reviews.php3">Reviews</a>
+		<a href="blog.php3">Blog</a>
+		<a href="search.php3">Phone Finder</a>
+		<a href="faq.php3">FAQ</a><br><br>
+		<a href="compare.php3">Compare</a>
+		<a href="network-bands.php3">Coverage</a>
+		<a href="glossary.php3">Glossary</a>
+		<a href="contact.php3">Contact us</a><br><br>
+		&copy; 2000-2019 <a href="team.php3">GSMArena.com</a> 
+
+    </p>
+</div>
+</div>
+<a id="cdn-hosting" href="http://www.maxcdn.com/" target="_blank" rel="nofollow">
+<span class="center">CDN by</span>
+<img src="https://cdn2.gsmarena.com/w/css/maxcdn.gif" alt="">
+</a>
+</div>
+
+
+
+
+</aside>
+
+</div><!-- id body -->
+</div><!-- id outer -->
+
+
+
+
+<div id="footer">
+ <div class="footer-logo">
+     <img src="https://fdn2.gsmarena.com/w/css/logo-gsmarena-com.gif" alt="" />
+    </div>
+    <div id="footmenu">
+<p>
+<a href="/">Home</a>
+<a href="news.php3">News</a>
+<a href="reviews.php3">Reviews</a>
+<a href="compare.php3">Compare</a>
+<a href="network-bands.php3">Coverage</a>
+<a href="glossary.php3">Glossary</a>
+<a href="faq.php3">FAQ</a>
+
+<a href="rss-news-reviews.php3" class="rss-icon">RSS feed</a></li>
+<a target="_blank" rel="noopener" href="https://www.facebook.com/GSMArenacom-189627474421/" class="fb-icon">Facebook</a>
+<a target="_blank" rel="noopener" href="https://twitter.com/gsmarena_com" class="tw-icon">Twitter</a>
+
+</p>
+<p>
+&copy; 2000-2019 <a href="team.php3">GSMArena.com</a> 
+<a href="https://www.gsmarena.com/switch.php3?ver=mobile&ref=MA%3D%3D">Mobile version</a>
+<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.gsmarena.android">Android app</a>
+<a href="contact.php3">Contact us</a>
+<a href="privacy-policy.php3">Privacy</a> 
+<a href="terms.php3">Terms of use</a>
+			
+</p>			
+<div id="cdn-hosting">
+<a href="http://www.maxcdn.com/" target="_blank" rel="nofollow noopener">
+  <span class="center">CDN by</span><br />
+  <img src="https://cdn2.gsmarena.com/w/css/maxcdn.gif" alt="" />
+</a>
+</div>
+  </div>
+ </div>
+ 
+ 
+</div>
+
+
+<script type="text/javascript" src="https://fdn.gsmarena.com/vv/assets10/js/autocomplete.js?ver=18"></script>
+<script type="text/javascript" language="javascript">
+AUTOCOMPLETE_LIST_URL = "/quicksearch-8089.jpg";
+$gsm.addEventListener(document, "DOMContentLoaded", function() 
+{
+    new Autocomplete( "topsearch-text", "topsearch", true );
+}
+)
+</script>
+
+<script>
+function checkForAdBlocker() {
+    function gcs(e, p) { return window.getComputedStyle(e, null).getPropertyValue(p); }
+    var elem = document.querySelector('#topAdv');
+    var visible = (gcs(elem, "display") == "block") && (gcs(elem, "visibility") == "visible") && (gcs(elem, "height") != "0px") && (gcs(elem, "width") != "0px");
+    return !visible? "yes" : "no";
+}
+sAdBlockerUsed =  checkForAdBlocker();
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-131096-1', 'auto' );
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview'
+, { 'dimension2': '1' }
+	);
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="https://fdn.gsmarena.com/vv/assets10/js/infinite-scroll.js?ver=18"></script>
+
+</body></html>
