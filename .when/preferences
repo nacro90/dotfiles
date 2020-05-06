@@ -1,0 +1,4 @@
+calendar = /home/orcan/note/calendar
+editor = nvim
+monday_first = yes
+items_today_style = "bold,fgblue"

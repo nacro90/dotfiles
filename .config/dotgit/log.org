@@ -9624,3 +9624,32 @@ index 8b3e658..d9c1398 100755
  export SXHKD_SHELL='/bin/sh'
  
 #+END_SRC
+* <2020-05-06 Wed 15:10>
+
+- M .config/betterbash
+- A  .when/preferences
+- A  packages.txt
+
+#+BEGIN_SRC diff
+diff --git a/.config/betterbash b/.config/betterbash
+--- a/.config/betterbash
++++ b/.config/betterbash
+@@ -1 +1 @@
+-Subproject commit e7c03460be0d7b3971c4fb05af78d20443b31e7b
++Subproject commit e7c03460be0d7b3971c4fb05af78d20443b31e7b-dirty
+diff --git a/.config/dotgit/log.org b/.config/dotgit/log.org
+index 797d059..46f6d3f 100644
+--- a/.config/dotgit/log.org
++++ b/.config/dotgit/log.org
+@@ -9624,3 +9624,10 @@ index 8b3e658..d9c1398 100755
+  export SXHKD_SHELL='/bin/sh'
+  
+ #+END_SRC
++* <2020-05-06 Wed 15:10>
++
++- M .config/betterbash
++- A  .when/preferences
++- A  packages.txt
++
++#+BEGIN_SRC diff
+#+END_SRC
